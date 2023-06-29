@@ -1,9 +1,9 @@
-
-
 # DevOps Interview Questions
+
 <details>
- <summary>1. What are the popular DevOps tools that you use?</summary>
-  <p>We use folowingtoolsfor work inDevOps:</p>
+ <summary>What are the popular DevOps tools that you use?</summary>
+  <p>We use folowingtools for work inDevOps:</p>
+  ## imp
   1.Jenkins : This is an open source automation server used as a continuous integration tool. We can build,
 deployand runautomated tests withJenkins.
   2.GIT:It is a version controltool used for tracking changesin files and software.
