@@ -30,3 +30,19 @@ issue in production. This gives confidence in releasing feature without worrying
          <li><b>Performance-oriented</b> : With DevOps, organization folows performance-oriented culture in which teams become more productive andmore innovative.</lI>
     </ol>
 </details>
+
+<details>
+ <summary>3.What is the typical DevOps workflow you use in your organization?</summary>
+  <p>The typicalDevOps workflowin our organization is as folows:</p>
+    <ol>
+        <li>We use Atlassian Jira for writing requirements and tracking tasks.</li>
+        <li>Based on the Jira tasks, developers checkin code into GIT version control system.</li>
+        <li>The code checked into GITis built by usingApache Maven.</li>
+        <li>The build processis automated with Jenkins.</li>
+        <li>Code built onJenkins is sent to organization’s Artifactory.</li>
+        <li>Jenkins automaticaly picks the libraries from Artifactory and deploys it to Production</li>
+        <li>During Production deployment Docker images are used to deploy same code on multiple hosts.</li>
+        <li>Once code is deployed to Production, we use Nagiosto monitor the health of production servers.</lI>
+        <li>Splunk based alertsinformus of any issues or exceptionsin production.</li>
+    </ol>
+</details>
