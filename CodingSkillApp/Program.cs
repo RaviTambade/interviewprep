@@ -224,12 +224,5 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
-<<<<<<< HEAD
 
 
-=======
-AreaOfCircle(12);
-
-CheckNumberPositiveOrNegative(-2);
-CheckNumberEvenOrOdd(13);
->>>>>>> 540ebf2a3a5be238c528977b63cce6a4483bacf1
