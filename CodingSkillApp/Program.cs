@@ -1,6 +1,4 @@
-﻿
-
-static void ShowFibonacciSeriesNumber(int level)
+﻿static void ShowFibonacciSeriesNumber(int level)
 {
     int firstNumber = 0;
     int secondNumber = 1;
@@ -15,7 +13,6 @@ static void ShowFibonacciSeriesNumber(int level)
     }
 }
 
-
 static bool IsAbundant(int number)
 {
     int sum = 0;
@@ -29,7 +26,6 @@ static bool IsAbundant(int number)
     }
     return false;
 }
-
 
 // program to replace all 0's with 1 in a given integer  : 
 
@@ -61,61 +57,59 @@ static bool IsAutomorphicNumber(int number)
 }
 
 //Check Whether Or Not the Number is an Perfect Number 
+//Sum of factors should be the same number
+
 static bool IsPerfectNumber(int number)
 {
-    int sum = 0;
+    bool status=false;
+    int sumOfFactors = 0;
     for (int i = 1; i < number; i++)
     {
         if (number % i == 0)
         {
-            sum += i;
+            sumOfFactors += i;
         }
     }
-
-    if (sum == number)
+    if (sumOfFactors == number)
     {
-        return true;
+       status=true;;
     }
-    else
-        return false;
-
+    return status;
 }
 
 //check whether or not the number is perfect square.
-static bool isPerfectSquare(int number)
+static bool IsPerfectSquare(int number)
 {
+    bool status=false;
     if (number >= 0)
     {
-
         int squareRoot = (int)Math.Sqrt(number);
-        Console.WriteLine(squareRoot);
-        return (squareRoot * squareRoot) == number;
+        int square=squareRoot * squareRoot;
+        if(square == number)
+        status=true;
     }
-    return false;
+    return status;
 }
 
 
-//find the sum of N natural numbers
-static void SumOfNaturalNumebers(int number){
-int sum =0;
+//find the sum of natural numbers till number
 
- for(int i=1;i<=number;i++) {
-        sum+=i;
-
- }
- Console.WriteLine(sum);
+static int SumOfNaturalNumbersTillNumber(int number){
+    int sum =0;
+    for(int i=1;i<=number;i++) {
+            sum+=i;
+    }
+    return sum;
 }
-
 
 
 // Find the Sum of Numbers in a Given Range
-static void SumOfNumbersGivenRange(int number1,int number2){
-int sum=0;
-
-for(int i=number1;i<=number2;i++){
-       sum+=i;
-}
-Console.WriteLine(sum);
+static int  SumOfNumbersGivenRange(int number1,int number2){
+    int sum=0;
+    for(int i=number1;i<=number2;i++){
+        sum+=i;
+    }
+    return sum;
 }
 
 
@@ -127,7 +121,7 @@ static bool IsGreater(int number1,int number2){
     return status;
 }
 
-static int DecimalToOctal(int decimalNumber){
+static int ConvertDecimalToOctal(int decimalNumber){
     int octal =0;
     int reminder ,digit=1;
     while(decimalNumber!=0){
@@ -139,6 +133,38 @@ static int DecimalToOctal(int decimalNumber){
     return octal;
 }
 
+static int ConvertOctalToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber= 0;
+    int baseValue = 8;
+
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        int octalPowerValue=(int)Math.Pow(baseValue, i);
+        decimalNumber=decimalNumber+ digit * octalPowerValue;
+        number=number/ 10; //(number/=10)
+        i++;
+    }
+    return decimalNumber;
+}
+
+ static int ConvertBinaryToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber = 0;
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        decimalNumber += digit * (int)Math.Pow(2, i);
+        number /= 10;
+        i++;
+    }
+    return decimalNumber;
+}
+
+
 
 //Check if a Number is Positive or Negative 
 static bool IsNegative(int number){
@@ -147,13 +173,6 @@ static bool IsNegative(int number){
     status=true;
     return status;
 }
-
-
-
-
-
-/
-
 
 // sum of digits in a number
 static int GetSumOfDigit(int number){
@@ -167,67 +186,30 @@ int sum =0;
     return sum;   
 }
 
- static int ConvertOctalToDecimal(long number)
-    {
-        int i = 0;
-        int dec = 0;
-        int baseValue = 8;
-
-        // Converting octal to decimal
-        while (number != 0)
-         {
-            int digit = (int)(number % 10);
-            dec += digit * (int)Math.Pow(baseValue, i);
-
-            number /= 10;
-            i++;
-        }
-        return dec;
-    }
-
- static int ConvertBinaryToDecimal(long num)
-    {
-        int i = 0, decimalNumber = 0;
-
-        // Converting binary to decimal
-        while (num != 0)
-        {
-            int digit = (int)(num % 10);
-            decimalNumber += digit * (int)Math.Pow(2, i);
-
-            num /= 10;
-            i++;
-        }
-
-        return decimalNumber;
-    }
-
+ 
 //find the reverse of a number
 static int GetReverseNumber(int number){
-int num=1234;
-int reverse =0;
-int rem;
-
-    while(num!=0){
-        rem= num % 10;
-        reverse=reverse*10+rem;
-        num/=10;            
+    int reverse =0;
+    int reminder;
+    while(number!=0){
+        reminder= number % 10;
+        reverse=reverse*10+reminder;
+        number/=10;            
     }
     return reverse;   
 }
 
 //Highest Common Factor(HCF)
-static int GetHighestCommonFactor(){
-int num1 = 12;
-int num2 = 36;
-int HCF = 1;
-
-    for(int i=1; i<=num1 && i<=num2; i++ ){
-        if(num1%i==0 && num2%i==0){
-            HCF=i;
+static int GetHighestCommonFactor(int number1, int number2){
+    int hcf;
+    for(int i=1; i<=number1 && i<=number2; i++ ){
+        int reminder1=number1%i;
+        int reminder2=number2%i;
+        if(reminder1==0 && reminder2==0){
+            hcf=i;
         }
     }
-    return HCF;
+    return hcf;
 }
 
 // Calculate the number of digits in an integer
