@@ -131,7 +131,6 @@ static int DecimalToOctal(int decimalNumber){
     int octal =0;
     int reminder ,digit=1;
     while(decimalNumber!=0){
-
         reminder=decimalNumber%8;
         decimalNumber=decimalNumber/8;
         octal += reminder * digit;
@@ -142,39 +141,13 @@ static int DecimalToOctal(int decimalNumber){
 
 
 //Check if a Number is Positive or Negative 
-static void CheckNumberPositiveOrNegative(int number){
-if (number < 0)
-{
-    System.Console.WriteLine("The given number is negative");
-}
-else if (number > 0)
-{
-    System.Console.WriteLine("The number is positive");
-}
-else
-{
-    System.Console.WriteLine("The number is zero");
-}
+static bool IsNegative(int number){
+    bool status=false;
+    if(number < 0)
+    status=true;
+    return status;
 }
 
-//Check if a Number is even or odd.
-static void CheckNumberEvenOrOdd(int number)
-{
-    if (number % 2 == 0)
-    {
-        System.Console.WriteLine("The given number is even");
-    }
-    else
-    {
-        System.Console.WriteLine("The given number is odd");
-    }
-}
-
-static void AreaOfCircle(float radius){
-
-     float areaOfCircle=3.14f * radius * radius;
-     Console.WriteLine(areaOfCircle);
-  }
 
 
 
