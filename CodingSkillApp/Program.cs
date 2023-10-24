@@ -96,6 +96,63 @@ static bool isPerfectSquare(int number)
 }
 
 
+//find the sum of N natural numbers
+static void SumOfNaturalNumebers(int number){
+int sum =0;
+
+ for(int i=1;i<=number;i++) {
+        sum+=i;
+
+ }
+ Console.WriteLine(sum);
+}
+
+
+
+// Find the Sum of Numbers in a Given Range
+static void SumOfNumbersGivenRange(int number1,int number2){
+int sum=0;
+
+for(int i=number1;i<=number2;i++){
+       sum+=i;
+}
+Console.WriteLine(sum);
+}
+
+
+
+static void FindGretestNumber(int n,int b){
+if(n==b){
+       Console.WriteLine("Both are Equal numbers");
+}
+
+else if(n>b){
+       Console.WriteLine(n + " is greter than " + b);
+}
+
+else{
+
+Console.WriteLine(b + " is greter than " + n);
+}
+}
+
+
+
+  static void DecimalToOctal(int num){
+    int octal =0;
+    int rem ,i=1;
+
+    while(num!=0){
+
+        rem=num%8;
+        num=num/8;
+        octal += rem * i;
+        i=i*10;
+    }
+    Console.WriteLine(octal);
+  }
+
+
 
 
 
@@ -122,3 +179,10 @@ Console.WriteLine(statusOfPerfectNumber);
 int perfectSquare = 5;
 bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
 Console.WriteLine(statusOfPerfectSquare);
+
+
+
+SumOfNaturalNumebers(3);
+SumOfNumbersGivenRange(4,6);
+FindGretestNumber(4,6);
+DecimalToOctal(25);
