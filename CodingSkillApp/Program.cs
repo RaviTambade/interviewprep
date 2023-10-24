@@ -33,18 +33,18 @@ static bool IsAbundant(int number)
 
 // program to replace all 0's with 1 in a given integer  : 
 
-static string GetRelacedInterger(string number)
+static string RelaceData(string data, char from, char to)
 {
-    string reqlacedNumber = "";
-    //use the logic to replace all 0's with 1 in a given integer
-    for (int i = 0; i < number.Length; i++)
+    string replacedData = "";
+    //use the logic to replace  character
+     for (int i = 0; i < data.Length; i++)
     {
-        if (number[i] == '0')
-            reqlacedNumber += '1';
+        if (data[i] == from)
+            replacedData += to;
         else
-            reqlacedNumber += number[i];
+            replacedData += data[i];
     }
-    return reqlacedNumber;
+    return replacedData;
 }
 
 //Check Whether Or Not the Number is an Automorphic Number 
@@ -153,6 +153,9 @@ Console.WriteLine(b + " is greter than " + n);
   }
 
 
+
+  
+
   //Check if a Number is Positive or Negative 
 static void CheckNumberPositiveOrNegative(int number){
 if (number < 0)
@@ -181,6 +184,12 @@ static void CheckNumberEvenOrOdd(int number)
         System.Console.WriteLine("The given number is odd");
     }
 }
+
+static void AreaOfCircle(float radius){
+
+     float areaOfCircle=3.14f * radius * radius;
+     Console.WriteLine(areaOfCircle);
+  }
 
 
 
@@ -272,3 +281,5 @@ FindGretestNumber(4,6);
 DecimalToOctal(25);
 CheckNumberPositiveOrNegative(-2);
 CheckNumberEvenOrOdd(13);
+
+
