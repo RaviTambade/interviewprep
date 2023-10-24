@@ -51,9 +51,8 @@ static string RelaceData(string data, char from, char to)
 // Automorphic number-  if its square ends in the same digits as the number itself.
 static bool IsAutomorphicNumber(int number)
 {
-
-    int y = number * number;
-    if (y % 10 == number % 10)
+    int squareNumber= number * number;
+    if (squareNumber % 10 == number % 10)
     {
         return true;
     }
@@ -120,21 +119,14 @@ Console.WriteLine(sum);
 }
 
 
-
-static void FindGretestNumber(int n,int b){
-if(n==b){
-       Console.WriteLine("Both are Equal numbers");
+static bool IsGreater(int number1,int number2){
+    bool status=false;
+    if(number1>number2){
+    status=true;
+    }
+    return status;
 }
 
-else if(n>b){
-       Console.WriteLine(n + " is greter than " + b);
-}
-
-else{
-
-Console.WriteLine(b + " is greter than " + n);
-}
-}
 
 
 
