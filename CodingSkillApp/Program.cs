@@ -197,6 +197,17 @@ while(binaryNumber > 0){
 System.Console.WriteLine(decimalNumber);
 }
 
+static void ConvertDecimalToBinary(int decimalNumber){
+string binaryNumber = "";
+while (decimalNumber > 0)
+{
+    int remainder = decimalNumber % 2;
+    binaryNumber = remainder + binaryNumber;
+    decimalNumber = decimalNumber / 2;
+}
+Console.WriteLine(binaryNumber);
+}
+
 
 //find the reverse of a number
 static int GetReverseNumber(int number){
