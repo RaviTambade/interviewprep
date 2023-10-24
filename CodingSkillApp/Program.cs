@@ -127,28 +127,21 @@ static bool IsGreater(int number1,int number2){
     return status;
 }
 
-
-
-
-  static void DecimalToOctal(int num){
+static int DecimalToOctal(int decimalNumber){
     int octal =0;
-    int rem ,i=1;
+    int reminder ,digit=1;
+    while(decimalNumber!=0){
 
-    while(num!=0){
-
-        rem=num%8;
-        num=num/8;
-        octal += rem * i;
-        i=i*10;
+        reminder=decimalNumber%8;
+        decimalNumber=decimalNumber/8;
+        octal += reminder * digit;
+        digit=digit*10;
     }
-    Console.WriteLine(octal);
-  }
+    return octal;
+}
 
 
-
-  
-
-  //Check if a Number is Positive or Negative 
+//Check if a Number is Positive or Negative 
 static void CheckNumberPositiveOrNegative(int number){
 if (number < 0)
 {
