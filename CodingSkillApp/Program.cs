@@ -154,6 +154,44 @@ Console.WriteLine(b + " is greter than " + n);
 
 
 
+  
+
+  //Check if a Number is Positive or Negative 
+static void CheckNumberPositiveOrNegative(int number){
+if (number < 0)
+{
+    System.Console.WriteLine("The given number is negative");
+}
+else if (number > 0)
+{
+    System.Console.WriteLine("The number is positive");
+}
+else
+{
+    System.Console.WriteLine("The number is zero");
+}
+}
+
+//Check if a Number is even or odd.
+static void CheckNumberEvenOrOdd(int number)
+{
+    if (number % 2 == 0)
+    {
+        System.Console.WriteLine("The given number is even");
+    }
+    else
+    {
+        System.Console.WriteLine("The given number is odd");
+    }
+}
+
+static void AreaOfCircle(float radius){
+
+     float areaOfCircle=3.14f * radius * radius;
+     Console.WriteLine(areaOfCircle);
+  }
+
+
 
 
 //Testing
@@ -186,5 +224,12 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
+<<<<<<< HEAD
 
 
+=======
+AreaOfCircle(12);
+
+CheckNumberPositiveOrNegative(-2);
+CheckNumberEvenOrOdd(13);
+>>>>>>> 540ebf2a3a5be238c528977b63cce6a4483bacf1
