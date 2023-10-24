@@ -365,11 +365,6 @@ static void CheckHarshadNumber(int number)
 
 //ShowFibonacciSeriesNumber(10);
 
-<<<<<<< HEAD
-//int number=56;
-//bool status=IsAbundantNumber(number);
-//Console.WriteLine("Abundant ="+ status);
-=======
 // int number = 56;
 // bool status = IsAbundant(number);
 // Console.WriteLine("Abundant =" + status);
@@ -411,7 +406,6 @@ int number = 3;
 ConvertBinaryToDecimal(1010);
 CheckHarshadNumber(42);
 
->>>>>>> be3ea18b9e96b4e3bfa403df4f638aa04fb8e434
 
 //Testing Prime OR Not
 
@@ -429,3 +423,42 @@ int a, i;
   }
   if (!flag)
      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+
+     //equilibrium index of array
+
+    public static int equilibriumPoint(long arr[], int n) {
+        long totalSum = 0;
+        long leftSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            totalSum += arr[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            totalSum -= arr[i];
+
+            if (leftSum == totalSum) {
+                return i + 1; // Equilibrium point found at index i
+            }
+
+            leftSum += arr[i];
+        }
+
+        return -1; // No equilibrium point found
+    }
+    
+    //string palidrome
+    
+	
+	bool isPal(string str){
+	int front =0;
+ 	int end=str.Length-1;
+	while(front<end){
+	 if(str[front]!=str[end])
+	return false;
+	front++;
+	end--;
+    }
+    return true;
+    }
+   
