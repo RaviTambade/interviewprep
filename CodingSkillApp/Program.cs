@@ -400,6 +400,28 @@ int number = arr.Length;
 Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 
 
+
+//Toggle each character in a String e.g VedANt=>vEDanT
+ static string ToggleStringCase(string input)
+    {
+        char[] characters = input.ToCharArray();
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (char.IsLower(characters[i]))
+            {
+                characters[i] = char.ToUpper(characters[i]);
+            }
+            else if (char.IsUpper(characters[i]))
+            {
+                characters[i] = char.ToLower(characters[i]);
+            }
+        }
+
+        return new string(characters);
+    }
+
+    
 //ShowFibonacciSeriesNumber(10);
 
 // int number = 56;
