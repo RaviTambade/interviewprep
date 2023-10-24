@@ -33,18 +33,18 @@ static bool IsAbundant(int number)
 
 // program to replace all 0's with 1 in a given integer  : 
 
-static string GetRelacedInterger(string number)
+static string RelaceData(string data, char from, char to)
 {
-    string reqlacedNumber = "";
-    //use the logic to replace all 0's with 1 in a given integer
-    for (int i = 0; i < number.Length; i++)
+    string replacedData = "";
+    //use the logic to replace  character
+     for (int i = 0; i < data.Length; i++)
     {
-        if (number[i] == '0')
-            reqlacedNumber += '1';
+        if (data[i] == from)
+            replacedData += to;
         else
-            reqlacedNumber += number[i];
+            replacedData += data[i];
     }
-    return reqlacedNumber;
+    return replacedData;
 }
 
 //Check Whether Or Not the Number is an Automorphic Number 
@@ -186,3 +186,5 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
+
+
