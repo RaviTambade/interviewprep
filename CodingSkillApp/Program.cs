@@ -153,6 +153,35 @@ Console.WriteLine(b + " is greter than " + n);
   }
 
 
+  //Check if a Number is Positive or Negative 
+static void CheckNumberPositiveOrNegative(int number){
+if (number < 0)
+{
+    System.Console.WriteLine("The given number is negative");
+}
+else if (number > 0)
+{
+    System.Console.WriteLine("The number is positive");
+}
+else
+{
+    System.Console.WriteLine("The number is zero");
+}
+}
+
+//Check if a Number is even or odd.
+static void CheckNumberEvenOrOdd(int number)
+{
+    if (number % 2 == 0)
+    {
+        System.Console.WriteLine("The given number is even");
+    }
+    else
+    {
+        System.Console.WriteLine("The given number is odd");
+    }
+}
+
 
 
 
@@ -186,3 +215,5 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
+CheckNumberPositiveOrNegative(-2);
+CheckNumberEvenOrOdd(13);
