@@ -152,7 +152,7 @@ static bool IsNegative(int number){
 
 
 
-/
+
 
 
 // sum of digits in a number
@@ -242,15 +242,30 @@ int digit=0;
 }
 
 
+//prime number with recursion    
+
+bool isPrime(int number, int i = 2)
+{
+    // Base conditions
+    if (number <= 2) return (number == 2) ? true : false; if (number % i == 0) return false; if (i * i > number)
+       return true;
+
+    return isPrime(number, i + 1);           //function calls itselfs
+}
+
+
+
+
+
 
 
 //Testing
 
 ShowFibonacciSeriesNumber(10);
 
-int number = 56;
-bool status = IsAbundant(number);
-Console.WriteLine("Abundant =" + status);
+// int number = 56;
+// bool status = IsAbundant(number);
+// Console.WriteLine("Abundant =" + status);
 
 
 // string numberToBeReplace = "540203";
@@ -277,5 +292,12 @@ SumOfNumbersGivenRange(4,6);
 DecimalToOctal(25);
 // CheckNumberPositiveOrNegative(-2);
 // CheckNumberEvenOrOdd(13);
+
+int number = 3;
+    if (isPrime(number))
+       Console.WriteLine("Prime Number");
+    else{       
+        Console.WriteLine("not prime numer");
+    }
 
 
