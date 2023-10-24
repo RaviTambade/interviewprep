@@ -152,17 +152,11 @@ static bool IsNegative(int number){
 
 
 
-//Testing
-
-ShowFibonacciSeriesNumber(10);
-
-int number = 56;
-bool status = IsAbundant(number);
-Console.WriteLine("Abundant =" + status);
+/
 
 
 // sum of digits in a number
-static int GetSum(int number){
+static int GetSumOfDigit(int number){
 int num=1234;
 int sum =0;
 
@@ -238,15 +232,30 @@ int HCF = 1;
 
 // Calculate the number of digits in an integer
 
-static int GetSumOfDigits(){
-int num =1234;
-int digit =0;
-    while(num>0){
+static int GetCountOfDigits(int number){
+    int sum =0;
+    int digit=0;
+    while(number>0){
         digit++;
-        num=num/10;
+        number=number/10;
+        sum=sum+digit;
     }
-    return digit;
+    return sum;
 }
+
+
+
+
+
+
+
+//Testing
+
+ShowFibonacciSeriesNumber(10);
+
+int number = 56;
+bool status = IsAbundant(number);
+Console.WriteLine("Abundant =" + status);
 
 
 // string numberToBeReplace = "540203";
