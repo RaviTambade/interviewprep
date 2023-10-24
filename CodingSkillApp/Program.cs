@@ -185,22 +185,29 @@ int sum =0;
         return dec;
     }
 
- static int ConvertBinaryToDecimal(long num)
-    {
-        int i = 0, decimalNumber = 0;
+ static void ConvertBinaryToDecimal(int binaryNumber){
+int n=0;
+int decimalNumber=0;
+while(binaryNumber > 0){
+    int temp= binaryNumber %10;
+    decimalNumber +=(int) (temp*Math.Pow(2,n));
+    binaryNumber= binaryNumber / 10;
+    n++;
+}
+System.Console.WriteLine(decimalNumber);
+}
 
-        // Converting binary to decimal
-        while (num != 0)
-        {
-            int digit = (int)(num % 10);
-            decimalNumber += digit * (int)Math.Pow(2, i);
+static void ConvertDecimalToBinary(int decimalNumber){
+string binaryNumber = "";
+while (decimalNumber > 0)
+{
+    int remainder = decimalNumber % 2;
+    binaryNumber = remainder + binaryNumber;
+    decimalNumber = decimalNumber / 2;
+}
+Console.WriteLine(binaryNumber);
+}
 
-            num /= 10;
-            i++;
-        }
-
-        return decimalNumber;
-    }
 
 //find the reverse of a number
 static int GetReverseNumber(int number){
@@ -242,8 +249,24 @@ int digit=0;
 }
 
 
-//last non-zero digit in factorial
 
+static void CheckHarshadNumber(int number)
+{
+    string numberString=number.ToString();
+    int[] digits=numberString.Select(a=>int.Parse(a.ToString())).ToArray();
+    int digitSum=digits.Sum();
+     if (number % digitSum == 0)
+    {
+        System.Console.WriteLine("Harshad Number");
+    }
+    else
+    {
+        System.Console.WriteLine("Not a Harshad Number");
+    }
+}
+
+
+//last non-zero digit in factorial
 static int factorial(int n){
     if(n<=1)
     return 1;
@@ -288,5 +311,6 @@ SumOfNumbersGivenRange(4,6);
 DecimalToOctal(25);
 // CheckNumberPositiveOrNegative(-2);
 // CheckNumberEvenOrOdd(13);
-
+ConvertBinaryToDecimal(1010);
+CheckHarshadNumber(42);
 
