@@ -153,6 +153,9 @@ Console.WriteLine(b + " is greter than " + n);
   }
 
 
+  
+
+
 
 
 
@@ -186,3 +189,4 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
+AreaOfCircle(12);
