@@ -233,18 +233,13 @@ int HCF = 1;
 // Calculate the number of digits in an integer
 
 static int GetCountOfDigits(int number){
-    int sum =0;
-    int digit=0;
-    while(number>0){
-        digit++;
-        number=number/10;
-        sum=sum+digit;
-    }
-    return sum;
+int digit=0;
+   while(number>0){
+    digit++;
+    number=number/10;
 }
-
-
-
+    return digit;
+}
 
 
 
@@ -280,7 +275,7 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 //FindGretestNumber(4,6);
 DecimalToOctal(25);
-CheckNumberPositiveOrNegative(-2);
-CheckNumberEvenOrOdd(13);
+// CheckNumberPositiveOrNegative(-2);
+// CheckNumberEvenOrOdd(13);
 
 
