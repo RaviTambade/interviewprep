@@ -194,6 +194,61 @@ int number = 56;
 bool status = IsAbundant(number);
 Console.WriteLine("Abundant =" + status);
 
+
+// sum of digits in a number
+static int GetSum(int number){
+int num=1234;
+int sum =0;
+
+    while(num!=0){
+        sum += num % 10;
+        num = num/10;            
+    }
+    return sum;   
+}
+
+
+//find the reverse of a number
+static int GetReverseNumber(int number){
+int num=1234;
+int reverse =0;
+int rem;
+
+    while(num!=0){
+        rem= num % 10;
+        reverse=reverse*10+rem;
+        num/=10;            
+    }
+    return reverse;   
+}
+
+//Highest Common Factor(HCF)
+static int GetHighestCommonFactor(){
+int num1 = 12;
+int num2 = 36;
+int HCF = 1;
+
+    for(int i=1; i<=num1 && i<=num2; i++ ){
+        if(num1%i==0 && num2%i==0){
+            HCF=i;
+        }
+    }
+    return HCF;
+}
+
+// Calculate the number of digits in an integer
+
+static int GetSumOfDigits(){
+int num =1234;
+int digit =0;
+    while(num>0){
+        digit++;
+        num=num/10;
+    }
+    return digit;
+}
+
+
 string numberToBeReplace = "540203";
 string replacedNumber = GetRelacedInterger(numberToBeReplace);
 Console.WriteLine(replacedNumber);
@@ -216,5 +271,7 @@ SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 FindGretestNumber(4,6);
 DecimalToOctal(25);
+CheckNumberPositiveOrNegative(-2);
+CheckNumberEvenOrOdd(13);
 
 
