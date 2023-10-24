@@ -173,6 +173,40 @@ int sum =0;
     return sum;   
 }
 
+ static int ConvertToOctal(long number)
+    {
+        int i = 0;
+        int dec = 0;
+        int baseValue = 8;
+
+        // Converting octal to decimal
+        while (number != 0)
+         {
+            int digit = (int)(number % 10);
+            dec += digit * (int)Math.Pow(baseValue, i);
+
+            number /= 10;
+            i++;
+        }
+        return dec;
+    }
+
+ static int ConvertToDecimal(long num)
+    {
+        int i = 0, decimalNumber = 0;
+
+        // Converting binary to decimal
+        while (num != 0)
+        {
+            int digit = (int)(num % 10);
+            decimalNumber += digit * (int)Math.Pow(2, i);
+
+            num /= 10;
+            i++;
+        }
+
+        return decimalNumber;
+    }
 
 //find the reverse of a number
 static int GetReverseNumber(int number){
@@ -215,9 +249,9 @@ int digit =0;
 }
 
 
-string numberToBeReplace = "540203";
-string replacedNumber = GetRelacedInterger(numberToBeReplace);
-Console.WriteLine(replacedNumber);
+// string numberToBeReplace = "540203";
+// string replacedNumber = GetRelacedInterger(numberToBeReplace);
+// Console.WriteLine(replacedNumber);
 
 int automorphicNumber = 5;
 bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
@@ -235,7 +269,7 @@ Console.WriteLine(statusOfPerfectSquare);
 
 SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
-FindGretestNumber(4,6);
+//FindGretestNumber(4,6);
 DecimalToOctal(25);
 CheckNumberPositiveOrNegative(-2);
 CheckNumberEvenOrOdd(13);
