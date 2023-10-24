@@ -360,6 +360,22 @@ static void CheckHarshadNumber(int number)
     }
 }
 
+// remove duplicate element from array
+    static int[] RemoveDuplicates(int[] array)
+    {
+        HashSet<int> uniqueSet = new HashSet<int>();
+        List<int> uniqueList = new List<int>();
+
+        foreach (int item in array)
+        {
+            if (uniqueSet.Add(item)) // If the item is added to the HashSet, it's unique.
+            {
+                uniqueList.Add(item); // Add the unique item to the list.
+            }
+        }
+
+        return uniqueList.ToArray();
+    }
 
 //last non-zero digit in factorial
 static int factorial(int n){
