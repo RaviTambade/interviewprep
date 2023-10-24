@@ -200,7 +200,7 @@ int sum =0;
     return sum;   
 }
 
- static int ConvertToOctal(long number)
+ static int ConvertOctalToDecimal(long number)
     {
         int i = 0;
         int dec = 0;
@@ -218,7 +218,7 @@ int sum =0;
         return dec;
     }
 
- static int ConvertToDecimal(long num)
+ static int ConvertBinaryToDecimal(long num)
     {
         int i = 0, decimalNumber = 0;
 
