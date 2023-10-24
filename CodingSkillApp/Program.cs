@@ -242,9 +242,20 @@ int digit=0;
 }
 
 
+//last non-zero digit in factorial
 
+static int factorial(int n){
+    if(n<=1)
+    return 1;
+    return n*factorial(n-1);
+}
 
-//Testing
+int n =4;
+int fact = factorial(n);
+while(fact%10==0){
+   fact/=10;
+}
+
 
 ShowFibonacciSeriesNumber(10);
 
