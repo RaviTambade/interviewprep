@@ -1,5 +1,7 @@
 ﻿
 
+using System.Reflection.Emit;
+
 static void ShowFibonacciSeriesNumber(int level)
 {
     int firstNumber = 0;
@@ -28,6 +30,84 @@ static bool IsAbundant(int number)
         return true;
     }
     return false;
+}
+
+static bool prime_or_not(int a) {
+  int i;
+  bool is_prime = true;
+  if (a == 0 || a == 1) {
+    is_prime = false;
+  }
+  for(i = 2; i <= a/2; ++i) {
+    if(a % i == 0) {
+      is_prime = false;
+      break;
+    }
+  }
+  return is_prime;
+}
+
+
+static  int convert_HexaToDeci(string num)
+{
+    int len = num.Length;
+    int dec = 0, index = 0,i;
+    
+    for(i = len - 1; i >= 0; i--)
+    {
+        // Here we check if current array char is between (0-9)
+        if (num[i] >= '0' && num[i] <= '9') 
+        {
+            // whenever current num[i] is in range '0' - '9' 
+            // ascii int value can be fetched 
+            // by subtracting 48 (Refer Ascii table) as ASCII val 0 : 48 
+            int digit = Convert.ToInt32(num[i]) - 48; 
+            dec += Convert.ToInt32(digit * Math.Pow(16, index)); 
+            index++; 
+        } 
+
+        // Here we check if current array char is between (A-F) 
+        else if (num[i] >= 'A' && num[i] <= 'F') 
+        { 
+            // whenever current num[i] is in range 'A' - 'F' 
+            // ascii int value can be fetched 
+            // by subtracting 55 (Refer Ascii table) as 
+            // ASCII val A : 65 and A must result 10 as value 
+            int digit = Convert.ToInt32(num[i]) - 55; 
+            dec += Convert.ToInt32(digit * Math.Pow(16, index)); 
+            index++; 
+        } 
+    } 
+    return dec; 
+} 
+
+static void findRootsOfQudraticEquestion(int a, int b, int c)
+{
+    if (a == 0) {
+        Console.WriteLine("Invalid");
+        return;
+         } 
+         int d = b * b - 4 * a * c; 
+         double sqrt_val = Math. Sqrt(Math.Abs(d));
+          if (d > 0) {
+        Console.WriteLine("Roots are real and different \n");
+         Console.WriteLine((double)(-b + sqrt_val) / (2 * a));
+          Console.WriteLine((double)(-b - sqrt_val) / (2 * a));
+    }
+    else if (d == 0) {
+       Console.WriteLine("Roots are real and same \n");
+        Console.WriteLine((double)b / (2 * a));
+    }
+    else // d < 0
+    {
+        Console.WriteLine( "Roots are complex \n");
+        Console.WriteLine((double)b / (2 * a) );
+        Console.WriteLine(" + i" );
+        Console.WriteLine( sqrt_val); 
+        Console.WriteLine((double)b / (2 * a) );
+        Console.WriteLine(" - i"); 
+        Console.WriteLine( sqrt_val);
+    }
 }
 
 
@@ -152,7 +232,7 @@ static bool IsNegative(int number){
 
 
 
-/
+
 
 
 // sum of digits in a number
@@ -248,6 +328,21 @@ int digit=0;
     return digit;
 }
 
+//prime number with recursion    
+
+bool isPrime(int number, int i = 2)
+{
+    // Base conditions
+    if (number <= 2) return (number == 2) ? true : false; if (number % i == 0) return false; if (i * i > number)
+       return true;
+
+    return isPrime(number, i + 1);           //function calls itselfs
+}
+
+
+
+
+
 
 
 static void CheckHarshadNumber(int number)
@@ -272,19 +367,28 @@ static int factorial(int n){
     return 1;
     return n*factorial(n-1);
 }
-
 int n =4;
 int fact = factorial(n);
 while(fact%10==0){
    fact/=10;
 }
 
+// Smallest Element of the array using Recursion 
+static int SmallestNumber(int number,int[] arr){
+if(number==1)
+return arr[0];
+return Math.Min(arr[number-1], SmallestNumber(number-1, arr));
+}
+int[] arr={10,2,3,4,5,9};
+int number = arr.Length;
+Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 
-ShowFibonacciSeriesNumber(10);
 
-int number = 56;
-bool status = IsAbundant(number);
-Console.WriteLine("Abundant =" + status);
+//ShowFibonacciSeriesNumber(10);
+
+// int number = 56;
+// bool status = IsAbundant(number);
+// Console.WriteLine("Abundant =" + status);
 
 
 // string numberToBeReplace = "540203";
@@ -311,6 +415,71 @@ SumOfNumbersGivenRange(4,6);
 DecimalToOctal(25);
 // CheckNumberPositiveOrNegative(-2);
 // CheckNumberEvenOrOdd(13);
+
+int number = 3;
+    if (isPrime(number))
+       Console.WriteLine("Prime Number");
+    else{       
+        Console.WriteLine("not prime numer");
+    }
+
+
 ConvertBinaryToDecimal(1010);
 CheckHarshadNumber(42);
 
+
+//Testing Prime OR Not
+
+int a, i;
+  bool flag = false;
+  Console.WriteLine("Enter a positive  integer: ");
+  a = Convert.ToInt32(Console.ReadLine());
+  for(i = 2; i <= a/2; ++i) {
+    if (prime_or_not(i)) {
+      if (prime_or_not(a - i)) {
+        Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
+        flag = true;
+      }
+    }
+  }
+  if (!flag)
+     Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+
+     //equilibrium index of array
+
+    public static int equilibriumPoint(long arr[], int n) {
+        long totalSum = 0;
+        long leftSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            totalSum += arr[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            totalSum -= arr[i];
+
+            if (leftSum == totalSum) {
+                return i + 1; // Equilibrium point found at index i
+            }
+
+            leftSum += arr[i];
+        }
+
+        return -1; // No equilibrium point found
+    }
+    
+    //string palidrome
+    
+	
+	bool isPal(string str){
+	int front =0;
+ 	int end=str.Length-1;
+	while(front<end){
+	 if(str[front]!=str[end])
+	return false;
+	front++;
+	end--;
+    }
+    return true;
+    }
+   
