@@ -17,8 +17,9 @@ static void ShowFibonacciSeriesNumber(int level)
 }
 
 
-//Title:
-//coder:
+// Title :Abundant number
+//Coder :Akash Ajab
+
 
 static bool IsAbundant(int number)
 {
@@ -181,8 +182,8 @@ static bool IsPerfectSquare(int number)
 }
 
 
-//find the sum of natural numbers till number
-
+//Title :find the sum of natural numbers till number
+// Coder:Akash Ajab
 static int SumOfNaturalNumbersTillNumber(int number){
     int sum =0;
     for(int i=1;i<=number;i++) {
@@ -192,7 +193,8 @@ static int SumOfNaturalNumbersTillNumber(int number){
 }
 
 
-// Find the Sum of Numbers in a Given Range
+//Title : Find the Sum of Numbers in a Given Range
+//Coder : Akash Ajab
 static int  SumOfNumbersGivenRange(int number1,int number2){
     int sum=0;
     for(int i=number1;i<=number2;i++){
@@ -202,6 +204,8 @@ static int  SumOfNumbersGivenRange(int number1,int number2){
 }
 
 
+//Title :Greatest of two numbers
+//Coder :Akash Ajab
 static bool IsGreater(int number1,int number2){
     bool status=false;
     if(number1>number2){
@@ -210,6 +214,8 @@ static bool IsGreater(int number1,int number2){
     return status;
 }
 
+//Title :Decimal to Octal Conversion
+//Coder : Akash Ajab
 static int ConvertDecimalToOctal(int decimalNumber){
     int octal =0;
     int reminder ,digit=1;
@@ -265,7 +271,14 @@ static bool IsNegative(int number){
 }
 
 
-// sum of digits in a number
+
+
+
+
+
+
+// Title:sum of digits in a number
+//Coader:Pragati
 static int GetSumOfDigit(int number){
 int num=1234;
 int sum =0;
@@ -277,35 +290,35 @@ int sum =0;
     return sum;   
 }
 
- static int ConvertOctalToDecimal(long number)
-    {
-        int i = 0;
-        int dec = 0;
-        int baseValue = 8;
+//  static int ConvertOctalToDecimal(long number)
+//     {
+//         int i = 0;
+//         int dec = 0;
+//         int baseValue = 8;
 
-        // Converting octal to decimal
-        while (number != 0)
-         {
-            int digit = (int)(number % 10);
-            dec += digit * (int)Math.Pow(baseValue, i);
+//         // Converting octal to decimal
+//         while (number != 0)
+//          {
+//             int digit = (int)(number % 10);
+//             dec += digit * (int)Math.Pow(baseValue, i);
 
-            number /= 10;
-            i++;
-        }
-        return dec;
-    }
+//             number /= 10;
+//             i++;
+//         }
+//         return dec;
+//     }
 
- static void ConvertBinaryToDecimal(int binaryNumber){
-int n=0;
-int decimalNumber=0;
-while(binaryNumber > 0){
-    int temp= binaryNumber %10;
-    decimalNumber +=(int) (temp*Math.Pow(2,n));
-    binaryNumber= binaryNumber / 10;
-    n++;
-}
-System.Console.WriteLine(decimalNumber);
-}
+//  static void ConvertBinaryToDecimal(int binaryNumber){
+// int n=0;
+// int decimalNumber=0;
+// while(binaryNumber > 0){
+//     int temp= binaryNumber %10;
+//     decimalNumber +=(int) (temp*Math.Pow(2,n));
+//     binaryNumber= binaryNumber / 10;
+//     n++;
+// }
+// System.Console.WriteLine(decimalNumber);
+// }
 
 static void ConvertDecimalToBinary(int decimalNumber){
 string binaryNumber = "";
@@ -319,7 +332,8 @@ Console.WriteLine(binaryNumber);
 }
 
 
-//find the reverse of a number
+//Title:find the reverse of a number
+//Coader:Pragati
 static int GetReverseNumber(int number){
     int reverse =0;
     int reminder;
@@ -331,13 +345,12 @@ static int GetReverseNumber(int number){
     return reverse;   
 }
 
-//Highest Common Factor(HCF)
-static int GetHighestCommonFactor(int number1, int number2){
-    int hcf=0;
+//Title:Highest Common Factor(HCF)
+//Coader:Pragati
+static int GetHighestCommonFactor(int number1,int number2){
+int hcf = 1;
     for(int i=1; i<=number1 && i<=number2; i++ ){
-        int reminder1=number1%i;
-        int reminder2=number2%i;
-        if(reminder1==0 && reminder2==0){
+        if(number1%i==0 && number2%i==0){
             hcf=i;
         }
     }
@@ -345,7 +358,7 @@ static int GetHighestCommonFactor(int number1, int number2){
 }
 
 // Calculate the number of digits in an integer
-
+//Coader:Pragati
 static int GetCountOfDigits(int number){
 int digit=0;
    while(number>0){
@@ -356,7 +369,6 @@ int digit=0;
 }
 
 //prime number with recursion    
-
 bool isPrime(int number, int i = 2)
 {
     // Base conditions
@@ -397,11 +409,8 @@ static int[] RemoveDuplicates(int[] array)
         }
     }
 
-    return uniqueList.ToArray();
-}
-
-
-//last non-zero digit in factorial
+//Title:last non-zero digit in factorial
+//Coader:Pragati
 static int factorial(int n){
     if(n<=1)
     return 1;
@@ -414,7 +423,8 @@ while(fact%10==0){
    fact/=10;
 }
 
-// Smallest Element of the array using Recursion 
+// Title:Smallest Element of the array using Recursion
+//Coader:Pragati
 static int SmallestNumber(int number,int[] arr){
     if(number==1)
     return arr[0];
@@ -505,24 +515,24 @@ static void FindMaximumProduct(){
 
 
 
-    public static int equilibriumPoint(long arr[], int n) {
-        long totalSum = 0;
-        long leftSum = 0;
+    // public static int equilibriumPoint(long arr[], int n) {
+    //     long totalSum = 0;
+    //     long leftSum = 0;
 
-        for (int i = 0; i < n; i++) {
-            totalSum += arr[i];
-        }
+    //     for (int i = 0; i < n; i++) {
+    //         totalSum += arr[i];
+    //     }
 
-        for (int i = 0; i < n; i++) {
-            totalSum -= arr[i];
-            if (leftSum == totalSum) {
-                return i + 1; // Equilibrium point found at index i
-            }
-            leftSum += arr[i];
-        }
+    //     for (int i = 0; i < n; i++) {
+    //         totalSum -= arr[i];
+    //         if (leftSum == totalSum) {
+    //             return i + 1; // Equilibrium point found at index i
+    //         }
+    //         leftSum += arr[i];
+    //     }
 
-        return -1; // No equilibrium point found
-    }
+    //     return -1; // No equilibrium point found
+    // }
     
     //string palidrome
     
@@ -564,25 +574,25 @@ int perfectNumber = 5;
 bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
 Console.WriteLine(statusOfPerfectNumber);
 
-int perfectSquare = 5;
-bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
-Console.WriteLine(statusOfPerfectSquare);
+// int perfectSquare = 5;
+// bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
+// Console.WriteLine(statusOfPerfectSquare);
 
 
 
-SumOfNaturalNumebers(3);
+// SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4,6);
 //FindGretestNumber(4,6);
-DecimalToOctal(25);
+// DecimalToOctal(25);
 // CheckNumberPositiveOrNegative(-2);
 // CheckNumberEvenOrOdd(13);
 
-int number = 3;
-    if (isPrime(number))
-       Console.WriteLine("Prime Number");
-    else{       
-        Console.WriteLine("not prime numer");
-    }
+// int number = 3;
+//     if (isPrime(number))
+//        Console.WriteLine("Prime Number");
+//     else{       
+//         Console.WriteLine("not prime numer");
+//     }
 
 
 ConvertBinaryToDecimal(1010);
