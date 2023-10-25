@@ -622,12 +622,18 @@ bool isPal(string str)
 
 //Title:Calculates the power
 //Coder:Abhay Navale
+
 // static int Power(int base, int power)
 // {
 //     int result = 1;
 //     while (power > 0)
 //     {
 //         result = result * base;
+// static int Power(int base,int power){
+//     int result=1;
+//     while(power > 0){
+//         result=result*base;
+
 //         power--;
 //     }
 //     return result;
@@ -968,4 +974,37 @@ static int SmallestNumberInArray()
             mini = numbers[i];
     }
     return mini;
+}
+//topic:print the string in reverse order
+//coder:omkar sudrik
+ public static string StrRev(string str)
+        {
+            string str, str1 = ""; 
+            int i,l;
+			 l = str.Length-1;
+            for (i=l;i>=0;i--)
+            {
+             str1 = str1 + str[i];
+                }
+
+           	return str1;
+
+        }
+//topic:remove all character in string except alphabet
+//coder:omkar sudrik
+ static string RemoveSpecialCharacter(string s)
+         {
+        string ans = "";
+        foreach(char ch in s)
+        {
+            if (Char.IsLetter(ch))
+                ans += ch;
+        }
+        return ans;
+    }
+//topic:remove space from string
+//coder:omkar sudrik
+static string RemoveWhiteSpace(string source)
+{
+    return source.Trim();
 }
