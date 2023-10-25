@@ -1,5 +1,6 @@
 ﻿
 using System.Reflection.Emit;
+using System.Text.RegularExpressions;
 
 static void ShowFibonacciSeriesNumber(int level)
 {
@@ -599,26 +600,18 @@ static void FindMaximumProduct()
 //         }
 //         leftSum += arr[i];
 //     }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //     return -1; // No equilibrium point found
     // }
     
     //string palidrome
 
 	
-	bool isPal(string str){
-        int front =0;
-        int end=str.Length-1;
-        while(front<end){
-            if(str[front]!=str[end])
-<<<<<<< HEAD
-=======
-        }
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
+	// bool isPal(string str){
+    //     int front =0;
+    //     int end=str.Length-1;
+    //     while(front<end){
+    //         if(str[front]!=str[end])
+    //     }
 //     return -1; // No equilibrium point found
 // }
 
@@ -641,8 +634,6 @@ static void FindMaximumProduct()
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
-=======
 
 
 
@@ -652,7 +643,6 @@ static void FindMaximumProduct()
 //     while (power > 0)
 //     {
 //         result = result * base;
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 // static int Power(int base,int power){
 
 //     int result=1;
@@ -671,7 +661,6 @@ static void FindMaximumProduct()
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
-<<<<<<< HEAD
 // static int Power(int base, int power)
 // {
 //     int result = 1;
@@ -682,18 +671,16 @@ static void FindMaximumProduct()
 //     }
 //     return result;
 // }
-=======
 
-static int Power(int base, int power)
+static int Power(int bas, int power){
     int result = 1;
     while (power > 0)
     {
-        result = result * base;
+        result = result * bas;
         power--;
     }
     return result;
 }
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -784,10 +771,7 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -798,10 +782,7 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
-<<<<<<< HEAD
-=======
 
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
@@ -1176,9 +1157,85 @@ else{
         }
         return ans;
     }
+//topic: Find Repeating element of an array
+// Given an array, print all element whose frequency is not equal to one.
+//coder:Sahil Mankar
+void FindRepetedElementsInArray()
+{
+    int[] arr = new int[] { 10, 30, 30, 20, 10, 20, 50, 10 };
+    Dictionary<int, int> dict = new Dictionary<int, int>();
+
+    foreach (var element in arr)
+    {
+        if (dict.ContainsKey(element))
+        {
+            dict[element]++;
+        }
+        else
+        {
+            dict[element] = 1;
+        }
+    }
+    Console.WriteLine($"Repeted elemnts in array are");
+
+    foreach (var element in dict)
+    {
+        if (element.Value > 1)
+        {
+            Console.Write($" {element.Key} ,");
+        }
+    }
+}
+
+//array is a subset of another array
+/* 
+ Example
+arr1 = {1,2,3,4,5}  , arr2 = {3,4,5}
+arr2 is a subset of arr1 (As, arr1 contains all the elements of arr2)
+arr3 = {1,2,3,4,5}   arr4 = {1,2,9}
+arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4).
+ */
+//coder:Sahil Mankar
+
+
+void ArrayIsSubSetArray()
+{
+    int[] arr1 = { 11, 10, 13, 21, 30, 70 };
+    int[] arr2 = { 11, 30, 70, 10,12 };
+
+    for (int i = 0; i < arr2.Length; i++)
+    { // i itrets over arr2
+        int j;
+        for (j = 0; j < arr1.Length; j++)
+        { // j itrets over arr1
+            if (arr2[i] == arr1[j])
+                break;
+        }
+
+        if (j == arr1.Length) // this condition hit when any element is not present in arr1
+        {
+            Console.WriteLine("arr2[] is not subset of arr1[] ");
+            return;
+        }
+    }
+    Console.WriteLine("arr2[] is  subset of arr1[] ");
+}
+
+
+//ASCII Value of character
+//coder:Sahil Mankar
+
+void ASCIIValueOfCharacter(){
+    char c='a';
+    int ASCIIValue=c;
+    Console.WriteLine($"ASCII Value of Character {c} is {ASCIIValue}" );
+}
+
+
 //topic:remove space from string
 //coder:omkar sudrik
 static string RemoveWhiteSpace(string source)
 {
     return source.Trim();
 }
+
