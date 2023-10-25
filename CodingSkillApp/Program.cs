@@ -600,7 +600,6 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
     //     return -1; // No equilibrium point found
     // }
     
@@ -612,31 +611,28 @@ static void FindMaximumProduct()
         int end=str.Length-1;
         while(front<end){
             if(str[front]!=str[end])
-=======
 //     return -1; // No equilibrium point found
 // }
 
 //string palidrome
 
 
-bool isPal(string str)
-{
-    int front = 0;
-    int end = str.Length - 1;
-    while (front < end)
-    {
-        if (str[front] != str[end])
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
-            return false;
-        front++;
-        end--;
-    }
-    return true;
-}
+// bool isPal(string str)
+// {
+//     int front = 0;
+//     int end = str.Length - 1;
+//     while (front < end)
+//     {
+//         if (str[front] != str[end])
+//             return false;
+//         front++;
+//         end--;
+//     }
+//     return true;
+// }
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
 // static int Power(int base,int power){
 //     int result=1;
 //     while(power > 0){
@@ -652,17 +648,16 @@ bool isPal(string str)
 //     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString,stringWithWildCards);
 // }
-=======
-static int Power(int base, int power)
-{
-    int result = 1;
-    while (power > 0)
-    {
-        result = result * base;
-        power--;
-    }
-    return result;
-}
+// static int Power(int base, int power)
+// {
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+//         power--;
+//     }
+//     return result;
+// }
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -671,7 +666,6 @@ static bool IsStringMatching(string inputString, string stringWithWildCards)
     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
     return Regex.IsMatch(inputString, stringWithWildCards);
 }
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
 
 //Title: Reverse an Array
 //Coder: Vedant Yadav
@@ -755,7 +749,6 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-<<<<<<< HEAD
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -766,14 +759,12 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
-=======
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
 
 }
 
->>>>>>> 0903c51125b05a999c15afa87c0d149dd1982d47
 
 
 //ShowFibonacciSeriesNumber(10);
@@ -983,3 +974,43 @@ static int SmallestNumberInArray()
     }
     return mini;
 }
+
+static int FindLongestPalindrome()
+{
+    int IsPalindrome(int number)
+    {
+        int reverse = 0;
+        int temp = number; // Store the original number for comparison
+        while (number > 0)
+        {
+            int remainder = number % 10;
+            reverse = reverse * 10 + remainder;
+            number = number / 10;
+        }
+        return temp == reverse ? 1 : 0;
+    }
+    int[] numbers = { 124, 374, 989, 1221 };
+    int n = numbers.Length;
+    int maxPalindrome = -1; 
+    for (int i = 0; i < n; i++)
+    {
+        if (IsPalindrome(numbers[i]) == 1 && numbers[i] > maxPalindrome)
+        {
+            maxPalindrome = numbers[i];
+        }
+    }
+    if (maxPalindrome == -1)
+    {
+        Console.WriteLine("No palindromic numbers found.");
+    }
+    else
+    {
+        Console.WriteLine("The longest palindromic number is: " + maxPalindrome);
+    }
+    return maxPalindrome;
+    }
+
+int palindrome = FindLongestPalindrome();
+Console.WriteLine(palindrome);
+
+
