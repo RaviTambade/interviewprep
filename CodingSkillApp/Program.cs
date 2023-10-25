@@ -668,3 +668,18 @@ FindMaximumProduct();
      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
 
      //equilibrium index of array
+
+
+
+//Find Smallest Element in an Array
+  static int SmallestNumberInArray(){
+  int[] numbers = { 34, 4, 89, 90, 56};
+  int n = numbers.Length;
+  int mini = int.MaxValue;
+
+  for(int i=0; i<n; i++){
+    if(numbers[i]<mini)
+      mini = numbers[i];
+  }
+    return mini;
+  }
