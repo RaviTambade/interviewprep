@@ -600,19 +600,6 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
-    //     return -1; // No equilibrium point found
-    // }
-    
-    //string palidrome
-
-	
-	bool isPal(string str){
-        int front =0;
-        int end=str.Length-1;
-        while(front<end){
-            if(str[front]!=str[end])
-=======
 //     return -1; // No equilibrium point found
 // }
 
@@ -626,7 +613,6 @@ bool isPal(string str)
     while (front < end)
     {
         if (str[front] != str[end])
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
             return false;
         front++;
         end--;
@@ -636,7 +622,6 @@ bool isPal(string str)
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
 // static int Power(int base,int power){
 //     int result=1;
 //     while(power > 0){
@@ -652,26 +637,6 @@ bool isPal(string str)
 //     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString,stringWithWildCards);
 // }
-=======
-static int Power(int base, int power)
-{
-    int result = 1;
-    while (power > 0)
-    {
-        result = result * base;
-        power--;
-    }
-    return result;
-}
-
-//Title:Check if two strings match where one string contains wildcard characters 
-//Coder:Abhay Navale
-static bool IsStringMatching(string inputString, string stringWithWildCards)
-{
-    string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
-    return Regex.IsMatch(inputString, stringWithWildCards);
-}
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
 
 //Title: Reverse an Array
 //Coder: Vedant Yadav
@@ -755,25 +720,12 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-<<<<<<< HEAD
-    //Title:-Removing vowels from line
-    //coder:-Rohit Mangale
-    static string RemoveVowels(string line){
-        var letters = new HashSet < char > (line);  
-        string modifiedString="";
-            letters.ExceptWith("AaEeIiOoUu");                         
-            modifiedString=new string (letters.ToArray());            
-            return modifiedString;        
-
-        } 
-=======
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
 
 }
 
->>>>>>> 0903c51125b05a999c15afa87c0d149dd1982d47
 
 
 //ShowFibonacciSeriesNumber(10);
@@ -982,4 +934,37 @@ static int SmallestNumberInArray()
             mini = numbers[i];
     }
     return mini;
+}
+//topic:print the string in reverse order
+//coder:omkar sudrik
+ public static string StrRev(string str)
+        {
+            string str, str1 = ""; 
+            int i,l;
+			 l = str.Length-1;
+            for (i=l;i>=0;i--)
+            {
+             str1 = str1 + str[i];
+                }
+
+           	return str1;
+
+        }
+//topic:remove all character in string except alphabet
+//coder:omkar sudrik
+ public static string RemoveSpecialCharacter(string s)
+         {
+        string ans = "";
+        foreach(char ch in s)
+        {
+            if (Char.IsLetter(ch))
+                ans += ch;
+        }
+        return ans
+    }
+//topic:remove space from string
+//coder:omkar sudrik
+public static string RemoveWhiteSpace(string source)
+{
+    return source.Trim();
 }
