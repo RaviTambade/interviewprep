@@ -1,4 +1,4 @@
-
+﻿
 using System.Reflection.Emit;
 
 static void ShowFibonacciSeriesNumber(int level)
@@ -130,9 +130,8 @@ static string RelaceData(string data, char from, char to)
     }
     return replacedData;
 }
-//titile
-//coder:Vendant Yadav
-//Check Whether Or Not the Number is an Automorphic Number 
+//title:Check Whether Or Not the Number is an Automorphic Number
+//coder:Vedant Yadav 
 // Automorphic number-  if its square ends in the same digits as the number itself.
 static bool IsAutomorphicNumber(int number)
 {
@@ -145,9 +144,9 @@ static bool IsAutomorphicNumber(int number)
         return false;
 }
 
-//Check Whether Or Not the Number is an Perfect Number 
+//Title: Check Whether Or Not the Number is an Perfect Number 
+//Coder: Vedant Yadav
 //Sum of factors should be the same number
-
 static bool IsPerfectNumber(int number)
 {
     bool status=false;
@@ -166,7 +165,8 @@ static bool IsPerfectNumber(int number)
     return status;
 }
 
-//check whether or not the number is perfect square.
+//Title: check whether or not the number is perfect square.
+//Coder: Vedant Yadav
 static bool IsPerfectSquare(int number)
 {
     bool status=false;
@@ -382,7 +382,8 @@ static void CheckHarshadNumber(int number)
     }
 }
 
-// remove duplicate element from array
+//Title: remove duplicate element from array,
+//Coder: Vedant Yadav
 static int[] RemoveDuplicates(int[] array)
 {
     HashSet<int> uniqueSet = new HashSet<int>();
@@ -426,7 +427,8 @@ Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 
 
 
-//Toggle each character in a String e.g VedANt=>vEDanT
+//Title: Toggle each character in a String e.g VedANt=>vEDanT
+//Coder: Vedant Yadav
  static string ToggleStringCase(string input)
 {
     char[] characters = input.ToCharArray();
