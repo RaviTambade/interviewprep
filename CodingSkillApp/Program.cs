@@ -1,5 +1,6 @@
 ﻿
 using System.Reflection.Emit;
+using System.Text.RegularExpressions;
 
 static void ShowFibonacciSeriesNumber(int level)
 {
@@ -607,12 +608,12 @@ static void FindMaximumProduct()
     //string palidrome
 
 	
-	bool isPal(string str){
-        int front =0;
-        int end=str.Length-1;
-        while(front<end){
-            if(str[front]!=str[end])
-        }
+// 	bool isPal(string str){
+//         int front =0;
+//         int end=str.Length-1;
+//         while(front<end){
+//             if(str[front]!=str[end])
+//         }
 //     return -1; // No equilibrium point found
 // }
 
@@ -655,23 +656,23 @@ static void FindMaximumProduct()
 //     return result;
 // }
 
-//Title:Check if two strings match where one string contains wildcard characters 
-//Coder:Abhay Navale
+// Title:Check if two strings match where one string contains wildcard characters 
+// Coder:Abhay Navale
 // static bool IsStringMatching(string inputString, string stringWithWildCards)
 // {
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
 
-static int Power(int base, int power)
-    int result = 1;
-    while (power > 0)
-    {
-        result = result * base;
-        power--;
-    }
-    return result;
-}
+// static int Power(int base, int power)
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+//         power--;
+//     }
+//     return result;
+// }
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -1095,3 +1096,23 @@ static string RemoveWhiteSpace(string source)
 {
     return source.Trim();
 }
+
+
+static void Palindrom()
+{
+    int num = 12021, reverse=0,rem,temp;
+    temp=num;
+    while(temp!=0)
+    {
+        rem=temp%10;
+        reverse = reverse*10+rem;
+        temp/= 10;
+    };
+    // palindrome if num and reverse are equal
+     if (num == reverse)
+     Console.WriteLine (num + " is Palindrome");
+     else
+       Console.WriteLine (num + " is not Palindrome");
+}
+Palindrom();
+
