@@ -529,7 +529,7 @@ static void FindMaximumProduct(){
     // }
     
     //string palidrome
-    
+
 	
 	bool isPal(string str){
         int front =0;
@@ -560,56 +560,129 @@ static void FindMaximumProduct(){
 // string replacedNumber = GetRelacedInterger(numberToBeReplace);
 // Console.WriteLine(replacedNumber);
 
-int automorphicNumber = 5;
-bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
-Console.WriteLine(statusOfAutomorphicNumber);
+// int automorphicNumber = 5;
+// bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
+// Console.WriteLine(statusOfAutomorphicNumber);
 
-int perfectNumber = 5;
-bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
-Console.WriteLine(statusOfPerfectNumber);
+ 
+ //Title:Given an integer N the task is to print the F(N)th term
+ //Coder :Akash Ajab
+ 
+ static int term(int calculated,int current , int num){
+    int i=0;
+    int result =0;
 
-// int perfectSquare = 5;
-// bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
-// Console.WriteLine(statusOfPerfectSquare);
+    while(current!=num+1){
+        int cur =1;
+      for(i=calculated;i<calculated+current;i++)
+      cur *= i; 
+      calculated=i;
+      result += cur;
+      current++;  
+      
+    }
+    return result;
+
+}
+
+
+
+//Title :Recursively Remove all Adjacent Duplicate Characters
+//coder : Akash Ajab
+static string RemoveAdjacentDuplicates(string input)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length == 1)
+        {
+            return input;
+        }
+
+        char[] result = new char[input.Length];
+        int resultIndex = 0;
+
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (i < input.Length - 1 && input[i] == input[i + 1])
+            {
+                // Skip adjacent duplicates.
+                while (i < input.Length - 1 && input[i] == input[i + 1])
+                {
+                    i++;
+                }
+            }
+            else
+            {
+                result[resultIndex++] = input[i];
+            }
+            ;
+        }
+       string newString = new string(result, 0, resultIndex);
+
+        // Recursively remove adjacent duplicates until no more can be found.
+        if (newString.Length < input.Length)
+        {
+            return RemoveAdjacentDuplicates(newString);
+        }
+
+        return newString;
+    }
+
+        string input = "abbaca";
+        string result = RemoveAdjacentDuplicates(input);
+        Console.WriteLine("Original string: " + input);
+        Console.WriteLine("String with adjacent duplicates removed: " + result);
+
+// int perfectNumber = 5;
+// bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
+// Console.WriteLine(statusOfPerfectNumber);
+
+// // int perfectSquare = 5;
+// // bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
+// // Console.WriteLine(statusOfPerfectSquare);
 
 
 
 // SumOfNaturalNumebers(3);
-SumOfNumbersGivenRange(4,6);
-//FindGretestNumber(4,6);
-// DecimalToOctal(25);
-// CheckNumberPositiveOrNegative(-2);
-// CheckNumberEvenOrOdd(13);
+// //FindGretestNumber(4,6);
+// // DecimalToOctal(25);
+// // CheckNumberPositiveOrNegative(-2);
+// // CheckNumberEvenOrOdd(13);
 
-// int number = 3;
-//     if (isPrime(number))
-//        Console.WriteLine("Prime Number");
-//     else{       
-//         Console.WriteLine("not prime numer");
+// // int number = 3;
+// //     if (isPrime(number))
+// //        Console.WriteLine("Prime Number");
+// //     else{       
+// //         Console.WriteLine("not prime numer");
+// //     }
+
+
+//  ConvertBinaryToDecimal(1010);
+//   CheckHarshadNumber(42);
+// Decode(121);
+// SortArray(myArray);
+// FindMaximumProduct();
+
+ //Testing Prime OR Not
+
+// int a, i;
+//   bool flag = false;
+//   Console.WriteLine("Enter a positive  integer: ");
+//   a = Convert.ToInt32(Console.ReadLine());
+//   for(i = 2; i <= a/2; ++i) {
+//     if (prime_or_not(i)) {
+//       if (prime_or_not(a - i)) {
+//         Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
+//         flag = true;
+//       }
 //     }
-
-
-ConvertBinaryToDecimal(1010);
-CheckHarshadNumber(42);
-Decode(121);
-SortArray(myArray);
-FindMaximumProduct();
-
-//Testing Prime OR Not
-
-int a, i;
-  bool flag = false;
-  Console.WriteLine("Enter a positive  integer: ");
-  a = Convert.ToInt32(Console.ReadLine());
-  for(i = 2; i <= a/2; ++i) {
-    if (prime_or_not(i)) {
-      if (prime_or_not(a - i)) {
-        Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
-        flag = true;
-      }
-    }
-  }
-  if (!flag)
-     Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+//   }
+//   if (!flag)
+//      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
 
      //equilibrium index of array
+
+
+
+int num = 3;
+
+Console.WriteLine("F(3) "+term(1, 1, num));
+
