@@ -20,6 +20,7 @@ static void ShowFibonacciSeriesNumber(int level)
 // Title :Abundant number
 //Coder :Akash Ajab
 
+
 static bool IsAbundant(int number)
 {
     int sum = 0;
@@ -83,6 +84,8 @@ static  int convert_HexaToDeci(string num)
     return dec; 
 } 
 
+
+//ax²+bx+c=0
 static void findRootsOfQudraticEquestion(int a, int b, int c)
 {
     if (a == 0) {
@@ -128,7 +131,8 @@ static string RelaceData(string data, char from, char to)
     }
     return replacedData;
 }
-
+//titile
+//coder:Vendant Yadav
 //Check Whether Or Not the Number is an Automorphic Number 
 // Automorphic number-  if its square ends in the same digits as the number itself.
 static bool IsAutomorphicNumber(int number)
@@ -224,6 +228,7 @@ static int ConvertDecimalToOctal(int decimalNumber){
     return octal;
 }
 
+//
 static int ConvertOctalToDecimal(long number)
 {
     int i = 0;
