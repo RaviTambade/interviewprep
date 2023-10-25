@@ -419,19 +419,19 @@ bool isPrime(int number, int i = 2)
 //Coder : Shubhangi
 void ascDecFunc(int[] a, int n)
 {
-   int temp;
-   for(int i=0;i < n-1;i++)
-   {
-     for(int j = 0;j < n/2; j++) 
-     {
-            if(a[j]>a[j+1])
-           {
-             temp=a[j];
-             a[j]=a[j+1];
-             a[j+1]=temp;
-           }
-      }
-   }
+    int temp;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n / 2; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
 }
 
 
@@ -466,6 +466,7 @@ static int[] RemoveDuplicates(int[] array)
     }
     return uniqueList.ToArray();
 }
+
 //Title:last non-zero digit in factorial
 //Coader:Pragati
 static int factorial(int n)
@@ -585,6 +586,7 @@ static void FindMaximumProduct()
 
 
 
+
 // public static int equilibriumPoint(long arr[], int n) {
 //     long totalSum = 0;
 //     long leftSum = 0;
@@ -601,19 +603,28 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
+//     return -1; // No equilibrium point found
+// }
 
-    //     return -1; // No equilibrium point found
-    // }
-    
-    //string palidrome
+//string palidrome
 
-	
+
+
 // 	bool isPal(string str){
 //         int front =0;
 //         int end=str.Length-1;
 //         while(front<end){
 //             if(str[front]!=str[end])
 //         }
+
+	// bool isPal(string str){
+    //     int front =0;
+    //     int end=str.Length-1;
+    //     while(front<end){
+    //         if(str[front]!=str[end])
+
+    //     }
+
 //     return -1; // No equilibrium point found
 // }
 
@@ -639,12 +650,14 @@ static void FindMaximumProduct()
 
 
 
+
 // static int Power(int base, int power)
 // {
 //     int result = 1;
 //     while (power > 0)
 //     {
 //         result = result * base;
+
 // static int Power(int base,int power){
 
 //     int result=1;
@@ -665,6 +678,7 @@ static void FindMaximumProduct()
 // }
 
 // static int Power(int base, int power)
+// {
 //     int result = 1;
 //     while (power > 0)
 //     {
@@ -673,6 +687,29 @@ static void FindMaximumProduct()
 //     }
 //     return result;
 // }
+
+
+
+// static int Power(int base, int power)
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+//         power--;
+//     }
+//     return result;
+// }
+
+// static int Power(int base, int power)
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+//         power--;
+//     }
+//     return result;
+// }
+
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -766,41 +803,45 @@ static int[] RigthRotate(int[] arr)
 
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
-    static string RemoveVowels(string line){
-        var letters = new HashSet < char > (line);  
-        string modifiedString="";
-            letters.ExceptWith("AaEeIiOoUu");                         
-            modifiedString=new string (letters.ToArray());            
-            return modifiedString;        
+    static string RemoveVowels(string line)
+    {
+        var letters = new HashSet<char>(line);
+        string modifiedString = "";
+        letters.ExceptWith("AaEeIiOoUu");
+        modifiedString = new string(letters.ToArray());
+        return modifiedString;
 
-        } 
+    }
 
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
 
 }
-    //Title:-Shorting of Array
-    //coder:-Rohit Mangale
-    static int[] ShortArray(int[] arr){
-       
-        // Sort array in ASC order
-        Console.WriteLine();
-        Console.WriteLine("Sorted array in ASC order");
-        Array.Sort(arr);
-        foreach(int i in arr) {
-            Console.Write(i + " ");
-        }
-        Console.WriteLine();
-        Console.WriteLine("Sorted array in DESC order");
-        // Sort Array in DESC order
-        Array.Reverse(arr);
-        foreach(int i in arr) {
-            Console.Write(i + " ");
-        }
-        Console.WriteLine();
-        return arr;
+//Title:-Shorting of Array
+//coder:-Rohit Mangale
+static int[] ShortArray(int[] arr)
+{
+
+    // Sort array in ASC order
+    Console.WriteLine();
+    Console.WriteLine("Sorted array in ASC order");
+    Array.Sort(arr);
+    foreach (int i in arr)
+    {
+        Console.Write(i + " ");
     }
+    Console.WriteLine();
+    Console.WriteLine("Sorted array in DESC order");
+    // Sort Array in DESC order
+    Array.Reverse(arr);
+    foreach (int i in arr)
+    {
+        Console.Write(i + " ");
+    }
+    Console.WriteLine();
+    return arr;
+}
 
 
 
@@ -820,26 +861,28 @@ static int[] RigthRotate(int[] arr)
 // Console.WriteLine(statusOfAutomorphicNumber);
 
 
- 
- //Title:Given an integer N the task is to print the F(N)th term
- //Coder :Akash Ajab
- 
- static int term(int calculated,int current , int num){
-    int i=0;
-    int result =0;
 
-// int perfectNumber = 5;
-// bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
-// Console.WriteLine(statusOfPerfectNumber);
+//Title:Given an integer N the task is to print the F(N)th term
+//Coder :Akash Ajab
 
-    while(current!=num+1){
-        int cur =1;
-      for(i=calculated;i<calculated+current;i++)
-      cur *= i; 
-      calculated=i;
-      result += cur;
-      current++;  
-      
+static int term(int calculated, int current, int num)
+{
+    int i = 0;
+    int result = 0;
+
+    // int perfectNumber = 5;
+    // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
+    // Console.WriteLine(statusOfPerfectNumber);
+
+    while (current != num + 1)
+    {
+        int cur = 1;
+        for (i = calculated; i < calculated + current; i++)
+            cur *= i;
+        calculated = i;
+        result += cur;
+        current++;
+
     }
     return result;
 
@@ -850,98 +893,107 @@ static int[] RigthRotate(int[] arr)
 //Title :Recursively Remove all Adjacent Duplicate Characters
 //coder : Akash Ajab
 static string RemoveAdjacentDuplicates(string input)
+{
+    if (string.IsNullOrEmpty(input) || input.Length == 1)
     {
-        if (string.IsNullOrEmpty(input) || input.Length == 1)
-        {
-            return input;
-        }
+        return input;
+    }
 
-        char[] result = new char[input.Length];
-        int resultIndex = 0;
+    char[] result = new char[input.Length];
+    int resultIndex = 0;
 
-        for (int i = 0; i < input.Length; i++)
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (i < input.Length - 1 && input[i] == input[i + 1])
         {
-            if (i < input.Length - 1 && input[i] == input[i + 1])
+            // Skip adjacent duplicates.
+            while (i < input.Length - 1 && input[i] == input[i + 1])
             {
-                // Skip adjacent duplicates.
-                while (i < input.Length - 1 && input[i] == input[i + 1])
-                {
-                    i++;
-                }
+                i++;
             }
-            else
-            {
-                result[resultIndex++] = input[i];
-            }
-            ;
         }
-       string newString = new string(result, 0, resultIndex);
-
-        // Recursively remove adjacent duplicates until no more can be found.
-        if (newString.Length < input.Length)
+        else
         {
-            return RemoveAdjacentDuplicates(newString);
+            result[resultIndex++] = input[i];
         }
+        ;
+    }
+    string newString = new string(result, 0, resultIndex);
 
-        return newString;
+    // Recursively remove adjacent duplicates until no more can be found.
+    if (newString.Length < input.Length)
+    {
+        return RemoveAdjacentDuplicates(newString);
     }
 
+    return newString;
+}
 
-  //Title :program to find the frequency of elements in an array
-  //Coder :Akash Ajab.
-    static void FindFrequencyOfElement(){
 
-        int[] arr= {10,20,30,10,20,30,40,10};
+//Title :program to find the frequency of elements in an array
+//Coder :Akash Ajab.
+static void FindFrequencyOfElement()
+{
 
-        Dictionary<int,int> frequency = new Dictionary<int, int>();
+    int[] arr = { 10, 20, 30, 10, 20, 30, 40, 10 };
 
-        foreach(int element in arr){
-            if(frequency.ContainsKey(element)){
-                frequency[element]++;
-            }
+    Dictionary<int, int> frequency = new Dictionary<int, int>();
 
-            else{
-
-                frequency[element]=1;
-            }
-
-            
+    foreach (int element in arr)
+    {
+        if (frequency.ContainsKey(element))
+        {
+            frequency[element]++;
         }
 
-        foreach(var kvp in frequency){
-                Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
-            }
+        else
+        {
+
+            frequency[element] = 1;
+        }
+
 
     }
 
-
-
-    //Title :program to count numbers of even and odd elements in an array
-    //Coder :Akash Ajab
-    static void FindCountOfNumberInArray(){
-
-        int[] arr= {10,10,11,23,15,45,12,13,15};
-        int odd_count=0;
-        int even_count=0;
-        for(int i=0; i<arr.Length;i++){
-
-            if(arr[i]%2==0){
-                even_count++;
-            }
-            else{
-                odd_count++;
-            }
-        }
-        Console.WriteLine( $"Even number count{even_count} and odd number count{odd_count}");
+    foreach (var kvp in frequency)
+    {
+        Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
     }
 
-   
-   FindCountOfNumberInArray();
-   FindFrequencyOfElement();
-        // string input = "abbaca";
-        // string result = RemoveAdjacentDuplicates(input);
-        // Console.WriteLine("Original string: " + input);
-        // Console.WriteLine("String with adjacent duplicates removed: " + result);
+}
+
+
+
+//Title :program to count numbers of even and odd elements in an array
+//Coder :Akash Ajab
+static void FindCountOfNumberInArray()
+{
+
+    int[] arr = { 10, 10, 11, 23, 15, 45, 12, 13, 15 };
+    int odd_count = 0;
+    int even_count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+
+        if (arr[i] % 2 == 0)
+        {
+            even_count++;
+        }
+        else
+        {
+            odd_count++;
+        }
+    }
+    Console.WriteLine($"Even number count{even_count} and odd number count{odd_count}");
+}
+
+
+FindCountOfNumberInArray();
+FindFrequencyOfElement();
+// string input = "abbaca";
+// string result = RemoveAdjacentDuplicates(input);
+// Console.WriteLine("Original string: " + input);
+// Console.WriteLine("String with adjacent duplicates removed: " + result);
 
 // int perfectNumber = 5;
 // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
@@ -974,7 +1026,7 @@ SumOfNumbersGivenRange(4, 6);
 // SortArray(myArray);
 // FindMaximumProduct();
 
- //Testing Prime OR Not
+//Testing Prime OR Not
 
 // int a, i;
 //   bool flag = false;
@@ -991,14 +1043,14 @@ SumOfNumbersGivenRange(4, 6);
 //   if (!flag)
 //      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
 
-     //equilibrium index of array
+//equilibrium index of array
 
 
 
 
 int num = 3;
 
-Console.WriteLine("F(3) "+term(1, 1, num));
+Console.WriteLine("F(3) " + term(1, 1, num));
 
 
 ConvertBinaryToDecimal(1010);
@@ -1063,6 +1115,70 @@ static int SmallestNumberInArray()
     }
     return mini;
 }
+
+//Title:find longest palindrome number in array
+//coader:pragati
+static int FindLongestPalindrome()
+{
+    int IsPalindrome(int number)
+    {
+        int reverse = 0;
+        int temp = number; // Store the original number for comparison
+        while (number > 0)
+        {
+            int remainder = number % 10;
+            reverse = reverse * 10 + remainder;
+            number = number / 10;
+        }
+        return temp == reverse ? 1 : 0;
+    }
+    int[] numbers = { 124, 374, 989, 1221 };
+    int n = numbers.Length;
+    int maxPalindrome = -1;
+    for (int i = 0; i < n; i++)
+    {
+        if (IsPalindrome(numbers[i]) == 1 && numbers[i] > maxPalindrome)
+        {
+            maxPalindrome = numbers[i];
+        }
+    }
+    if (maxPalindrome == -1)
+    {
+        Console.WriteLine("No palindromic numbers found.");
+    }
+    else
+    {
+        Console.WriteLine("The longest palindromic number is: " + maxPalindrome);
+    }
+    return maxPalindrome;
+}
+
+//check whether Character is a vowel or consonant
+//coader:pragati 
+static bool IsLowerCase(char c)
+{
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+static bool IsUpperCase(char c)
+{
+    return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+}
+
+char c = 'p';
+if (IsLowerCase(c) || IsUpperCase(c))
+{
+    Console.WriteLine(c + " is a vowel");
+}
+else if (!char.IsLetter(c))
+{
+    Console.WriteLine("Non alphabate");
+}
+
+else
+{
+    Console.WriteLine(c + " is a consonent");
+}
 //topic:print the string in reverse order
 //coder:omkar sudrik
 //  public static string StrRev(string str)
@@ -1080,16 +1196,16 @@ static int SmallestNumberInArray()
 //         }
 //topic:remove all character in string except alphabet
 //coder:omkar sudrik
- static string RemoveSpecialCharacter(string s)
-         {
-        string ans = "";
-        foreach(char ch in s)
-        {
-            if (Char.IsLetter(ch))
-                ans += ch;
-        }
-        return ans;
+static string RemoveSpecialCharacter(string s)
+{
+    string ans = "";
+    foreach (char ch in s)
+    {
+        if (Char.IsLetter(ch))
+            ans += ch;
     }
+    return ans;
+}
 //topic:remove space from string
 //coder:omkar sudrik
 static string RemoveWhiteSpace(string source)
@@ -1098,21 +1214,23 @@ static string RemoveWhiteSpace(string source)
 }
 
 
+
 static void Palindrom()
 {
-    int num = 12021, reverse=0,rem,temp;
-    temp=num;
-    while(temp!=0)
+    int num = 12021, reverse = 0, rem, temp;
+    temp = num;
+    while (temp != 0)
     {
-        rem=temp%10;
-        reverse = reverse*10+rem;
-        temp/= 10;
+        rem = temp % 10;
+        reverse = reverse * 10 + rem;
+        temp /= 10;
     };
     // palindrome if num and reverse are equal
-     if (num == reverse)
-     Console.WriteLine (num + " is Palindrome");
-     else
-       Console.WriteLine (num + " is not Palindrome");
+    if (num == reverse)
+        Console.WriteLine(num + " is Palindrome");
+    else
+        Console.WriteLine(num + " is not Palindrome");
 }
 Palindrom();
+
 
