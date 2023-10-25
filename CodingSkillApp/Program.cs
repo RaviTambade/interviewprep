@@ -32,6 +32,8 @@ static bool IsAbundant(int number)
     return false;
 }
 
+//Topic : Can a number be expressed as a sum of two prime numbers(For this program need follwing fn)
+//Coder : Shubhangi
 static bool prime_or_not(int a) {
   int i;
   bool is_prime = true;
@@ -47,7 +49,8 @@ static bool prime_or_not(int a) {
   return is_prime;
 }
 
-
+//Topic:  Hexadecimal to Decimal conversion
+//Coder : Shubhangi
 static  int convert_HexaToDeci(string num)
 {
     int len = num.Length;
@@ -81,6 +84,9 @@ static  int convert_HexaToDeci(string num)
     return dec; 
 } 
 
+//Topic : Finding Roots of a quadratic equation
+//Coder : Shubhangi
+
 static void findRootsOfQudraticEquestion(int a, int b, int c)
 {
     if (a == 0) {
@@ -109,6 +115,9 @@ static void findRootsOfQudraticEquestion(int a, int b, int c)
         Console.WriteLine( sqrt_val);
     }
 }
+
+//Topic : Find all the N bit binary numbers having more than or equal 1’s than 0’s
+//Coder : Shubhangi
 
 
 // program to replace all 0's with 1 in a given integer  : 
@@ -265,6 +274,7 @@ int sum =0;
         return dec;
     }
 
+
  static void ConvertBinaryToDecimal(int binaryNumber){
 int n=0;
 int decimalNumber=0;
@@ -339,10 +349,37 @@ bool isPrime(int number, int i = 2)
     return isPrime(number, i + 1);           //function calls itselfs
 }
 
+//Topic : Sort first half in ascending order and second half in descending
+//Coder : Shubhangi
+void ascDecFunc(int[] a, int n)
+{
+   int temp;
+   for(int i=0;i < n-1;i++)
+   {
+     for(int j = 0;j < n/2; j++) 
+     {
+            if(a[j]>a[j+1])
+           {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+           }
+      }
 
+      for(int j = n/2;j < n-1; j++)
+      {
+          if(a[j] < a[j+1])
+          {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+          }
+      }
+   }
 
-
-
+   for(int i = 0; i < n; i++)
+      Console.WriteLine(a[i] + " ");
+}
 
 static void CheckHarshadNumber(int number)
 {
@@ -361,15 +398,10 @@ static void CheckHarshadNumber(int number)
 
 
 
-//Testing
+//-------------------------Testing------------------------------------
 
 //ShowFibonacciSeriesNumber(10);
 
-<<<<<<< HEAD
-//int number=56;
-//bool status=IsAbundantNumber(number);
-//Console.WriteLine("Abundant ="+ status);
-=======
 // int number = 56;
 // bool status = IsAbundant(number);
 // Console.WriteLine("Abundant =" + status);
@@ -379,53 +411,58 @@ static void CheckHarshadNumber(int number)
 // string replacedNumber = GetRelacedInterger(numberToBeReplace);
 // Console.WriteLine(replacedNumber);
 
-int automorphicNumber = 5;
-bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
-Console.WriteLine(statusOfAutomorphicNumber);
+// int automorphicNumber = 5;
+// bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
+// Console.WriteLine(statusOfAutomorphicNumber);
 
-int perfectNumber = 5;
-bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
-Console.WriteLine(statusOfPerfectNumber);
+// int perfectNumber = 5;
+// bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
+// Console.WriteLine(statusOfPerfectNumber);
 
-int perfectSquare = 5;
-bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
-Console.WriteLine(statusOfPerfectSquare);
-
-
-
-SumOfNaturalNumebers(3);
-SumOfNumbersGivenRange(4,6);
-//FindGretestNumber(4,6);
-DecimalToOctal(25);
-// CheckNumberPositiveOrNegative(-2);
-// CheckNumberEvenOrOdd(13);
-
-int number = 3;
-    if (isPrime(number))
-       Console.WriteLine("Prime Number");
-    else{       
-        Console.WriteLine("not prime numer");
-    }
+// int perfectSquare = 5;
+// bool statusOfPerfectSquare = isPerfectSquare(perfectSquare);
+// Console.WriteLine(statusOfPerfectSquare);
 
 
-ConvertBinaryToDecimal(1010);
-CheckHarshadNumber(42);
 
->>>>>>> be3ea18b9e96b4e3bfa403df4f638aa04fb8e434
+// SumOfNaturalNumebers(3);
+// SumOfNumbersGivenRange(4,6);
+// //FindGretestNumber(4,6);
+// DecimalToOctal(25);
+// // CheckNumberPositiveOrNegative(-2);
+// // CheckNumberEvenOrOdd(13);
 
-//Testing Prime OR Not
+// int number = 3;
+//     if (isPrime(number))
+//        Console.WriteLine("Prime Number");
+//     else{       
+//         Console.WriteLine("not prime numer");
+//     }
 
-int a, i;
-  bool flag = false;
-  Console.WriteLine("Enter a positive  integer: ");
-  a = Convert.ToInt32(Console.ReadLine());
-  for(i = 2; i <= a/2; ++i) {
-    if (prime_or_not(i)) {
-      if (prime_or_not(a - i)) {
-        Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
-        flag = true;
-      }
-    }
-  }
-  if (!flag)
-     Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+
+// ConvertBinaryToDecimal(1010);
+// CheckHarshadNumber(42);
+
+
+// Testing to check whether a number can be expressed as a sum of two prime numbers
+
+// int a, i;
+//   bool flag = false;
+//   Console.WriteLine("Enter a positive  integer: ");
+//   a = Convert.ToInt32(Console.ReadLine());
+//   for(i = 2; i <= a/2; ++i) {
+//     if (prime_or_not(i)) {
+//       if (prime_or_not(a - i)) {
+//         Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
+//         flag = true;
+//       }
+//     }
+//   }
+//   if (!flag)
+//      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+
+int []arr = {3, 2, 4, 1, 10, 30, 40, 20};
+    //int len = (arr.Length) / (sizeof(int));
+    int len = arr.Length;
+    
+    ascDecFunc(arr, len);
