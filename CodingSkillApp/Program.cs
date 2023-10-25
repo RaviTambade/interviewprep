@@ -600,7 +600,7 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
+
     //     return -1; // No equilibrium point found
     // }
     
@@ -612,32 +612,31 @@ static void FindMaximumProduct()
         int end=str.Length-1;
         while(front<end){
             if(str[front]!=str[end])
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
+        }
 //     return -1; // No equilibrium point found
 // }
 
 //string palidrome
 
 
-bool isPal(string str)
-{
-    int front = 0;
-    int end = str.Length - 1;
-    while (front < end)
-    {
-        if (str[front] != str[end])
-            return false;
-        front++;
-        end--;
-    }
-    return true;
-}
+// bool isPal(string str)
+// {
+//     int front = 0;
+//     int end = str.Length - 1;
+//     while (front < end)
+//     {
+//         if (str[front] != str[end])
+//             return false;
+//         front++;
+//         end--;
+//     }
+//     return true;
+// }
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
-=======
+
+
 
 // static int Power(int base, int power)
 // {
@@ -646,7 +645,7 @@ bool isPal(string str)
 //     {
 //         result = result * base;
 // static int Power(int base,int power){
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
+
 //     int result=1;
 //     while(power > 0){
 //         result=result*base;
@@ -663,7 +662,7 @@ bool isPal(string str)
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
-<<<<<<< HEAD
+
 static int Power(int base, int power)
     int result = 1;
     while (power > 0)
@@ -681,8 +680,6 @@ static bool IsStringMatching(string inputString, string stringWithWildCards)
     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
     return Regex.IsMatch(inputString, stringWithWildCards);
 }
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 
 //Title: Reverse an Array
 static int[] ReverseArray(int[] array)
@@ -765,7 +762,7 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-<<<<<<< HEAD
+
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -776,8 +773,7 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
+
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
