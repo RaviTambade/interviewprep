@@ -35,6 +35,8 @@ static bool IsAbundant(int number)
     return false;
 }
 
+//Topic : Can a number be expressed as a sum of two prime numbers(For this program need follwing fn)
+//Coder : Shubhangi
 static bool prime_or_not(int a) {
   int i;
   bool is_prime = true;
@@ -50,7 +52,8 @@ static bool prime_or_not(int a) {
   return is_prime;
 }
 
-
+//Topic:  Hexadecimal to Decimal conversion
+//Coder : Shubhangi
 static  int convert_HexaToDeci(string num)
 {
     int len = num.Length;
@@ -84,7 +87,7 @@ static  int convert_HexaToDeci(string num)
     return dec; 
 } 
 
-
+//Coder : Shubhangi
 //ax²+bx+c=0
 static void findRootsOfQudraticEquestion(int a, int b, int c)
 {
@@ -115,6 +118,9 @@ static void findRootsOfQudraticEquestion(int a, int b, int c)
     }
 }
 
+//Topic : Find all the N bit binary numbers having more than or equal 1’s than 0’s
+//Coder : Shubhangi
+
 
 // program to replace all 0's with 1 in a given integer  : 
 
@@ -131,9 +137,8 @@ static string RelaceData(string data, char from, char to)
     }
     return replacedData;
 }
-//titile
-//coder:Vendant Yadav
-//Check Whether Or Not the Number is an Automorphic Number 
+//title:Check Whether Or Not the Number is an Automorphic Number
+//coder:Vedant Yadav 
 // Automorphic number-  if its square ends in the same digits as the number itself.
 static bool IsAutomorphicNumber(int number)
 {
@@ -146,9 +151,9 @@ static bool IsAutomorphicNumber(int number)
         return false;
 }
 
-//Check Whether Or Not the Number is an Perfect Number 
+//Title: Check Whether Or Not the Number is an Perfect Number 
+//Coder: Vedant Yadav
 //Sum of factors should be the same number
-
 static bool IsPerfectNumber(int number)
 {
     bool status=false;
@@ -167,7 +172,8 @@ static bool IsPerfectNumber(int number)
     return status;
 }
 
-//check whether or not the number is perfect square.
+//Title: check whether or not the number is perfect square.
+//Coder: Vedant Yadav
 static bool IsPerfectSquare(int number)
 {
     bool status=false;
@@ -271,7 +277,14 @@ static bool IsNegative(int number){
 }
 
 
-// sum of digits in a number
+
+
+
+
+
+
+// Title:sum of digits in a number
+//Coader:Pragati
 static int GetSumOfDigit(int number){
 int num=1234;
 int sum =0;
@@ -325,7 +338,8 @@ Console.WriteLine(binaryNumber);
 }
 
 
-//find the reverse of a number
+//Title:find the reverse of a number
+//Coader:Pragati
 static int GetReverseNumber(int number){
     int reverse =0;
     int reminder;
@@ -337,13 +351,12 @@ static int GetReverseNumber(int number){
     return reverse;   
 }
 
-//Highest Common Factor(HCF)
-static int GetHighestCommonFactor(int number1, int number2){
-    int hcf=0;
+//Title:Highest Common Factor(HCF)
+//Coader:Pragati
+static int GetHighestCommonFactor(int number1,int number2){
+int hcf = 1;
     for(int i=1; i<=number1 && i<=number2; i++ ){
-        int reminder1=number1%i;
-        int reminder2=number2%i;
-        if(reminder1==0 && reminder2==0){
+        if(number1%i==0 && number2%i==0){
             hcf=i;
         }
     }
@@ -351,7 +364,7 @@ static int GetHighestCommonFactor(int number1, int number2){
 }
 
 // Calculate the number of digits in an integer
-
+//Coader:Pragati
 static int GetCountOfDigits(int number){
 int digit=0;
    while(number>0){
@@ -362,7 +375,6 @@ int digit=0;
 }
 
 //prime number with recursion    
-
 bool isPrime(int number, int i = 2)
 {
     // Base conditions
@@ -370,6 +382,29 @@ bool isPrime(int number, int i = 2)
        return true;
 
     return isPrime(number, i + 1);           //function calls itselfs
+}
+
+
+//Title:Check the given number is harshad or not eg.42 is harshad numbers because 4 + 2=6 and 42 is divide by 6 . 
+//Coder:Abhay Navale
+
+//Topic : Sort first half in ascending order and second half in descending
+//Coder : Shubhangi
+void ascDecFunc(int[] a, int n)
+{
+   int temp;
+   for(int i=0;i < n-1;i++)
+   {
+     for(int j = 0;j < n/2; j++) 
+     {
+            if(a[j]>a[j+1])
+           {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+           }
+      }
+   }
 }
 
 
@@ -388,7 +423,8 @@ static void CheckHarshadNumber(int number)
     }
 }
 
-// remove duplicate element from array
+//Title: remove duplicate element from array,
+//Coder: Vedant Yadav
 static int[] RemoveDuplicates(int[] array)
 {
     HashSet<int> uniqueSet = new HashSet<int>();
@@ -401,12 +437,10 @@ static int[] RemoveDuplicates(int[] array)
             uniqueList.Add(item); // Add the unique item to the list.
         }
     }
-
-    return uniqueList.ToArray();
+     return uniqueList.ToArray();
 }
-
-
-//last non-zero digit in factorial
+//Title:last non-zero digit in factorial
+//Coader:Pragati
 static int factorial(int n){
     if(n<=1)
     return 1;
@@ -419,7 +453,8 @@ while(fact%10==0){
    fact/=10;
 }
 
-// Smallest Element of the array using Recursion 
+// Title:Smallest Element of the array using Recursion
+//Coader:Pragati
 static int SmallestNumber(int number,int[] arr){
     if(number==1)
     return arr[0];
@@ -432,7 +467,8 @@ Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 
 
 
-//Toggle each character in a String e.g VedANt=>vEDanT
+//Title: Toggle each character in a String e.g VedANt=>vEDanT
+//Coder: Vedant Yadav
  static string ToggleStringCase(string input)
 {
     char[] characters = input.ToCharArray();
@@ -452,7 +488,8 @@ Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 }
 
 
-//Count possible decoding of a given digit sequence 
+//Title:Count possible decoding of a given digit sequence  eg:121 so (1,2,1),(12,1),(1,21)  
+//Coder:Abhay Navale
 static void Decode(int number){
     //number=121
     int i=0;
@@ -467,7 +504,8 @@ static void Decode(int number){
     System.Console.WriteLine(count);
 }
 
-
+//Title:Sort the elements of an array 
+//Coder:Abhay Navale
 static void SortArray(int [] arr){
    int temp=0;
    for(int i=0;i<arr.Length;i++){
@@ -483,17 +521,15 @@ static void SortArray(int [] arr){
    for(int i=0;i<arr.Length;i++){
     System.Console.WriteLine(arr[i]+ "");
    }  
-    Array.Sort(arr);
-    for(int i=0;i<arr.Length;i++){
-        System.Console.WriteLine(arr[i]);
-    }
+    // Array.Sort(arr);
+    // for(int i=0;i<arr.Length;i++){
+    //     System.Console.WriteLine(arr[i]);
+    // }
 }
 
-int[] myArray = { 60, 50, 30, 40 };
 
-
-
-//Finding Maximum scalar product of two vectors in an array
+//Title:Finding Maximum scalar product of two vectors in an array
+//Coder:Abhay Navale
 static void FindMaximumProduct(){
     int [] arr1=new int[] {11,16,13,12};
     int [] arr2=new int[] {12,11,10,15};
@@ -543,9 +579,83 @@ static void FindMaximumProduct(){
         return true;
     }
 
+//Title:Calculates the power
+//Coder:Abhay Navale
+// static int Power(int base,int power){
+//     int result=1;
+//     while(power > 0){
+//         result=result*base;
+//         power--;
+//     }
+//     return result;
+// }
 
+//Title:Check if two strings match where one string contains wildcard characters 
+//Coder:Abhay Navale
+// static bool IsStringMatching(string inputString,string stringWithWildCards){
+//     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
+//     return Regex.IsMatch(inputString,stringWithWildCards);
+// }
 
+//Title: Reverse an Array
+//Coder: Vedant Yadav
+static int[] ReverseArray(int[] array)
+{
+    int length = array.Length;
+    int[] reversedArray = new int[length];
 
+    for (int i = length - 1, j = 0; i >= 0; i--, j++)
+    {
+        reversedArray[j] = array[i];
+    }
+
+    return reversedArray;
+}
+ //Title: calculate length of the string using recursion
+ //Coder: Vedant Yadav   
+  static int CalculateLengthOfString(string input)
+    {
+        Console.WriteLine(input);
+        // if we reach at the end of the string
+        if (input.Equals(""))
+            return 0;
+        else
+            return CalculateLengthOfString(input.Substring(1)) + 1;
+    }
+
+    //Title:-Left Rotation of element of array
+    //coder:-Rohit Mangale
+    static int[] LeftRotate(int[] arr)
+    {
+        int []rotated=new int[arr.Length];
+        int elementToRotate = arr[0];
+        for (int i = 0; i < (arr.Length - 1); i++)
+        {
+            arr[i] = arr[i + 1];
+            rotated.Append(arr[i]);
+        }
+        arr[(arr.Length - 1)] = elementToRotate;
+        rotated.Append(arr[arr.Length-1]);
+        return rotated;
+    }
+
+    //Title:-Right Rotation of element of array
+    //coder:-Rohit Mangale
+    static int[] RigthRotate(int[] arr)
+    {
+        int[] rotated=new int[arr.Length];
+        int x = arr[(arr.Length - 1)];
+        for (int i = (arr.Length - 1); i > 0; i--)
+        {
+            arr[i] = arr[i - 1];
+            rotated.Append(arr[i]);
+        }
+
+        arr[0] = x;
+        rotated.Append(arr[0]);
+        return rotated;
+
+    }
 
 
         
@@ -564,6 +674,7 @@ static void FindMaximumProduct(){
 // bool statusOfAutomorphicNumber = IsAutomorphicNumber(automorphicNumber);
 // Console.WriteLine(statusOfAutomorphicNumber);
 
+
  
  //Title:Given an integer N the task is to print the F(N)th term
  //Coder :Akash Ajab
@@ -571,6 +682,10 @@ static void FindMaximumProduct(){
  static int term(int calculated,int current , int num){
     int i=0;
     int result =0;
+
+// int perfectNumber = 5;
+// bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
+// Console.WriteLine(statusOfPerfectNumber);
 
     while(current!=num+1){
         int cur =1;
@@ -682,7 +797,67 @@ static string RemoveAdjacentDuplicates(string input)
 
 
 
+
 int num = 3;
 
 Console.WriteLine("F(3) "+term(1, 1, num));
+
+
+ConvertBinaryToDecimal(1010);
+CheckHarshadNumber(42);
+Decode(121);
+// int[] myArray = { 60, 50, 30, 40 };
+// SortArray(myArray);
+// FindMaximumProduct();
+// int base=5;
+// int power=3;
+// int result=Power(base,power);
+// System.Console.WriteLine(result);
+
+// Testing to check whether a number can be expressed as a sum of two prime numbers
+
+    int a,i;
+  bool flag = false;
+  Console.WriteLine("Enter a positive  integer: ");
+  a = Convert.ToInt32(Console.ReadLine());
+  for(i = 2; i <= a/2; ++i) {
+    if (prime_or_not(i)) {
+      if (prime_or_not(a - i)) {
+        Console.WriteLine(a + " = " + i + " + " + Convert.ToInt32(a-i));
+        flag = true;
+      }
+    }
+  }
+  if (!flag)
+     Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
+
+     //equilibrium index of array
+
+     
+string inputString = "HelloWorld";
+string stringWithWildCards = "Hello*World";
+// bool isMatch=IsStringMatching(inputString,stringWithWildCards);
+//  if (isMatch)
+//         {
+//             Console.WriteLine("The strings match.");
+//         }
+//         else
+//         {
+//             Console.WriteLine("The strings do not match.");
+//         }
+
+
+
+//Find Smallest Element in an Array
+  static int SmallestNumberInArray(){
+  int[] numbers = { 34, 4, 89, 90, 56};
+  int n = numbers.Length;
+  int mini = int.MaxValue;
+
+  for(int i=0; i<n; i++){
+    if(numbers[i]<mini)
+      mini = numbers[i];
+  }
+    return mini;
+  }
 
