@@ -849,6 +849,27 @@ static string RemoveAdjacentDuplicates(string input)
 
 
 
+    //Title :program to count numbers of even and odd elements in an array
+    //Coder :Akash Ajab
+    static void FindCountOfNumberInArray(){
+
+        int[] arr= {10,10,11,23,15,45,12,13,15};
+        int odd_count=0;
+        int even_count=0;
+        for(int i=0; i<arr.Length;i++){
+
+            if(arr[i]%2==0){
+                even_count++;
+            }
+            else{
+                odd_count++;
+            }
+        }
+        Console.WriteLine( $"Even number count{even_count} and odd number count{odd_count}");
+    }
+
+   
+   FindCountOfNumberInArray();
    FindFrequencyOfElement();
         // string input = "abbaca";
         // string result = RemoveAdjacentDuplicates(input);
@@ -977,19 +998,19 @@ static int SmallestNumberInArray()
 }
 //topic:print the string in reverse order
 //coder:omkar sudrik
- public static string StrRev(string str)
-        {
-            string str, str1 = ""; 
-            int i,l;
-			 l = str.Length-1;
-            for (i=l;i>=0;i--)
-            {
-             str1 = str1 + str[i];
-                }
+//  public static string StrRev(string str)
+//         {
+//             string str, str1 = ""; 
+//             int i,l;
+// 			 l = str.Length-1;
+//             for (i=l;i>=0;i--)
+//             {
+//              str1 = str1 + str[i];
+//                 }
 
-           	return str1;
+//            	return str1;
 
-        }
+//         }
 //topic:remove all character in string except alphabet
 //coder:omkar sudrik
  static string RemoveSpecialCharacter(string s)
