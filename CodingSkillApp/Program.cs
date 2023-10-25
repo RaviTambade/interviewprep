@@ -358,7 +358,8 @@ bool isPrime(int number, int i = 2)
     return isPrime(number, i + 1);           //function calls itselfs
 }
 
-
+//Title:Check the given number is harshad or not eg.42 is harshad numbers because 4 + 2=6 and 42 is divide by 6 . 
+//Coder:Abhay Navale
 static void CheckHarshadNumber(int number)
 {
     string numberString=number.ToString();
@@ -438,7 +439,8 @@ Console.WriteLine("Smallest Element is: "+ SmallestNumber(number, arr));
 }
 
 
-//Count possible decoding of a given digit sequence 
+//Title:Count possible decoding of a given digit sequence  eg:121 so (1,2,1),(12,1),(1,21)  
+//Coder:Abhay Navale
 static void Decode(int number){
     //number=121
     int i=0;
@@ -453,7 +455,8 @@ static void Decode(int number){
     System.Console.WriteLine(count);
 }
 
-
+//Title:Sort the elements of an array 
+//Coder:Abhay Navale
 static void SortArray(int [] arr){
    int temp=0;
    for(int i=0;i<arr.Length;i++){
@@ -469,17 +472,15 @@ static void SortArray(int [] arr){
    for(int i=0;i<arr.Length;i++){
     System.Console.WriteLine(arr[i]+ "");
    }  
-    Array.Sort(arr);
-    for(int i=0;i<arr.Length;i++){
-        System.Console.WriteLine(arr[i]);
-    }
+    // Array.Sort(arr);
+    // for(int i=0;i<arr.Length;i++){
+    //     System.Console.WriteLine(arr[i]);
+    // }
 }
 
-int[] myArray = { 60, 50, 30, 40 };
 
-
-
-//Finding Maximum scalar product of two vectors in an array
+//Title:Finding Maximum scalar product of two vectors in an array
+//Coder:Abhay Navale
 static void FindMaximumProduct(){
     int [] arr1=new int[] {11,16,13,12};
     int [] arr2=new int[] {12,11,10,15};
@@ -529,8 +530,23 @@ static void FindMaximumProduct(){
         return true;
     }
 
+//Title:Calculates the power
+//Coder:Abhay Navale
+static int Power(int base,int power){
+    int result=1;
+    while(power > 0){
+        result=result*base;
+        power--;
+    }
+    return result;
+}
 
-
+//Title:Check if two strings match where one string contains wildcard characters 
+//Coder:Abhay Navale
+static bool IsStringMatching(string inputString,string stringWithWildCards){
+    string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
+    return Regex.IsMatch(inputString,stringWithWildCards);
+}
 
 
 
@@ -578,8 +594,13 @@ int number = 3;
 ConvertBinaryToDecimal(1010);
 CheckHarshadNumber(42);
 Decode(121);
+int[] myArray = { 60, 50, 30, 40 };
 SortArray(myArray);
 FindMaximumProduct();
+int base=5;
+int power=3;
+int result=Power(base,power);
+System.Console.WriteLine(result);
 
 //Testing Prime OR Not
 
@@ -599,3 +620,16 @@ int a, i;
      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
 
      //equilibrium index of array
+
+     
+string inputString = "HelloWorld";
+string stringWithWildCards = "Hello*World";
+bool isMatch=IsStringMatching(inputString,stringWithWildCards);
+ if (isMatch)
+        {
+            Console.WriteLine("The strings match.");
+        }
+        else
+        {
+            Console.WriteLine("The strings do not match.");
+        }
