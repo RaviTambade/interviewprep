@@ -235,7 +235,8 @@ static bool IsNegative(int number){
 
 
 
-// sum of digits in a number
+// Title:sum of digits in a number
+//Coader:Pragati
 static int GetSumOfDigit(int number){
 int num=1234;
 int sum =0;
@@ -289,7 +290,8 @@ Console.WriteLine(binaryNumber);
 }
 
 
-//find the reverse of a number
+//Title:find the reverse of a number
+//Coader:Pragati
 static int GetReverseNumber(int number){
 int num=1234;
 int reverse =0;
@@ -303,14 +305,12 @@ int rem;
     return reverse;   
 }
 
-//Highest Common Factor(HCF)
-static int GetHighestCommonFactor(){
-int num1 = 12;
-int num2 = 36;
+//Title:Highest Common Factor(HCF)
+//Coader:Pragati
+static int GetHighestCommonFactor(int number1,int number2){
 int HCF = 1;
-
-    for(int i=1; i<=num1 && i<=num2; i++ ){
-        if(num1%i==0 && num2%i==0){
+    for(int i=1; i<=number1 && i<=number2; i++ ){
+        if(number1%i==0 && number2%i==0){
             HCF=i;
         }
     }
@@ -318,7 +318,7 @@ int HCF = 1;
 }
 
 // Calculate the number of digits in an integer
-
+//Coader:Pragati
 static int GetCountOfDigits(int number){
 int digit=0;
    while(number>0){
@@ -329,7 +329,6 @@ int digit=0;
 }
 
 //prime number with recursion    
-
 bool isPrime(int number, int i = 2)
 {
     // Base conditions
@@ -377,7 +376,8 @@ static void CheckHarshadNumber(int number)
         return uniqueList.ToArray();
     }
 
-//last non-zero digit in factorial
+//Title:last non-zero digit in factorial
+//Coader:Pragati
 static int factorial(int n){
     if(n<=1)
     return 1;
@@ -389,7 +389,8 @@ while(fact%10==0){
    fact/=10;
 }
 
-// Smallest Element of the array using Recursion 
+// Title:Smallest Element of the array using Recursion
+//Coader:Pragati
 static int SmallestNumber(int number,int[] arr){
 if(number==1)
 return arr[0];
