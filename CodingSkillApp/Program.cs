@@ -579,16 +579,17 @@ static void FindMaximumProduct(){
 
 //Title: Reverse an Array
 //Coder: Vedant Yadav
-static List<int> ReverseArray(int[] array)
+static int[] ReverseArray(int[] array)
 {
-    int lenght = array.Length;
-    List<int> reversed = new List<int>();
+    int length = array.Length;
+    int[] reversedArray = new int[length];
 
-     for(int i=lenght-1; i>=0; i--){
-         reversed.Add(array[i]);
+    for (int i = length - 1, j = 0; i >= 0; i--, j++)
+    {
+        reversedArray[j] = array[i];
     }
 
-    return reversed;
+    return reversedArray;
 }
  //Title: calculate length of the string using recursion
  //Coder: Vedant Yadav   
