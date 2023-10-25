@@ -408,7 +408,8 @@ static int[] RemoveDuplicates(int[] array)
             uniqueList.Add(item); // Add the unique item to the list.
         }
     }
-
+     return uniqueList.ToArray();
+}
 //Title:last non-zero digit in factorial
 //Coader:Pragati
 static int factorial(int n){
