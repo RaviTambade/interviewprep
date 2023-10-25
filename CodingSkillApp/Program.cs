@@ -600,6 +600,7 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
+<<<<<<< HEAD
     //     return -1; // No equilibrium point found
     // }
     
@@ -611,6 +612,8 @@ static void FindMaximumProduct()
         int end=str.Length-1;
         while(front<end){
             if(str[front]!=str[end])
+=======
+>>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 //     return -1; // No equilibrium point found
 // }
 
@@ -633,9 +636,21 @@ bool isPal(string str)
 
 //Title:Calculates the power
 //Coder:Abhay Navale
+<<<<<<< HEAD
+=======
+
+// static int Power(int base, int power)
+// {
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+// static int Power(int base,int power){
+>>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 //     int result=1;
 //     while(power > 0){
 //         result=result*base;
+
 //         power--;
 //     }
 //     return result;
@@ -643,10 +658,12 @@ bool isPal(string str)
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
-// static bool IsStringMatching(string inputString,string stringWithWildCards){
-//     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
-//     return Regex.IsMatch(inputString,stringWithWildCards);
+// static bool IsStringMatching(string inputString, string stringWithWildCards)
+// {
+//     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
+//     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
+<<<<<<< HEAD
 static int Power(int base, int power)
     int result = 1;
     while (power > 0)
@@ -664,6 +681,8 @@ static bool IsStringMatching(string inputString, string stringWithWildCards)
     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
     return Regex.IsMatch(inputString, stringWithWildCards);
 }
+=======
+>>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 
 //Title: Reverse an Array
 static int[] ReverseArray(int[] array)
@@ -746,6 +765,7 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
+<<<<<<< HEAD
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -756,6 +776,8 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
+=======
+>>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
@@ -867,10 +889,41 @@ static string RemoveAdjacentDuplicates(string input)
         return newString;
     }
 
-        string input = "abbaca";
-        string result = RemoveAdjacentDuplicates(input);
-        Console.WriteLine("Original string: " + input);
-        Console.WriteLine("String with adjacent duplicates removed: " + result);
+
+  //Title :program to find the frequency of elements in an array
+  //Coder :Akash Ajab.
+    static void FindFrequencyOfElement(){
+
+        int[] arr= {10,20,30,10,20,30,40,10};
+
+        Dictionary<int,int> frequency = new Dictionary<int, int>();
+
+        foreach(int element in arr){
+            if(frequency.ContainsKey(element)){
+                frequency[element]++;
+            }
+
+            else{
+
+                frequency[element]=1;
+            }
+
+            
+        }
+
+        foreach(var kvp in frequency){
+                Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
+            }
+
+    }
+
+
+
+   FindFrequencyOfElement();
+        // string input = "abbaca";
+        // string result = RemoveAdjacentDuplicates(input);
+        // Console.WriteLine("Original string: " + input);
+        // Console.WriteLine("String with adjacent duplicates removed: " + result);
 
 // int perfectNumber = 5;
 // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
@@ -936,10 +989,10 @@ Decode(121);
 int[] myArray = { 60, 50, 30, 40 };
 SortArray(myArray);
 FindMaximumProduct();
-int base=5;
-int power = 3;
-int result = Power(base, power);
-System.Console.WriteLine(result);
+// int base=5;
+// int power = 3;
+// int result = Power(base, power);
+// System.Console.WriteLine(result);
 
 // Testing to check whether a number can be expressed as a sum of two prime numbers
 
@@ -964,17 +1017,17 @@ if (!flag)
 //equilibrium index of array
 
 
-string inputString = "HelloWorld";
-string stringWithWildCards = "Hello*World";
-bool isMatch = IsStringMatching(inputString, stringWithWildCards);
-if (isMatch)
-{
-    Console.WriteLine("The strings match.");
-}
-else
-{
-    Console.WriteLine("The strings do not match.");
-}
+// string inputString = "HelloWorld";
+// string stringWithWildCards = "Hello*World";
+// bool isMatch = IsStringMatching(inputString, stringWithWildCards);
+// if (isMatch)
+// {
+//     Console.WriteLine("The strings match.");
+// }
+// else
+// {
+//     Console.WriteLine("The strings do not match.");
+// }
 
 
 
@@ -991,4 +1044,37 @@ static int SmallestNumberInArray()
             mini = numbers[i];
     }
     return mini;
+}
+//topic:print the string in reverse order
+//coder:omkar sudrik
+ public static string StrRev(string str)
+        {
+            string str, str1 = ""; 
+            int i,l;
+			 l = str.Length-1;
+            for (i=l;i>=0;i--)
+            {
+             str1 = str1 + str[i];
+                }
+
+           	return str1;
+
+        }
+//topic:remove all character in string except alphabet
+//coder:omkar sudrik
+ static string RemoveSpecialCharacter(string s)
+         {
+        string ans = "";
+        foreach(char ch in s)
+        {
+            if (Char.IsLetter(ch))
+                ans += ch;
+        }
+        return ans;
+    }
+//topic:remove space from string
+//coder:omkar sudrik
+static string RemoveWhiteSpace(string source)
+{
+    return source.Trim();
 }
