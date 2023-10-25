@@ -637,6 +637,17 @@ static int[] ReverseArray(int[] array)
 
     }
 
+    //Title:-Removing vowels from line
+    //coder:-Rohit Mangale
+    static string RemoveVowels(string line){
+        var letters = new HashSet < char > (line);  
+        string modifiedString="";
+            letters.ExceptWith("AaEeIiOoUu");                         
+            modifiedString=new string (letters.ToArray());            
+            return modifiedString;        
+
+        } 
+
 
         
 //ShowFibonacciSeriesNumber(10);
