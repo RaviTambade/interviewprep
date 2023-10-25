@@ -600,6 +600,10 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //     return -1; // No equilibrium point found
     // }
     
@@ -611,6 +615,10 @@ static void FindMaximumProduct()
         int end=str.Length-1;
         while(front<end){
             if(str[front]!=str[end])
+<<<<<<< HEAD
+=======
+        }
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 //     return -1; // No equilibrium point found
 // }
 
@@ -633,10 +641,24 @@ static void FindMaximumProduct()
 
 //Title:Calculates the power
 //Coder:Abhay Navale
+<<<<<<< HEAD
+=======
+
+
+
+// static int Power(int base, int power)
+// {
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 // static int Power(int base,int power){
+
 //     int result=1;
 //     while(power > 0){
 //         result=result*base;
+
 //         power--;
 //     }
 //     return result;
@@ -644,10 +666,12 @@ static void FindMaximumProduct()
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
-// static bool IsStringMatching(string inputString,string stringWithWildCards){
-//     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
-//     return Regex.IsMatch(inputString,stringWithWildCards);
+// static bool IsStringMatching(string inputString, string stringWithWildCards)
+// {
+//     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
+//     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
+<<<<<<< HEAD
 // static int Power(int base, int power)
 // {
 //     int result = 1;
@@ -658,6 +682,18 @@ static void FindMaximumProduct()
 //     }
 //     return result;
 // }
+=======
+
+static int Power(int base, int power)
+    int result = 1;
+    while (power > 0)
+    {
+        result = result * base;
+        power--;
+    }
+    return result;
+}
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -668,7 +704,6 @@ static bool IsStringMatching(string inputString, string stringWithWildCards)
 }
 
 //Title: Reverse an Array
-//Coder: Vedant Yadav
 static int[] ReverseArray(int[] array)
 {
     int length = array.Length;
@@ -749,6 +784,10 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -759,11 +798,36 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
 
 }
+    //Title:-Shorting of Array
+    //coder:-Rohit Mangale
+    static int[] ShortArray(int[] arr){
+       
+        // Sort array in ASC order
+        Console.WriteLine();
+        Console.WriteLine("Sorted array in ASC order");
+        Array.Sort(arr);
+        foreach(int i in arr) {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Sorted array in DESC order");
+        // Sort Array in DESC order
+        Array.Reverse(arr);
+        foreach(int i in arr) {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        return arr;
+    }
 
 
 
@@ -849,10 +913,62 @@ static string RemoveAdjacentDuplicates(string input)
         return newString;
     }
 
-        string input = "abbaca";
-        string result = RemoveAdjacentDuplicates(input);
-        Console.WriteLine("Original string: " + input);
-        Console.WriteLine("String with adjacent duplicates removed: " + result);
+
+  //Title :program to find the frequency of elements in an array
+  //Coder :Akash Ajab.
+    static void FindFrequencyOfElement(){
+
+        int[] arr= {10,20,30,10,20,30,40,10};
+
+        Dictionary<int,int> frequency = new Dictionary<int, int>();
+
+        foreach(int element in arr){
+            if(frequency.ContainsKey(element)){
+                frequency[element]++;
+            }
+
+            else{
+
+                frequency[element]=1;
+            }
+
+            
+        }
+
+        foreach(var kvp in frequency){
+                Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
+            }
+
+    }
+
+
+
+    //Title :program to count numbers of even and odd elements in an array
+    //Coder :Akash Ajab
+    static void FindCountOfNumberInArray(){
+
+        int[] arr= {10,10,11,23,15,45,12,13,15};
+        int odd_count=0;
+        int even_count=0;
+        for(int i=0; i<arr.Length;i++){
+
+            if(arr[i]%2==0){
+                even_count++;
+            }
+            else{
+                odd_count++;
+            }
+        }
+        Console.WriteLine( $"Even number count{even_count} and odd number count{odd_count}");
+    }
+
+   
+   FindCountOfNumberInArray();
+   FindFrequencyOfElement();
+        // string input = "abbaca";
+        // string result = RemoveAdjacentDuplicates(input);
+        // Console.WriteLine("Original string: " + input);
+        // Console.WriteLine("String with adjacent duplicates removed: " + result);
 
 // int perfectNumber = 5;
 // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
@@ -918,10 +1034,10 @@ Decode(121);
 int[] myArray = { 60, 50, 30, 40 };
 SortArray(myArray);
 FindMaximumProduct();
-int base=5;
-int power = 3;
-int result = Power(base, power);
-System.Console.WriteLine(result);
+// int base=5;
+// int power = 3;
+// int result = Power(base, power);
+// System.Console.WriteLine(result);
 
 // Testing to check whether a number can be expressed as a sum of two prime numbers
 
@@ -946,17 +1062,17 @@ if (!flag)
 //equilibrium index of array
 
 
-string inputString = "HelloWorld";
-string stringWithWildCards = "Hello*World";
-bool isMatch = IsStringMatching(inputString, stringWithWildCards);
-if (isMatch)
-{
-    Console.WriteLine("The strings match.");
-}
-else
-{
-    Console.WriteLine("The strings do not match.");
-}
+// string inputString = "HelloWorld";
+// string stringWithWildCards = "Hello*World";
+// bool isMatch = IsStringMatching(inputString, stringWithWildCards);
+// if (isMatch)
+// {
+//     Console.WriteLine("The strings match.");
+// }
+// else
+// {
+//     Console.WriteLine("The strings do not match.");
+// }
 
 
 
@@ -1012,7 +1128,8 @@ static int FindLongestPalindrome()
     return maxPalindrome;
     }
 
-//check whether Character is a vowel or consonant 
+//check whether Character is a vowel or consonant
+//coader:pragati 
 static bool IsLowerCase(char c){
   return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
 }
@@ -1031,4 +1148,37 @@ else if(!char.IsLetter(c)){
 
 else{
    Console.WriteLine( c +" is a consonent");
+}
+//topic:print the string in reverse order
+//coder:omkar sudrik
+//  public static string StrRev(string str)
+//         {
+//             string str, str1 = ""; 
+//             int i,l;
+// 			 l = str.Length-1;
+//             for (i=l;i>=0;i--)
+//             {
+//              str1 = str1 + str[i];
+//                 }
+
+//            	return str1;
+
+//         }
+//topic:remove all character in string except alphabet
+//coder:omkar sudrik
+ static string RemoveSpecialCharacter(string s)
+         {
+        string ans = "";
+        foreach(char ch in s)
+        {
+            if (Char.IsLetter(ch))
+                ans += ch;
+        }
+        return ans;
+    }
+//topic:remove space from string
+//coder:omkar sudrik
+static string RemoveWhiteSpace(string source)
+{
+    return source.Trim();
 }
