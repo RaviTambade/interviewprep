@@ -600,19 +600,6 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
-    //     return -1; // No equilibrium point found
-    // }
-    
-    //string palidrome
-
-	
-	bool isPal(string str){
-        int front =0;
-        int end=str.Length-1;
-        while(front<end){
-            if(str[front]!=str[end])
-=======
 //     return -1; // No equilibrium point found
 // }
 
@@ -626,7 +613,6 @@ bool isPal(string str)
     while (front < end)
     {
         if (str[front] != str[end])
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
             return false;
         front++;
         end--;
@@ -636,11 +622,12 @@ bool isPal(string str)
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
-// static int Power(int base,int power){
-//     int result=1;
-//     while(power > 0){
-//         result=result*base;
+// static int Power(int base, int power)
+// {
+//     int result = 1;
+//     while (power > 0)
+//     {
+//         result = result * base;
 //         power--;
 //     }
 //     return result;
@@ -648,30 +635,11 @@ bool isPal(string str)
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
-// static bool IsStringMatching(string inputString,string stringWithWildCards){
-//     string regexPattern= Regex.Escape(stringWithWildCards).Replace("//*", ".*");
-//     return Regex.IsMatch(inputString,stringWithWildCards);
+// static bool IsStringMatching(string inputString, string stringWithWildCards)
+// {
+//     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
+//     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
-=======
-static int Power(int base, int power)
-{
-    int result = 1;
-    while (power > 0)
-    {
-        result = result * base;
-        power--;
-    }
-    return result;
-}
-
-//Title:Check if two strings match where one string contains wildcard characters 
-//Coder:Abhay Navale
-static bool IsStringMatching(string inputString, string stringWithWildCards)
-{
-    string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
-    return Regex.IsMatch(inputString, stringWithWildCards);
-}
->>>>>>> 5158bee2b06b6bd47e4d95989ac36b665552d96a
 
 //Title: Reverse an Array
 //Coder: Vedant Yadav
@@ -845,10 +813,41 @@ static string RemoveAdjacentDuplicates(string input)
         return newString;
     }
 
-        string input = "abbaca";
-        string result = RemoveAdjacentDuplicates(input);
-        Console.WriteLine("Original string: " + input);
-        Console.WriteLine("String with adjacent duplicates removed: " + result);
+
+  //Title :program to find the frequency of elements in an array
+  //Coder :Akash Ajab.
+    static void FindFrequencyOfElement(){
+
+        int[] arr= {10,20,30,10,20,30,40,10};
+
+        Dictionary<int,int> frequency = new Dictionary<int, int>();
+
+        foreach(int element in arr){
+            if(frequency.ContainsKey(element)){
+                frequency[element]++;
+            }
+
+            else{
+
+                frequency[element]=1;
+            }
+
+            
+        }
+
+        foreach(var kvp in frequency){
+                Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
+            }
+
+    }
+
+
+
+   FindFrequencyOfElement();
+        // string input = "abbaca";
+        // string result = RemoveAdjacentDuplicates(input);
+        // Console.WriteLine("Original string: " + input);
+        // Console.WriteLine("String with adjacent duplicates removed: " + result);
 
 // int perfectNumber = 5;
 // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
@@ -914,10 +913,10 @@ Decode(121);
 int[] myArray = { 60, 50, 30, 40 };
 SortArray(myArray);
 FindMaximumProduct();
-int base=5;
-int power = 3;
-int result = Power(base, power);
-System.Console.WriteLine(result);
+// int base=5;
+// int power = 3;
+// int result = Power(base, power);
+// System.Console.WriteLine(result);
 
 // Testing to check whether a number can be expressed as a sum of two prime numbers
 
@@ -942,17 +941,17 @@ if (!flag)
 //equilibrium index of array
 
 
-string inputString = "HelloWorld";
-string stringWithWildCards = "Hello*World";
-bool isMatch = IsStringMatching(inputString, stringWithWildCards);
-if (isMatch)
-{
-    Console.WriteLine("The strings match.");
-}
-else
-{
-    Console.WriteLine("The strings do not match.");
-}
+// string inputString = "HelloWorld";
+// string stringWithWildCards = "Hello*World";
+// bool isMatch = IsStringMatching(inputString, stringWithWildCards);
+// if (isMatch)
+// {
+//     Console.WriteLine("The strings match.");
+// }
+// else
+// {
+//     Console.WriteLine("The strings do not match.");
+// }
 
 
 
