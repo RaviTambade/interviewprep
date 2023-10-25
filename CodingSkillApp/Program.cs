@@ -603,6 +603,40 @@ static int[] ReverseArray(int[] array)
             return CalculateLengthOfString(input.Substring(1)) + 1;
     }
 
+    //Title:-Left Rotation of element of array
+    //coder:-Rohit Mangale
+    static int[] LeftRotate(int[] arr)
+    {
+        int []rotated=new int[arr.Length];
+        int elementToRotate = arr[0];
+        for (int i = 0; i < (arr.Length - 1); i++)
+        {
+            arr[i] = arr[i + 1];
+            rotated.Append(arr[i]);
+        }
+        arr[(arr.Length - 1)] = elementToRotate;
+        rotated.Append(arr[arr.Length-1]);
+        return rotated;
+    }
+
+    //Title:-Right Rotation of element of array
+    //coder:-Rohit Mangale
+    static int[] RigthRotate(int[] arr)
+    {
+        int[] rotated=new int[arr.Length];
+        int x = arr[(arr.Length - 1)];
+        for (int i = (arr.Length - 1); i > 0; i--)
+        {
+            arr[i] = arr[i - 1];
+            rotated.Append(arr[i]);
+        }
+
+        arr[0] = x;
+        rotated.Append(arr[0]);
+        return rotated;
+
+    }
+
 
         
 //ShowFibonacciSeriesNumber(10);
