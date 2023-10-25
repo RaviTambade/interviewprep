@@ -553,6 +553,30 @@ static void FindMaximumProduct(){
 
 
 
+//Title: Reverse an Array
+//Coder: Vedant Yadav
+static List<int> ReverseArray(int[] array)
+{
+    int lenght = array.Length;
+    List<int> reversed = new List<int>();
+
+     for(int i=lenght-1; i>=0; i--){
+         reversed.Add(array[i]);
+    }
+
+    return reversed;
+}
+ //Title: calculate length of the string using recursion
+ //Coder: Vedant Yadav   
+  static int CalculateLengthOfString(string input)
+    {
+        Console.WriteLine(input);
+        // if we reach at the end of the string
+        if (input.Equals(""))
+            return 0;
+        else
+            return CalculateLengthOfString(input.Substring(1)) + 1;
+    }
 
 
         
