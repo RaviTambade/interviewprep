@@ -975,6 +975,8 @@ static int SmallestNumberInArray()
     return mini;
 }
 
+//Title:find longest palindrome number in array
+//coader:pragati
 static int FindLongestPalindrome()
 {
     int IsPalindrome(int number)
@@ -1010,7 +1012,23 @@ static int FindLongestPalindrome()
     return maxPalindrome;
     }
 
-int palindrome = FindLongestPalindrome();
-Console.WriteLine(palindrome);
+//check whether Character is a vowel or consonant 
+static bool IsLowerCase(char c){
+  return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
 
+static bool IsUpperCase(char c){
+  return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+}
 
+char c ='p';
+if(IsLowerCase(c) || IsUpperCase(c)){
+  Console.WriteLine( c  + " is a vowel");
+}
+else if(!char.IsLetter(c)){
+   Console.WriteLine( "Non alphabate");
+}
+
+else{
+   Console.WriteLine( c +" is a consonent");
+}
