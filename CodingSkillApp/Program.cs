@@ -988,6 +988,43 @@ static void FindCountOfNumberInArray()
 }
 
 
+//Title:Finding Circular rotation of an array by K positions 
+//Coder :Akash Ajab
+ void GetCircularArr(int[] myarray, int d, int n)
+{
+    for (int i = 0; i < d; i++)
+    {
+        int temp = myarray[0];
+        Console.WriteLine(temp);
+        for (int j = 0; j < n - 1; j++)
+        {
+            myarray[j] = myarray[j + 1];
+            Console.WriteLine(myarray[j]);
+        }
+        myarray[n - 1] = temp;
+        Console.WriteLine(temp);
+
+        // Print the array in curly brace format
+        Console.Write("{ ");
+        for (int k = 0; k < myarray.Length; k++)
+        {
+            Console.Write(myarray[k]);
+            if (k < myarray.Length - 1)
+            {
+                Console.Write(", ");
+            }
+        }
+        Console.WriteLine(" }");
+    }
+}
+
+
+
+int[] myarray={1,2,3,4,5,6,7,8,9,10};
+
+GetCircularArr(myarray, 2, myarray.Length);
+
+
 FindCountOfNumberInArray();
 FindFrequencyOfElement();
 // string input = "abbaca";
