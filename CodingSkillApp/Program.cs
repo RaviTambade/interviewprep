@@ -1412,7 +1412,8 @@ static string RemoveWhiteSpace(string source)
     return source.Trim();
 }
 
-// Count the sum of numbers in a string
+// Title:Count the sum of numbers in a string
+//coader=pragati
 static int FindSumOfDigitsInString(string str){
   int sum =0;
  foreach(char ch in str){
@@ -1424,3 +1425,33 @@ static int FindSumOfDigitsInString(string str){
 }
 string str="2dg5ds46";
 
+//Title:Find if there is any subarray with sum equal to 0
+//coader=pragati
+static bool findSum(int[] numbers){
+ int flag=0;
+ int sum=0;
+ for(int i=0; i<numbers.Length; i++){
+  for(int j=i ;j<numbers.Length; j++ ){
+    sum+=numbers[j];
+    if(sum==0){
+      flag=1;
+      break;
+    }
+    else{
+      flag=0;
+      break;
+    }
+  }
+ }
+  if(flag==1){
+    return true;
+  }
+  return false;
+ }
+
+int[] numbers ={0,0,9,8,7};
+
+
+bool status = findSum(numbers);
+Console.WriteLine(status);
+ 
