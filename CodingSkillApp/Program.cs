@@ -600,10 +600,7 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //     return -1; // No equilibrium point found
     // }
     
@@ -615,10 +612,7 @@ static void FindMaximumProduct()
         int end=str.Length-1;
         while(front<end){
             if(str[front]!=str[end])
-<<<<<<< HEAD
-=======
         }
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 //     return -1; // No equilibrium point found
 // }
 
@@ -641,8 +635,6 @@ static void FindMaximumProduct()
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
-=======
 
 
 
@@ -652,7 +644,6 @@ static void FindMaximumProduct()
 //     while (power > 0)
 //     {
 //         result = result * base;
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 // static int Power(int base,int power){
 
 //     int result=1;
@@ -671,7 +662,6 @@ static void FindMaximumProduct()
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
-<<<<<<< HEAD
 // static int Power(int base, int power)
 // {
 //     int result = 1;
@@ -682,7 +672,6 @@ static void FindMaximumProduct()
 //     }
 //     return result;
 // }
-=======
 
 static int Power(int base, int power)
     int result = 1;
@@ -693,7 +682,6 @@ static int Power(int base, int power)
     }
     return result;
 }
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -784,10 +772,7 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -798,10 +783,7 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
-<<<<<<< HEAD
-=======
 
->>>>>>> e90dafdf868bd573ec50756cd75f1895a7a3164d
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
@@ -1182,3 +1164,16 @@ static string RemoveWhiteSpace(string source)
 {
     return source.Trim();
 }
+
+// Count the sum of numbers in a string
+static int FindSumOfDigitsInString(string str){
+  int sum =0;
+ foreach(char ch in str){
+  if(char.IsDigit(ch)){
+    sum+= ch-'0';
+  }
+ }
+ return sum;
+}
+string str="2dg5ds46";
+
