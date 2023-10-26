@@ -565,7 +565,91 @@ static void SortArray(int[] arr)
     //     System.Console.WriteLine(arr[i]);
     // }
 }
+//Title:Calculate Sum of the numbers in array
+//Coder:Shubham Teli
 
+static int CalculateSum()
+{
+    int[] arr = { 10, 10, 20, 30, 60 };
+    int length = arr.Length;
+    int sum = 0;
+    for (int i = 0; i < length; i++)
+    {
+        sum = sum + arr[i];
+    }
+    Console.WriteLine(sum);
+    return sum;
+}
+//Title:Calculate LCM of the given two Numbers
+//Coder:Shubham Teli
+
+//Title: Check if the current element is a duplicate in array
+//Coder:Shubham Teli
+
+static int RemoveDuplicatesNumber(){
+
+    
+    int[] arr = { 10, 20, 20, 30, 40, 40, 40, 50, 50,20,10 };
+        int length = arr.Length;
+    {
+        if (length == 0 || length == 1)
+            return length;
+
+        int j = 0;
+        for (int i = 0; i < length; i++)
+        {
+            bool isDuplicate = false;
+
+            // Check if the current element is a duplicate of any previous element
+            for (int k = 0; k < i; k++)
+            {
+                if (arr[i] == arr[k])
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            // If it's not a duplicate, add it to the array
+            if (!isDuplicate)
+            {
+                arr[j++] = arr[i];
+Console.Write(arr[i]+ " ");
+
+            }
+        }
+//  Console.WriteLine(j);
+        return j;
+    }
+}
+
+
+//Title:Calculate Equal no of the given Array
+//Coder:Shubham Teli
+
+static int EqualNumbers()
+
+    {
+        int[] a = { 50, 49, 100 };
+        int length = a.Length;
+        for (int i = 0; i < length; i++)
+        {
+            // Divide number by 2
+            while (a[i] % 2 == 0)
+                a[i] /= 2;
+
+            // Divide number by 3
+            while (a[i] % 3 == 0)
+                a[i] /= 3;
+
+            if (a[i] != a[0])
+            {
+                return 0;
+            }
+        }
+
+        return 1;
+    }
 
 //Title:Finding Maximum scalar product of two vectors in an array
 //Coder:Abhay Navale
@@ -990,7 +1074,7 @@ static void FindCountOfNumberInArray()
 
 //Title:Finding Circular rotation of an array by K positions 
 //Coder :Akash Ajab
- void GetCircularArr(int[] myarray, int d, int n)
+void GetCircularArr(int[] myarray, int d, int n)
 {
     for (int i = 0; i < d; i++)
     {
@@ -1020,7 +1104,7 @@ static void FindCountOfNumberInArray()
 
 
 
-int[] myarray={1,2,3,4,5,6,7,8,9,10};
+int[] myarray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 GetCircularArr(myarray, 2, myarray.Length);
 
@@ -1313,53 +1397,54 @@ isArmstrong();
 //coder: Rushikesh Chikane.
 
 
-       static int getOrder(int num) {
-            int len = 0;
-            while (num!=0)
-            {
-                len++;
-                num = num/10;
-            }
-            return len;
-    }
-     static void armstrongs()
+static int getOrder(int num)
+{
+    int len = 0;
+    while (num != 0)
     {
-        
-        Console.WriteLine("Enter lower and upper ranges : ");
-        int low = int.Parse(Console.ReadLine());
-        int high = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Armstrong numbers between "+ low + " and " + high + " are : ");
-
-        // loop for finding and printing all armstrong numbers between given range
-        for(int num = low ; num <= high ; num++)
-        {
-            int sum = 0, temp, digit, len;
-
-            len = getOrder(num);
-            temp = num;
-            // loop to extract digit, find ordered power of digits & add to sum
-            while(temp != 0)
-            {
-                // extract digit
-                digit = temp % 10;
-
-                // add power to sum
-                sum = sum + (int) Math.Pow(digit,len);
-                temp /= 10;
-            };
-
-            if(sum == num)
-                Console.Write(num + " ");
-        }
+        len++;
+        num = num / 10;
     }
-       armstrongs();
+    return len;
+}
+static void armstrongs()
+{
+
+    Console.WriteLine("Enter lower and upper ranges : ");
+    int low = int.Parse(Console.ReadLine());
+    int high = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Armstrong numbers between " + low + " and " + high + " are : ");
+
+    // loop for finding and printing all armstrong numbers between given range
+    for (int num = low; num <= high; num++)
+    {
+        int sum = 0, temp, digit, len;
+
+        len = getOrder(num);
+        temp = num;
+        // loop to extract digit, find ordered power of digits & add to sum
+        while (temp != 0)
+        {
+            // extract digit
+            digit = temp % 10;
+
+            // add power to sum
+            sum = sum + (int)Math.Pow(digit, len);
+            temp /= 10;
+        };
+
+        if (sum == num)
+            Console.Write(num + " ");
+    }
+}
+armstrongs();
 
 //topic: LCM (Lowest Common Factorial)
 //coder: Rushikesh Chikane.
-   
-    static void LCM ()
-  {
+
+static void LCM()
+{
     int num1 = 36, num2 = 60, lcm = 0;
 
     // finding the larger number here
@@ -1368,13 +1453,13 @@ isArmstrong();
     // LCM will atleast be >= max(num1, num2)
     // Largest possibility of LCM will be num1*num2
     for (int i = max; i <= num1 * num2; i++)
-      {
-     if (i % num1 == 0 && i % num2 == 0)
+    {
+        if (i % num1 == 0 && i % num2 == 0)
         {
-         lcm = i;
-         break;
+            lcm = i;
+            break;
         }
-      }
-    Console.WriteLine ("\n"+"The LCM: " + lcm);
-  }
-  LCM();
+    }
+    Console.WriteLine("\n" + "The LCM: " + lcm);
+}
+LCM();
