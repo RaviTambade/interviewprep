@@ -617,13 +617,13 @@ static void FindMaximumProduct()
 //             if(str[front]!=str[end])
 //         }
 
-	// bool isPal(string str){
-    //     int front =0;
-    //     int end=str.Length-1;
-    //     while(front<end){
-    //         if(str[front]!=str[end])
+// bool isPal(string str){
+//     int front =0;
+//     int end=str.Length-1;
+//     while(front<end){
+//         if(str[front]!=str[end])
 
-    //     }
+//     }
 
 //     return -1; // No equilibrium point found
 // }
@@ -1214,7 +1214,8 @@ static string RemoveWhiteSpace(string source)
 }
 
 
-
+//topic:Number is Palindrom or not
+//coder:Rushikesh Chikane.
 static void Palindrom()
 {
     int num = 12021, reverse = 0, rem, temp;
@@ -1233,4 +1234,89 @@ static void Palindrom()
 }
 Palindrom();
 
+//topic: Armstrong Number
+//coder: Rushikesh Chikane.
 
+static int getArmstrongSum(int num, int order)
+{
+    if (num == 0)
+        return 0;
+
+    int digit = num % 10;
+
+    return (int)Math.Pow(digit, order) + getArmstrongSum(num / 10, order);
+}
+
+static int order(int num)
+{
+    int len = 0;
+    while (num != 0)
+    {
+        len++;
+        num = num / 10;
+    }
+    return len;
+}
+
+static void isArmstrong()
+{
+    //variables initialization
+    int num = 1634, reverse = 0;
+    int len = order(num);
+
+    if (num == getArmstrongSum(num, len))
+        Console.WriteLine(num + " is an Armstrong Number");
+    else
+        Console.WriteLine(num + " is not an Armstrong Number");
+}
+isArmstrong();
+
+
+//topic: Armstrong Number between tow intervals(in given range)
+//coder: Rushikesh Chikane.
+
+
+       static int getOrder(int num) {
+            int len = 0;
+            while (num!=0)
+            {
+                len++;
+                num = num/10;
+            }
+            return len;
+    }
+     static void armstrongs()
+    {
+        
+        Console.WriteLine("Enter lower and upper ranges : ");
+        int low = int.Parse(Console.ReadLine());
+        int high = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Armstrong numbers between "+ low + " and " + high + " are : ");
+
+        // loop for finding and printing all armstrong numbers between given range
+        for(int num = low ; num <= high ; num++)
+        {
+            int sum = 0, temp, digit, len;
+
+            len = getOrder(num);
+            temp = num;
+            // loop to extract digit, find ordered power of digits & add to sum
+            while(temp != 0)
+            {
+                // extract digit
+                digit = temp % 10;
+
+                // add power to sum
+                sum = sum + (int) Math.Pow(digit,len);
+                temp /= 10;
+            };
+
+            if(sum == num)
+                Console.Write(num + " ");
+        }
+    }
+       armstrongs();
+
+
+   
