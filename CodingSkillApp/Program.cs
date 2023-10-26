@@ -1,5 +1,4 @@
-﻿
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 
 static void ShowFibonacciSeriesNumber(int level)
@@ -17,7 +16,6 @@ static void ShowFibonacciSeriesNumber(int level)
     }
 }
 
-
 // Title :Abundant number
 //Coder :Akash Ajab
 
@@ -27,7 +25,8 @@ static bool IsAbundant(int number)
     int sum = 0;
     for (int i = 1; i < number; i++)
     {
-        if (number % i == 0) sum += i;
+        if (number % i == 0)
+            sum += i;
     }
     if (sum > number)
     {
@@ -62,28 +61,29 @@ static bool prime_or_not(int a)
 static int convert_HexaToDeci(string num)
 {
     int len = num.Length;
-    int dec = 0, index = 0, i;
+    int dec = 0,
+        index = 0,
+        i;
 
     for (i = len - 1; i >= 0; i--)
     {
         // Here we check if current array char is between (0-9)
         if (num[i] >= '0' && num[i] <= '9')
         {
-            // whenever current num[i] is in range '0' - '9' 
-            // ascii int value can be fetched 
-            // by subtracting 48 (Refer Ascii table) as ASCII val 0 : 48 
+            // whenever current num[i] is in range '0' - '9'
+            // ascii int value can be fetched
+            // by subtracting 48 (Refer Ascii table) as ASCII val 0 : 48
             int digit = Convert.ToInt32(num[i]) - 48;
             dec += Convert.ToInt32(digit * Math.Pow(16, index));
             index++;
         }
-
-        // Here we check if current array char is between (A-F) 
+        // Here we check if current array char is between (A-F)
         else if (num[i] >= 'A' && num[i] <= 'F')
         {
-            // whenever current num[i] is in range 'A' - 'F' 
-            // ascii int value can be fetched 
-            // by subtracting 55 (Refer Ascii table) as 
-            // ASCII val A : 65 and A must result 10 as value 
+            // whenever current num[i] is in range 'A' - 'F'
+            // ascii int value can be fetched
+            // by subtracting 55 (Refer Ascii table) as
+            // ASCII val A : 65 and A must result 10 as value
             int digit = Convert.ToInt32(num[i]) - 55;
             dec += Convert.ToInt32(digit * Math.Pow(16, index));
             index++;
@@ -130,7 +130,7 @@ static void findRootsOfQudraticEquestion(int a, int b, int c)
 //Coder : Shubhangi
 
 
-// program to replace all 0's with 1 in a given integer  : 
+// program to replace all 0's with 1 in a given integer  :
 
 static string RelaceData(string data, char from, char to)
 {
@@ -145,8 +145,9 @@ static string RelaceData(string data, char from, char to)
     }
     return replacedData;
 }
+
 //title:Check Whether Or Not the Number is an Automorphic Number
-//coder:Vedant Yadav 
+//coder:Vedant Yadav
 // Automorphic number-  if its square ends in the same digits as the number itself.
 static bool IsAutomorphicNumber(int number)
 {
@@ -159,7 +160,7 @@ static bool IsAutomorphicNumber(int number)
         return false;
 }
 
-//Title: Check Whether Or Not the Number is an Perfect Number 
+//Title: Check Whether Or Not the Number is an Perfect Number
 //Coder: Vedant Yadav
 //Sum of factors should be the same number
 static bool IsPerfectNumber(int number)
@@ -175,7 +176,8 @@ static bool IsPerfectNumber(int number)
     }
     if (sumOfFactors == number)
     {
-        status = true; ;
+        status = true;
+        ;
     }
     return status;
 }
@@ -195,7 +197,6 @@ static bool IsPerfectSquare(int number)
     return status;
 }
 
-
 //Title :find the sum of natural numbers till number
 // Coder:Akash Ajab
 static int SumOfNaturalNumbersTillNumber(int number)
@@ -208,7 +209,6 @@ static int SumOfNaturalNumbersTillNumber(int number)
     return sum;
 }
 
-
 //Title : Find the Sum of Numbers in a Given Range
 //Coder : Akash Ajab
 static int SumOfNumbersGivenRange(int number1, int number2)
@@ -220,7 +220,6 @@ static int SumOfNumbersGivenRange(int number1, int number2)
     }
     return sum;
 }
-
 
 //Title :Greatest of two numbers
 //Coder :Akash Ajab
@@ -239,7 +238,8 @@ static bool IsGreater(int number1, int number2)
 static int ConvertDecimalToOctal(int decimalNumber)
 {
     int octal = 0;
-    int reminder, digit = 1;
+    int reminder,
+        digit = 1;
     while (decimalNumber != 0)
     {
         reminder = decimalNumber % 8;
@@ -282,9 +282,7 @@ static int ConvertBinaryToDecimal(long number)
     return decimalNumber;
 }
 
-
-
-//Check if a Number is Positive or Negative 
+//Check if a Number is Positive or Negative
 static bool IsNegative(int number)
 {
     bool status = false;
@@ -292,13 +290,6 @@ static bool IsNegative(int number)
         status = true;
     return status;
 }
-
-
-
-
-
-
-
 
 // Title:sum of digits in a number
 //Coader:Pragati
@@ -357,7 +348,6 @@ static void ConvertDecimalToBinary(int decimalNumber)
     Console.WriteLine(binaryNumber);
 }
 
-
 //Title:find the reverse of a number
 //Coader:Pragati
 static int GetReverseNumber(int number)
@@ -401,39 +391,41 @@ static int GetCountOfDigits(int number)
     return digit;
 }
 
-//prime number with recursion    
+//prime number with recursion
 bool isPrime(int number, int i = 2)
 {
     // Base conditions
-    if (number <= 2) return (number == 2) ? true : false; if (number % i == 0) return false; if (i * i > number)
+    if (number <= 2)
+        return (number == 2) ? true : false;
+    if (number % i == 0)
+        return false;
+    if (i * i > number)
         return true;
 
-    return isPrime(number, i + 1);           //function calls itselfs
+    return isPrime(number, i + 1); //function calls itselfs
 }
 
-
-//Title:Check the given number is harshad or not eg.42 is harshad numbers because 4 + 2=6 and 42 is divide by 6 . 
+//Title:Check the given number is harshad or not eg.42 is harshad numbers because 4 + 2=6 and 42 is divide by 6 .
 //Coder:Abhay Navale
 
 //Topic : Sort first half in ascending order and second half in descending
 //Coder : Shubhangi
 void ascDecFunc(int[] a, int n)
 {
-   int temp;
-   for(int i=0;i < n-1;i++)
-   {
-     for(int j = 0;j < n/2; j++) 
-     {
-            if(a[j]>a[j+1])
-           {
-             temp=a[j];
-             a[j]=a[j+1];
-             a[j+1]=temp;
-           }
-      }
-   }
+    int temp;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n / 2; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
 }
-
 
 static void CheckHarshadNumber(int number)
 {
@@ -466,6 +458,7 @@ static int[] RemoveDuplicates(int[] array)
     }
     return uniqueList.ToArray();
 }
+
 //Title:last non-zero digit in factorial
 //Coader:Pragati
 static int factorial(int n)
@@ -495,8 +488,6 @@ int[] arr = { 10, 2, 3, 4, 5, 9 };
 int number = arr.Length;
 Console.WriteLine("Smallest Element is: " + SmallestNumber(number, arr));
 
-
-
 //Title: Toggle each character in a String e.g VedANt=>vEDanT
 //Coder: Vedant Yadav
 static string ToggleStringCase(string input)
@@ -517,8 +508,7 @@ static string ToggleStringCase(string input)
     return new string(characters);
 }
 
-
-//Title:Count possible decoding of a given digit sequence  eg:121 so (1,2,1),(12,1),(1,21)  
+//Title:Count possible decoding of a given digit sequence  eg:121 so (1,2,1),(12,1),(1,21)
 //Coder:Abhay Navale
 static void Decode(int number)
 {
@@ -537,7 +527,7 @@ static void Decode(int number)
     System.Console.WriteLine(count);
 }
 
-//Title:Sort the elements of an array 
+//Title:Sort the elements of an array
 //Coder:Abhay Navale
 static void SortArray(int[] arr)
 {
@@ -565,7 +555,6 @@ static void SortArray(int[] arr)
     // }
 }
 
-
 //Title:Finding Maximum scalar product of two vectors in an array
 //Coder:Abhay Navale
 static void FindMaximumProduct()
@@ -582,9 +571,6 @@ static void FindMaximumProduct()
     Console.WriteLine(product);
 }
 
-
-
-
 // public static int equilibriumPoint(long arr[], int n) {
 //     long totalSum = 0;
 //     long leftSum = 0;
@@ -600,18 +586,18 @@ static void FindMaximumProduct()
 //         }
 //         leftSum += arr[i];
 //     }
-    //     return -1; // No equilibrium point found
-    // }
-    
-    //string palidrome
+//     return -1; // No equilibrium point found
+// }
 
-	
-	// bool isPal(string str){
-    //     int front =0;
-    //     int end=str.Length-1;
-    //     while(front<end){
-    //         if(str[front]!=str[end])
-    //     }
+//string palidrome
+
+
+// bool isPal(string str){
+//     int front =0;
+//     int end=str.Length-1;
+//     while(front<end){
+//         if(str[front]!=str[end])
+//     }
 //     return -1; // No equilibrium point found
 // }
 
@@ -654,7 +640,7 @@ static void FindMaximumProduct()
 //     return result;
 // }
 
-//Title:Check if two strings match where one string contains wildcard characters 
+//Title:Check if two strings match where one string contains wildcard characters
 //Coder:Abhay Navale
 // static bool IsStringMatching(string inputString, string stringWithWildCards)
 // {
@@ -672,7 +658,8 @@ static void FindMaximumProduct()
 //     return result;
 // }
 
-static int Power(int bas, int power){
+static int Power(int bas, int power)
+{
     int result = 1;
     while (power > 0)
     {
@@ -682,7 +669,7 @@ static int Power(int bas, int power){
     return result;
 }
 
-//Title:Check if two strings match where one string contains wildcard characters 
+//Title:Check if two strings match where one string contains wildcard characters
 //Coder:Abhay Navale
 static bool IsStringMatching(string inputString, string stringWithWildCards)
 {
@@ -703,8 +690,9 @@ static int[] ReverseArray(int[] array)
 
     return reversedArray;
 }
+
 //Title: calculate length of the string using recursion
-//Coder: Vedant Yadav   
+//Coder: Vedant Yadav
 static int CalculateLengthOfString(string input)
 {
     Console.WriteLine(input);
@@ -771,46 +759,45 @@ static int[] RigthRotate(int[] arr)
         rotated.Append(arr[i]);
     }
 
-
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
-    static string RemoveVowels(string line){
-        var letters = new HashSet < char > (line);  
-        string modifiedString="";
-            letters.ExceptWith("AaEeIiOoUu");                         
-            modifiedString=new string (letters.ToArray());            
-            return modifiedString;        
-
-        } 
+    static string RemoveVowels(string line)
+    {
+        var letters = new HashSet<char>(line);
+        string modifiedString = "";
+        letters.ExceptWith("AaEeIiOoUu");
+        modifiedString = new string(letters.ToArray());
+        return modifiedString;
+    }
 
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
-
 }
-    //Title:-Shorting of Array
-    //coder:-Rohit Mangale
-    static int[] ShortArray(int[] arr){
-       
-        // Sort array in ASC order
-        Console.WriteLine();
-        Console.WriteLine("Sorted array in ASC order");
-        Array.Sort(arr);
-        foreach(int i in arr) {
-            Console.Write(i + " ");
-        }
-        Console.WriteLine();
-        Console.WriteLine("Sorted array in DESC order");
-        // Sort Array in DESC order
-        Array.Reverse(arr);
-        foreach(int i in arr) {
-            Console.Write(i + " ");
-        }
-        Console.WriteLine();
-        return arr;
+
+//Title:-Shorting of Array
+//coder:-Rohit Mangale
+static int[] ShortArray(int[] arr)
+{
+    // Sort array in ASC order
+    Console.WriteLine();
+    Console.WriteLine("Sorted array in ASC order");
+    Array.Sort(arr);
+    foreach (int i in arr)
+    {
+        Console.Write(i + " ");
     }
-
-
+    Console.WriteLine();
+    Console.WriteLine("Sorted array in DESC order");
+    // Sort Array in DESC order
+    Array.Reverse(arr);
+    foreach (int i in arr)
+    {
+        Console.Write(i + " ");
+    }
+    Console.WriteLine();
+    return arr;
+}
 
 //ShowFibonacciSeriesNumber(10);
 
@@ -828,128 +815,124 @@ static int[] RigthRotate(int[] arr)
 // Console.WriteLine(statusOfAutomorphicNumber);
 
 
- 
- //Title:Given an integer N the task is to print the F(N)th term
- //Coder :Akash Ajab
- 
- static int term(int calculated,int current , int num){
-    int i=0;
-    int result =0;
 
-// int perfectNumber = 5;
-// bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
-// Console.WriteLine(statusOfPerfectNumber);
+//Title:Given an integer N the task is to print the F(N)th term
+//Coder :Akash Ajab
 
-    while(current!=num+1){
-        int cur =1;
-      for(i=calculated;i<calculated+current;i++)
-      cur *= i; 
-      calculated=i;
-      result += cur;
-      current++;  
-      
+static int term(int calculated, int current, int num)
+{
+    int i = 0;
+    int result = 0;
+
+    // int perfectNumber = 5;
+    // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
+    // Console.WriteLine(statusOfPerfectNumber);
+
+    while (current != num + 1)
+    {
+        int cur = 1;
+        for (i = calculated; i < calculated + current; i++)
+            cur *= i;
+        calculated = i;
+        result += cur;
+        current++;
     }
     return result;
-
 }
-
-
 
 //Title :Recursively Remove all Adjacent Duplicate Characters
 //coder : Akash Ajab
 static string RemoveAdjacentDuplicates(string input)
+{
+    if (string.IsNullOrEmpty(input) || input.Length == 1)
     {
-        if (string.IsNullOrEmpty(input) || input.Length == 1)
-        {
-            return input;
-        }
+        return input;
+    }
 
-        char[] result = new char[input.Length];
-        int resultIndex = 0;
+    char[] result = new char[input.Length];
+    int resultIndex = 0;
 
-        for (int i = 0; i < input.Length; i++)
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (i < input.Length - 1 && input[i] == input[i + 1])
         {
-            if (i < input.Length - 1 && input[i] == input[i + 1])
+            // Skip adjacent duplicates.
+            while (i < input.Length - 1 && input[i] == input[i + 1])
             {
-                // Skip adjacent duplicates.
-                while (i < input.Length - 1 && input[i] == input[i + 1])
-                {
-                    i++;
-                }
+                i++;
             }
-            else
-            {
-                result[resultIndex++] = input[i];
-            }
-            ;
         }
-       string newString = new string(result, 0, resultIndex);
-
-        // Recursively remove adjacent duplicates until no more can be found.
-        if (newString.Length < input.Length)
+        else
         {
-            return RemoveAdjacentDuplicates(newString);
+            result[resultIndex++] = input[i];
         }
+        ;
+    }
+    string newString = new string(result, 0, resultIndex);
 
-        return newString;
+    // Recursively remove adjacent duplicates until no more can be found.
+    if (newString.Length < input.Length)
+    {
+        return RemoveAdjacentDuplicates(newString);
     }
 
+    return newString;
+}
 
-  //Title :program to find the frequency of elements in an array
-  //Coder :Akash Ajab.
-    static void FindFrequencyOfElement(){
+//Title :program to find the frequency of elements in an array
+//Coder :Akash Ajab.
+static void FindFrequencyOfElement()
+{
+    int[] arr = { 10, 20, 30, 10, 20, 30, 40, 10 };
 
-        int[] arr= {10,20,30,10,20,30,40,10};
+    Dictionary<int, int> frequency = new Dictionary<int, int>();
 
-        Dictionary<int,int> frequency = new Dictionary<int, int>();
-
-        foreach(int element in arr){
-            if(frequency.ContainsKey(element)){
-                frequency[element]++;
-            }
-
-            else{
-
-                frequency[element]=1;
-            }
-
-            
+    foreach (int element in arr)
+    {
+        if (frequency.ContainsKey(element))
+        {
+            frequency[element]++;
         }
-
-        foreach(var kvp in frequency){
-                Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
-            }
-
+        else
+        {
+            frequency[element] = 1;
+        }
     }
 
-
-
-    //Title :program to count numbers of even and odd elements in an array
-    //Coder :Akash Ajab
-    static void FindCountOfNumberInArray(){
-
-        int[] arr= {10,10,11,23,15,45,12,13,15};
-        int odd_count=0;
-        int even_count=0;
-        for(int i=0; i<arr.Length;i++){
-
-            if(arr[i]%2==0){
-                even_count++;
-            }
-            else{
-                odd_count++;
-            }
-        }
-        Console.WriteLine( $"Even number count{even_count} and odd number count{odd_count}");
+    foreach (var kvp in frequency)
+    {
+        Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
     }
+}
 
-   
-   FindCountOfNumberInArray();
-   FindFrequencyOfElement();
-        // string input = "abbaca";
-        // string result = RemoveAdjacentDuplicates(input);
-        // Console.WriteLine("Original string: " + input);
-        // Console.WriteLine("String with adjacent duplicates removed: " + result);
+//Title :program to count numbers of even and odd elements in an array
+//Coder :Akash Ajab
+static void FindCountOfNumberInArray()
+{
+    int[] arr = { 10, 10, 11, 23, 15, 45, 12, 13, 15 };
+    int odd_count = 0;
+    int even_count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            even_count++;
+        }
+        else
+        {
+            odd_count++;
+        }
+    }
+    Console.WriteLine($"Even number count{even_count} and odd number count{odd_count}");
+}
+
+FindCountOfNumberInArray();
+FindFrequencyOfElement();
+
+// string input = "abbaca";
+// string result = RemoveAdjacentDuplicates(input);
+// Console.WriteLine("Original string: " + input);
+// Console.WriteLine("String with adjacent duplicates removed: " + result);
 
 // int perfectNumber = 5;
 // bool statusOfPerfectNumber = IsPerfectNumber(perfectNumber);
@@ -963,6 +946,7 @@ static string RemoveAdjacentDuplicates(string input)
 
 // SumOfNaturalNumebers(3);
 SumOfNumbersGivenRange(4, 6);
+
 //FindGretestNumber(4,6);
 // DecimalToOctal(25);
 // CheckNumberPositiveOrNegative(-2);
@@ -971,7 +955,7 @@ SumOfNumbersGivenRange(4, 6);
 // // int number = 3;
 // //     if (isPrime(number))
 // //        Console.WriteLine("Prime Number");
-// //     else{       
+// //     else{
 // //         Console.WriteLine("not prime numer");
 // //     }
 
@@ -982,7 +966,7 @@ SumOfNumbersGivenRange(4, 6);
 // SortArray(myArray);
 // FindMaximumProduct();
 
- //Testing Prime OR Not
+//Testing Prime OR Not
 
 // int a, i;
 //   bool flag = false;
@@ -999,15 +983,14 @@ SumOfNumbersGivenRange(4, 6);
 //   if (!flag)
 //      Console.WriteLine( a +" can't be expressed as sum of two prime numbers.");
 
-     //equilibrium index of array
+//equilibrium index of array
 
 
 
 
 int num = 3;
 
-Console.WriteLine("F(3) "+term(1, 1, num));
-
+Console.WriteLine("F(3) " + term(1, 1, num));
 
 ConvertBinaryToDecimal(1010);
 CheckHarshadNumber(42);
@@ -1015,6 +998,7 @@ Decode(121);
 int[] myArray = { 60, 50, 30, 40 };
 SortArray(myArray);
 FindMaximumProduct();
+
 // int base=5;
 // int power = 3;
 // int result = Power(base, power);
@@ -1022,7 +1006,8 @@ FindMaximumProduct();
 
 // Testing to check whether a number can be expressed as a sum of two prime numbers
 
-int a, i;
+int a,
+    i;
 bool flag = false;
 Console.WriteLine("Enter a positive  integer: ");
 a = Convert.ToInt32(Console.ReadLine());
@@ -1090,7 +1075,7 @@ static int FindLongestPalindrome()
     }
     int[] numbers = { 124, 374, 989, 1221 };
     int n = numbers.Length;
-    int maxPalindrome = -1; 
+    int maxPalindrome = -1;
     for (int i = 0; i < n; i++)
     {
         if (IsPalindrome(numbers[i]) == 1 && numbers[i] > maxPalindrome)
@@ -1107,34 +1092,39 @@ static int FindLongestPalindrome()
         Console.WriteLine("The longest palindromic number is: " + maxPalindrome);
     }
     return maxPalindrome;
-    }
+}
 
 //check whether Character is a vowel or consonant
-//coader:pragati 
-static bool IsLowerCase(char c){
-  return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+//coader:pragati
+static bool IsLowerCase(char c)
+{
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
 }
 
-static bool IsUpperCase(char c){
-  return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+static bool IsUpperCase(char c)
+{
+    return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
 }
 
-char c ='p';
-if(IsLowerCase(c) || IsUpperCase(c)){
-  Console.WriteLine( c  + " is a vowel");
+char c = 'p';
+if (IsLowerCase(c) || IsUpperCase(c))
+{
+    Console.WriteLine(c + " is a vowel");
 }
-else if(!char.IsLetter(c)){
-   Console.WriteLine( "Non alphabate");
+else if (!char.IsLetter(c))
+{
+    Console.WriteLine("Non alphabate");
+}
+else
+{
+    Console.WriteLine(c + " is a consonent");
 }
 
-else{
-   Console.WriteLine( c +" is a consonent");
-}
 //topic:print the string in reverse order
 //coder:omkar sudrik
 //  public static string StrRev(string str)
 //         {
-//             string str, str1 = ""; 
+//             string str, str1 = "";
 //             int i,l;
 // 			 l = str.Length-1;
 //             for (i=l;i>=0;i--)
@@ -1147,16 +1137,17 @@ else{
 //         }
 //topic:remove all character in string except alphabet
 //coder:omkar sudrik
- static string RemoveSpecialCharacter(string s)
-         {
-        string ans = "";
-        foreach(char ch in s)
-        {
-            if (Char.IsLetter(ch))
-                ans += ch;
-        }
-        return ans;
+static string RemoveSpecialCharacter(string s)
+{
+    string ans = "";
+    foreach (char ch in s)
+    {
+        if (Char.IsLetter(ch))
+            ans += ch;
     }
+    return ans;
+}
+
 //topic: Find Repeating element of an array
 // Given an array, print all element whose frequency is not equal to one.
 //coder:Sahil Mankar
@@ -1188,7 +1179,7 @@ void FindRepetedElementsInArray()
 }
 
 //array is a subset of another array
-/* 
+/*
  Example
 arr1 = {1,2,3,4,5}  , arr2 = {3,4,5}
 arr2 is a subset of arr1 (As, arr1 contains all the elements of arr2)
@@ -1201,7 +1192,7 @@ arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4)
 void ArrayIsSubSetArray()
 {
     int[] arr1 = { 11, 10, 13, 21, 30, 70 };
-    int[] arr2 = { 11, 30, 70, 10,12 };
+    int[] arr2 = { 11, 30, 70, 10, 12 };
 
     for (int i = 0; i < arr2.Length; i++)
     { // i itrets over arr2
@@ -1221,14 +1212,180 @@ void ArrayIsSubSetArray()
     Console.WriteLine("arr2[] is  subset of arr1[] ");
 }
 
-
 //ASCII Value of character
 //coder:Sahil Mankar
 
-void ASCIIValueOfCharacter(){
-    char c='a';
-    int ASCIIValue=c;
-    Console.WriteLine($"ASCII Value of Character {c} is {ASCIIValue}" );
+void ASCIIValueOfCharacter()
+{
+    char c = 'a';
+    int ASCIIValue = c;
+    Console.WriteLine($"ASCII Value of Character {c} is {ASCIIValue}");
+}
+
+// Factorial of a Number
+//coder:Sahil Mankar
+
+void GetFactorial()
+{
+    int fact = 1;
+    int n = 5;
+    if (n < 0)
+    {
+        Console.WriteLine("Factorial for Negative Number dosent Exist");
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+    Console.WriteLine($"Factorial of {n} is {fact}");
+}
+
+// topic : frequency of character in string
+//coder:Sahil Mankar
+
+
+void FrequencyOfCharacterInString()
+{
+    string str = "sahil";
+    Dictionary<char, int> dict = new Dictionary<char, int>();
+
+    foreach (char ch in str)
+    {
+        if (dict.ContainsKey(ch))
+        {
+            dict[ch]++;
+        }
+        else
+        {
+            dict[ch] = 1;
+        }
+    }
+    Console.WriteLine($"Characters  in string with Coressponding frequencies are");
+
+    foreach (var ch in dict)
+    {
+        Console.WriteLine($" {ch.Key} = {ch.Value}");
+    }
+}
+
+// GCD(Greatest Common Divisor) or HCF(Highest Common Factor) of two numbers
+//is the number which is the largest common factor of both numbers.
+//It is also referred as Greatest Common Factor(GCF),
+//Greatest Common Measure(GCM), Highest Common Divisor(HCD).
+
+//coder:sahil mankar
+
+void GetGCDByLoop()
+{
+    int num1 = 36;
+    int num2 = 60;
+    int gcd = 0;
+
+    for (int i = 1; i <= num1 && i <= num2; i++)
+    {
+        Console.WriteLine("count" + i);
+        if (num1 % i == 0 && num2 % i == 0)
+            gcd = i;
+    }
+
+    Console.WriteLine("The GCD is: " + gcd);
+}
+
+void GetGCDByRepetedSubstraction()
+{
+    int num1 = 36,
+        num2 = 60,
+        hcf;
+
+    while (num1 != num2)
+    {
+        if (num1 > num2)
+            num1 -= num2;
+        else
+            num2 -= num1;
+    }
+
+    Console.WriteLine("The HCF: " + num1);
+}
+
+int RecurcieveGCD(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return RecurcieveGCD(b, a % b);
+}
+
+//program to find the number of days in a given month of a given year
+//coder:sahil mankar
+
+void GetNumberOfMonths(){
+      int month=2, year = 2012;
+        switch (month) {
+            // Cases for 31 Days
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+           Console.WriteLine("Number of days is 31");
+            break;
+  
+            // Cases for 30 Days
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+           Console.WriteLine("Number of days is 30");
+            break;
+  
+            // Case for 28/29 Days
+            case 2:
+                if((year%400==0) || ((year%100!=0)&&(year%4==0)))
+                   Console.WriteLine("Number of days is 29");
+                else
+                Console.WriteLine("Number of days is 28");
+            break;
+  
+            default:
+           Console.WriteLine("Invalid Month.");
+            break;
+        }
+}
+
+
+//find the second smallest element in an array
+//coder:sahil mankar
+
+void FindSecondSmallestElementInArray(){
+int[] numbers = { 5, 8, 2, 10, 3, 1, 9, 4, 7, 6 };
+
+int smallest = int.MaxValue;
+int secondSmallest = int.MaxValue;
+
+foreach (int num in numbers)
+{
+    if (num < smallest)
+    {
+        secondSmallest = smallest;
+        smallest = num;
+    }
+    
+    else if (num < secondSmallest && num != smallest)
+    {
+        secondSmallest = num;
+    }
+}
+
+if (secondSmallest == int.MaxValue)
+{
+    Console.WriteLine("There is no second smallest element.");
+}
+else
+{
+    Console.WriteLine("The second smallest element is: " + secondSmallest);
+}
 }
 
 
@@ -1238,4 +1395,3 @@ static string RemoveWhiteSpace(string source)
 {
     return source.Trim();
 }
-
