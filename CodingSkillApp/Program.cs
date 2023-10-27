@@ -1341,3 +1341,121 @@ isArmstrong();
     Console.WriteLine ("\n"+"The LCM: " + lcm);
   }
   LCM();
+
+
+//topic: Permutations in which n people can occupy r seats in a classroom
+//coder: Rushikesh Chikane.
+
+   static void PermatutationPeopleOccupySeats()  
+        {  
+            int n, r, per, fact1, fact2;  
+            Console.WriteLine("Enter the Value of n: ");  
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Value of r: ");
+            r = int.Parse(Console.ReadLine()); 
+            fact1 = 1;  
+            for (int i = n; i > 1; i=i-1)  
+            {  
+                fact1 = fact1 * i;  //calculating factorial (n!)
+            }  
+            int number;  
+            number = n - r;  
+            fact2 = 1;  
+            for (int i = number; i > 1; i=i-1)  
+            {  
+                fact2 = fact2 * i;  //calculating factorial ((n-r)!)
+            }  
+            per = fact1 / fact2;  //calculating  nPr
+            Console.WriteLine(per+" ways");  
+    }  
+
+    PermatutationPeopleOccupySeats();
+
+
+//topic: Program to convert Digits/Numbers to Words
+//coder: Rushikesh Chikane.
+
+static void convert_to_words(char[] num)
+{
+    int len = num.Length;
+    // Base cases
+    if (len == 0)
+    {
+        Console.WriteLine("empty string");
+        return;
+    }
+    if (len > 4)
+    {
+        Console.WriteLine(
+            "Length more than 4 is not supported");
+        return;
+    }
+    String[] single_digits = new String[] {
+            "zero", "one", "two",   "three", "four",
+            "five", "six", "seven", "eight", "nine"
+        };
+
+    String[] two_digits = new String[] {
+            "",          "ten",      "eleven",  "twelve",
+            "thirteen",  "fourteen", "fifteen", "sixteen",
+            "seventeen", "eighteen", "nineteen"
+        };
+
+    String[] tens_multiple = new String[] {
+            "",      "",      "twenty",  "thirty", "forty",
+            "fifty", "sixty", "seventy", "eighty", "ninety"
+        };
+
+    String[] tens_power = new String[] { "hundred", "thousand" };
+
+    Console.Write(new string(num) + ": ");
+    if (len == 1)
+    {
+        Console.WriteLine(single_digits[num[0] - '0']);
+        return;
+    }
+    int x = 0;
+    while (x < num.Length)
+    {
+        if (len >= 3)
+        {
+            if (num[x] - '0' != 0)
+            {
+                Console.Write(single_digits[num[x] - '0'] + " ");
+                Console.Write(tens_power[len - 3] + " ");
+
+            }
+            --len;
+        }
+        else
+        {
+            if (num[x] - '0' == 1)
+            {
+                int sum
+                    = num[x] - '0' + num[x + 1] - '0';
+                Console.WriteLine(two_digits[sum]);
+                return;
+            }
+            else if (num[x] - '0' == 2
+                     && num[x + 1] - '0' == 0)
+            {
+                Console.WriteLine("twenty");
+                return;
+            }
+            else
+            {
+                int i = (num[x] - '0');
+                if (i > 0)
+                    Console.Write(tens_multiple[i] + " ");
+                else
+                    Console.WriteLine("");
+                ++x;
+                if (num[x] - '0' != 0)
+                    Console.Write(single_digits[num[x] - '0']);
+            }
+        }
+        ++x;
+    }
+}
+// Driver Code
+convert_to_words("1121".ToCharArray());
