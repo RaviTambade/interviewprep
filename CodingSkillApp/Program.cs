@@ -580,8 +580,96 @@ static int CalculateSum()
     Console.WriteLine(sum);
     return sum;
 }
+
+//Remove Duplicates In Array using HashSet 
+//Coder:Shubham Teli.
+
+static int RemoveDuplicatesInArray(int[] arr)
+{
+    HashSet<int> uniqueSet = new HashSet<int>();
+    List<int> uniqueList = new List<int>();
+
+    foreach (int num in arr)
+    {
+        if (uniqueSet.Add(num))
+        {
+            uniqueList.Add(num);
+        }
+    }
+    uniqueList.CopyTo(arr);
+    foreach (int i in uniqueList)
+    {
+        Console.WriteLine(i + "\n");
+    }
+    Console.WriteLine("\n");
+
+    Console.WriteLine(uniqueList.Count);
+
+    return uniqueList.Count;
+}
+
+// Testing
+//int[] arr = { 10, 50, 30, 10, 2, 50, 30, 10 };
+
+RemoveDuplicatesInArray(arr);
+
+
+
+//Print length of string whithout using .length Function.
+//Coder:Shubham Teli.
+
+
+//Initializing variable
+string str;
+int length = 0;
+
+// Accepting input
+Console.WriteLine("Enter a string:");
+str = Console.ReadLine();
+
+// Manually counting the length without using Length property
+foreach (var ch in str)
+{
+    Console.WriteLine(ch + " ");
+    length++; // Counting the length
+
+}
+Console.WriteLine("\nLength of input string: " + length);
+
+
 //Title:Calculate LCM of the given two Numbers
 //Coder:Shubham Teli
+
+static int LCMUsingRecursion(int n1, int n2)
+{
+    return FindLCM(n1, n2, 1);
+}
+
+
+static int FindLCM(int n1, int n2, int lowestLCM)
+{
+    if (lowestLCM % n1 == 0 && lowestLCM % n2 == 0)
+    {
+        return lowestLCM;
+    }
+    else
+    {
+        return FindLCM(n1, n2, lowestLCM + 1);
+    }
+}
+
+// Testing 
+
+//   Console.Write("Enter the first number: ");
+//     int n1 = int.Parse(Console.ReadLine());
+
+//     Console.Write("Enter the second number: ");
+//     int n2 = int.Parse(Console.ReadLine());
+
+//     int result = LCM(n1, n2);
+
+//     Console.WriteLine($"LCM of {n1} and {n2} is {result}");
+
 
 //Title: Check if the current element is a duplicate in array
 //Coder:Shubham Teli
@@ -1580,8 +1668,8 @@ static void convert_to_words(char[] num)
     }
 }
 // Driver Code
-convert_to_words("1121".ToCharArray());
-    }
-    Console.WriteLine("\n" + "The LCM: " + lcm);
-}
-LCM();
+// convert_to_words("1121".ToCharArray());
+//     }
+//     Console.WriteLine("\n" + "The LCM: " + lcm);
+// }
+// LCM();
