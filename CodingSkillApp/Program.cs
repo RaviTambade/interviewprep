@@ -1745,3 +1745,23 @@ else if(x==0 && y!=0){
 }
 }
 FindQuadrants(1,-2);
+
+//find maximum product subarray in a given array
+
+int[] numberArray = { 10, -20, -30, 0, 70, -80, -20 };
+    int p= numberArray.Length;
+    int result = numberArray[0];
+    
+    for (int k = 0; k < n; k++)
+    {
+        int mul = numberArray[k];
+        // traversing in current subarray
+        for (int j = k + 1; j < n; j++) { // updating result every time // to keep an eye over the // maximum product 
+                if(mul>result)
+                result = mul;
+            mul *= numberArray[j];
+        }
+        if(mul>result)
+            result = mul;
+    }
+    Console.WriteLine(result);
