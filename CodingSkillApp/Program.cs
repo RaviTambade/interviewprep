@@ -1102,40 +1102,6 @@ static string RemoveAdjacentDuplicates(string input)
 }
 
 
-//Title :program to find the frequency of elements in an array
-//Coder :Akash Ajab.
-static void FindFrequencyOfElement()
-{
-
-    int[] arr = { 10, 20, 30, 10, 20, 30, 40, 10 };
-
-    Dictionary<int, int> frequency = new Dictionary<int, int>();
-
-    foreach (int element in arr)
-    {
-        if (frequency.ContainsKey(element))
-        {
-            frequency[element]++;
-        }
-
-        else
-        {
-
-            frequency[element] = 1;
-        }
-
-
-    }
-
-    foreach (var kvp in frequency)
-    {
-        Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
-    }
-
-}
-
-
-
 //Title :program to count numbers of even and odd elements in an array
 //Coder :Akash Ajab
 static void FindCountOfNumberInArray()
@@ -1745,3 +1711,292 @@ else if(x==0 && y!=0){
 }
 }
 FindQuadrants(1,-2);
+
+
+
+//topic: Find Repeating element of an array
+// Given an array, print all element whose frequency is not equal to one.
+//coder:Sahil Mankar
+void FindRepetedElementsInArray()
+{
+    
+    int[] arr = new int[] { 10, 30, 30, 20, 10, 20, 50, 10 };
+    Dictionary<int, int> dict = new Dictionary<int, int>();
+
+    foreach (var element in arr)
+    {
+        if (dict.ContainsKey(element))
+        {
+            dict[element]++;
+        }
+        else
+        {
+            dict[element] = 1;
+        }
+    }
+    Console.WriteLine($"Repeted elemnts in array are");
+
+    foreach (var element in dict)
+    {
+        if (element.Value > 1)
+        {
+            Console.Write($" {element.Key} ,");
+        }
+    }
+}
+
+//array is a subset of another array
+/*
+ Example
+arr1 = {1,2,3,4,5}  , arr2 = {3,4,5}
+arr2 is a subset of arr1 (As, arr1 contains all the elements of arr2)
+arr3 = {1,2,3,4,5}   arr4 = {1,2,9}
+arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4).
+ */
+//coder:Sahil Mankar
+
+
+void ArrayIsSubSetArray()
+{
+    int[] arr1 = { 11, 10, 13, 21, 30, 70 };
+    int[] arr2 = { 11, 30, 70, 10, 12 };
+
+    for (int i = 0; i < arr2.Length; i++)
+    { // i itrets over arr2
+        int j;
+        for (j = 0; j < arr1.Length; j++)
+        { // j itrets over arr1
+            if (arr2[i] == arr1[j])
+                break;
+        }
+
+        if (j == arr1.Length) // this condition hit when any element is not present in arr1
+        {
+            Console.WriteLine("arr2[] is not subset of arr1[] ");
+            return;
+        }
+    }
+    Console.WriteLine("arr2[] is  subset of arr1[] ");
+}
+
+//ASCII Value of character
+//coder:Sahil Mankar
+
+void ASCIIValueOfCharacter()
+{
+    char c = 'a';
+    int ASCIIValue = c;
+    Console.WriteLine($"ASCII Value of Character {c} is {ASCIIValue}");
+}
+
+// Factorial of a Number
+//coder:Sahil Mankar
+
+void GetFactorial()
+{
+    int fact = 1;
+    int n = 5;
+    if (n < 0)
+    {
+        Console.WriteLine("Factorial for Negative Number dosent Exist");
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+    Console.WriteLine($"Factorial of {n} is {fact}");
+}
+
+// topic : frequency of character in string
+//coder:Sahil Mankar
+
+
+void FrequencyOfCharacterInString()
+{
+    string str = "sahil";
+    Dictionary<char, int> dict = new Dictionary<char, int>();
+
+    foreach (char ch in str)
+    {
+        if (dict.ContainsKey(ch))
+        {
+            dict[ch]++;
+        }
+        else
+        {
+            dict[ch] = 1;
+        }
+    }
+    Console.WriteLine($"Characters  in string with Coressponding frequencies are");
+
+    foreach (var ch in dict)
+    {
+        Console.WriteLine($" {ch.Key} = {ch.Value}");
+    }
+}
+
+// GCD(Greatest Common Divisor) or HCF(Highest Common Factor) of two numbers
+//is the number which is the largest common factor of both numbers.
+//It is also referred as Greatest Common Factor(GCF),
+//Greatest Common Measure(GCM), Highest Common Divisor(HCD).
+
+//coder:sahil mankar
+
+void GetGCDByLoop()
+{
+    int num1 = 36;
+    int num2 = 60;
+    int gcd = 0;
+
+    for (int i = 1; i <= num1 && i <= num2; i++)
+    {
+        Console.WriteLine("count" + i);
+        if (num1 % i == 0 && num2 % i == 0)
+            gcd = i;
+    }
+
+    Console.WriteLine("The GCD is: " + gcd);
+}
+
+void GetGCDByRepetedSubstraction()
+{
+    int num1 = 36,
+        num2 = 60,
+        hcf;
+
+    while (num1 != num2)
+    {
+        if (num1 > num2)
+            num1 -= num2;
+        else
+            num2 -= num1;
+    }
+
+    Console.WriteLine("The HCF: " + num1);
+}
+
+
+//program to find the number of days in a given month of a given year
+//coder:sahil mankar
+
+void GetNumberOfMonths(){
+      int month=2, year = 2012;
+        switch (month) {
+            // Cases for 31 Days
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+           Console.WriteLine("Number of days is 31");
+            break;
+  
+            // Cases for 30 Days
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+           Console.WriteLine("Number of days is 30");
+            break;
+  
+            // Case for 28/29 Days
+            case 2:
+                if((year%400==0) || ((year%100!=0)&&(year%4==0)))
+                   Console.WriteLine("Number of days is 29");
+                else
+                Console.WriteLine("Number of days is 28");
+            break;
+  
+            default:
+           Console.WriteLine("Invalid Month.");
+            break;
+        }
+}
+
+
+//find the second smallest element in an array
+//coder:sahil mankar
+
+void FindSecondSmallestElementInArray(){
+int[] numbers = { 5, 8, 2, 10, 3, 1, 9, 4, 7, 6 };
+
+int smallest = int.MaxValue;
+int secondSmallest = int.MaxValue;
+
+foreach (int num in numbers)
+{
+    if (num < smallest)
+    {
+        secondSmallest = smallest;
+        smallest = num;
+    }
+    
+    else if (num < secondSmallest && num != smallest)
+    {
+        secondSmallest = num;
+    }
+}
+
+if (secondSmallest == int.MaxValue)
+{
+    Console.WriteLine("There is no second smallest element.");
+}
+else
+{
+    Console.WriteLine("The second smallest element is: " + secondSmallest);
+}
+}
+
+// Maximum number of handshakes
+// The given program will find the maximum number of handshakes in a room.
+//Suppose there are N persons in a room. We have to find the maximum number of Handshakes
+// possible. Given the fact that any two persons shake hand only once.
+//coder:sahil mankar
+
+void GenrateHandShakes()
+{
+    int num = 3;
+
+    int total = num * (num - 1) / 2; // Combination nC2 n!/(n-2)!2!
+
+    Console.WriteLine("For " + num + " people there will be " + total + " handshakes");
+}
+
+// Find common elements in three Sorted Arrays
+//coder:sahil mankar
+
+void FindCommonElementInThreeArray()
+{
+    int[] arr1 = { 1, 5, 10, 20, 40, 80 };
+    int[] arr2 = { 6, 7, 20, 80, 100 };
+    int[] arr3 = { 3, 4, 15, 20, 30, 70, 80, 120 };
+
+    int i = 0,
+        j = 0,
+        k = 0;
+    Console.WriteLine("Common element in array");
+    while (i < arr1.Length && j < arr2.Length && k < arr3.Length)
+    {
+        if (arr1[i] == arr2[j] && arr2[j] == arr3[k])
+        {
+            Console.WriteLine(arr1[i]+",");
+            i++;
+            j++;
+            k++;
+        }
+        else if (arr1[i] < arr2[j])
+        {
+            i++;
+        }
+        else if (arr2[j] < arr3[k])
+        {
+            j++;
+        }
+        else
+        {
+            k++;
+        }
+    }
+}
