@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 
 static void ShowFibonacciSeriesNumber(int level)
 {
@@ -251,39 +252,6 @@ static int ConvertDecimalToOctal(int decimalNumber)
     return octal;
 }
 
-//
-static int ConvertOctalToDecimal(long number)
-{
-    int i = 0;
-    int decimalNumber = 0;
-    int baseValue = 8;
-
-    while (number != 0)
-    {
-        int digit = (int)(number % 10);
-        int octalPowerValue = (int)Math.Pow(baseValue, i);
-        decimalNumber = decimalNumber + digit * octalPowerValue;
-        number = number / 10; //(number/=10)
-        i++;
-    }
-    return decimalNumber;
-}
-
-static int ConvertBinaryToDecimal(long number)
-{
-    int i = 0;
-    int decimalNumber = 0;
-    while (number != 0)
-    {
-        int digit = (int)(number % 10);
-        decimalNumber += digit * (int)Math.Pow(2, i);
-        number /= 10;
-        i++;
-    }
-    return decimalNumber;
-}
-
-
 
 //Check if a Number is Positive or Negative 
 static bool IsNegative(int number)
@@ -293,12 +261,6 @@ static bool IsNegative(int number)
         status = true;
     return status;
 }
-
-
-
-
-
-
 
 
 // Title:sum of digits in a number
@@ -345,18 +307,6 @@ static int GetSumOfDigit(int number)
 // }
 // System.Console.WriteLine(decimalNumber);
 // }
-
-static void ConvertDecimalToBinary(int decimalNumber)
-{
-    string binaryNumber = "";
-    while (decimalNumber > 0)
-    {
-        int remainder = decimalNumber % 2;
-        binaryNumber = remainder + binaryNumber;
-        decimalNumber = decimalNumber / 2;
-    }
-    Console.WriteLine(binaryNumber);
-}
 
 
 //Title:find the reverse of a number
@@ -566,6 +516,66 @@ static void SortArray(int[] arr)
     //     System.Console.WriteLine(arr[i]);
     // }
 }
+
+static void ConvertDecimalToBinary(int decimalNumber)
+{
+    string binaryNumber = "";
+    while (decimalNumber > 0)
+    {
+        int remainder = decimalNumber % 2;
+        binaryNumber = remainder + binaryNumber;
+        decimalNumber = decimalNumber / 2;
+    }
+    Console.WriteLine(binaryNumber);
+}
+//Testing
+// Console.WriteLine("Enter Decimal Number:");
+// int decimalNumber= int.Parse(Console.ReadLine());
+// ConvertDecimalToBinary(decimalNumber);
+
+
+//Convert Binary No to Decimal Number.
+//Coder:Shubham Teli.
+static int ConvertBinaryToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber = 0;
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        decimalNumber += digit * (int)Math.Pow(2, i);
+        number /= 10;
+        i++;
+    }
+    Console.WriteLine(decimalNumber);
+    return decimalNumber;
+}
+//Testing
+Console.WriteLine("Enter Binary Number:");
+int binaryNumber=int.Parse(Console.ReadLine());
+ConvertBinaryToDecimal(binaryNumber);
+
+//Convert Octal No to Decimal Number.
+//Coder:Shubham Teli.
+
+static int ConvertOctalToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber = 0;
+    int baseValue = 8;
+
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        int octalPowerValue = (int)Math.Pow(baseValue, i);
+        decimalNumber = decimalNumber + digit * octalPowerValue;
+        number = number / 10; //(number/=10)
+        i++;
+    }
+    return decimalNumber;
+}
+
+
 //Title:Calculate Sum of the numbers in array
 //Coder:Shubham Teli
 
@@ -581,6 +591,34 @@ static int CalculateSum()
     Console.WriteLine(sum);
     return sum;
 }
+
+
+// Find Non Repeating Characters in string 
+// Coder:Shubham Teli
+
+// Initializing variables.
+
+static void FindRepeating()
+{        
+        string str = "Shubham5!";
+        int[] freq = new int[256];
+      
+        // Calculating frequency of each character.
+        for (int i = 0; i < str.Length; i++)
+        {
+            freq[(int)str[i]]++;
+        }
+        Console.Write("The non-repeating characters are: ");
+        for (int i = 0; i < 256; i++)
+        {
+            if (freq[i] == 1) // Finding unique characters and printing them.
+            {
+                Console.Write(" " + (char)i + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+
 
 //Remove Duplicates In Array using HashSet 
 //Coder:Shubham Teli.
@@ -611,9 +649,6 @@ static int RemoveDuplicatesInArray(int[] arr)
 
 // Testing
 //int[] arr = { 10, 50, 30, 10, 2, 50, 30, 10 };
-
-RemoveDuplicatesInArray(arr);
-
 
 
 //Print length of string whithout using .length Function.
@@ -739,6 +774,13 @@ static int EqualNumbers()
 
         return 1;
     }
+    //Testing
+    
+// if (EqualNumbers() == 1)
+//     Console.WriteLine("Yes");
+// else
+//     Console.WriteLine("No");
+
 
 //Title:Finding Maximum scalar product of two vectors in an array
 //Coder:Abhay Navale
@@ -820,9 +862,12 @@ static void FindMaximumProduct()
 
 //Title:Calculates the power
 //Coder:Abhay Navale
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 925ce8df9810c3deb8ce8aa122aa392173215a3d
 
 // static int Power(int base, int power)
 // {
@@ -832,7 +877,10 @@ static void FindMaximumProduct()
 //         result = result * base;
 
 // static int Power(int base,int power){
+<<<<<<< HEAD
+=======
 
+>>>>>>> 925ce8df9810c3deb8ce8aa122aa392173215a3d
 //     int result=1;
 //     while(power > 0){
 //         result=result*base;
@@ -849,6 +897,17 @@ static void FindMaximumProduct()
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
+<<<<<<< HEAD
+static int Power(int base, int power)
+    int result = 1;
+    while (power > 0)
+    {
+        result = result * base;
+        power--;
+    }
+    return result;
+}
+=======
 
 // static int Power(int base, int power)
 // {
@@ -883,6 +942,7 @@ static void FindMaximumProduct()
 //     return result;
 // }
 
+>>>>>>> 925ce8df9810c3deb8ce8aa122aa392173215a3d
 
 //Title:Check if two strings match where one string contains wildcard characters 
 //Coder:Abhay Navale
@@ -972,8 +1032,14 @@ static int[] RigthRotate(int[] arr)
         arr[i] = arr[i - 1];
         rotated.Append(arr[i]);
     }
+    arr[0] = x;
+    rotated.Append(arr[0]);
+    return rotated;
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 925ce8df9810c3deb8ce8aa122aa392173215a3d
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line)
@@ -986,9 +1052,14 @@ static int[] RigthRotate(int[] arr)
 
     }
 
+<<<<<<< HEAD
+        } 
+   
+=======
     arr[0] = x;
     rotated.Append(arr[0]);
     return rotated;
+>>>>>>> 925ce8df9810c3deb8ce8aa122aa392173215a3d
 
 }
 //Title:-Shorting of Array
@@ -1016,6 +1087,37 @@ static int[] ShortArray(int[] arr)
     return arr;
 }
 
+//Title:-Kadane Expression
+//Coder:- Rohit Mangale
+  // function for kadane's algorithm
+  static int kadane(int[] Array) {
+    int max_sum = 0;
+    int current_sum = 0;
+    int n = Array.Length;
+    
+    for(int i=0; i<n; i++) {
+      current_sum = current_sum + Array[i];
+      if (current_sum < 0)
+        current_sum = 0; 
+      if(max_sum < current_sum)
+        max_sum = current_sum; 
+    }
+    return max_sum;
+  }
+
+  
+
+//Title:-Replacing one word from string
+//Coder:- Rohit Mangale
+   static void ReplacingWord(string line) {
+
+      string str = "All the best for interviews ";
+      Console.WriteLine(str);
+
+      string res = str.Replace("interviews ", "Bright Future ");
+      Console.WriteLine("After replacing...");
+      Console.WriteLine(res);
+   }
 
 
 //ShowFibonacciSeriesNumber(10);
