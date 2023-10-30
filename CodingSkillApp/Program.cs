@@ -1,6 +1,7 @@
 ﻿
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 
 static void ShowFibonacciSeriesNumber(int level)
 {
@@ -250,39 +251,6 @@ static int ConvertDecimalToOctal(int decimalNumber)
     return octal;
 }
 
-//
-static int ConvertOctalToDecimal(long number)
-{
-    int i = 0;
-    int decimalNumber = 0;
-    int baseValue = 8;
-
-    while (number != 0)
-    {
-        int digit = (int)(number % 10);
-        int octalPowerValue = (int)Math.Pow(baseValue, i);
-        decimalNumber = decimalNumber + digit * octalPowerValue;
-        number = number / 10; //(number/=10)
-        i++;
-    }
-    return decimalNumber;
-}
-
-static int ConvertBinaryToDecimal(long number)
-{
-    int i = 0;
-    int decimalNumber = 0;
-    while (number != 0)
-    {
-        int digit = (int)(number % 10);
-        decimalNumber += digit * (int)Math.Pow(2, i);
-        number /= 10;
-        i++;
-    }
-    return decimalNumber;
-}
-
-
 
 //Check if a Number is Positive or Negative 
 static bool IsNegative(int number)
@@ -292,12 +260,6 @@ static bool IsNegative(int number)
         status = true;
     return status;
 }
-
-
-
-
-
-
 
 
 // Title:sum of digits in a number
@@ -344,18 +306,6 @@ static int GetSumOfDigit(int number)
 // }
 // System.Console.WriteLine(decimalNumber);
 // }
-
-static void ConvertDecimalToBinary(int decimalNumber)
-{
-    string binaryNumber = "";
-    while (decimalNumber > 0)
-    {
-        int remainder = decimalNumber % 2;
-        binaryNumber = remainder + binaryNumber;
-        decimalNumber = decimalNumber / 2;
-    }
-    Console.WriteLine(binaryNumber);
-}
 
 
 //Title:find the reverse of a number
@@ -565,6 +515,66 @@ static void SortArray(int[] arr)
     //     System.Console.WriteLine(arr[i]);
     // }
 }
+
+static void ConvertDecimalToBinary(int decimalNumber)
+{
+    string binaryNumber = "";
+    while (decimalNumber > 0)
+    {
+        int remainder = decimalNumber % 2;
+        binaryNumber = remainder + binaryNumber;
+        decimalNumber = decimalNumber / 2;
+    }
+    Console.WriteLine(binaryNumber);
+}
+//Testing
+// Console.WriteLine("Enter Decimal Number:");
+// int decimalNumber= int.Parse(Console.ReadLine());
+// ConvertDecimalToBinary(decimalNumber);
+
+
+//Convert Binary No to Decimal Number.
+//Coder:Shubham Teli.
+static int ConvertBinaryToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber = 0;
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        decimalNumber += digit * (int)Math.Pow(2, i);
+        number /= 10;
+        i++;
+    }
+    Console.WriteLine(decimalNumber);
+    return decimalNumber;
+}
+//Testing
+Console.WriteLine("Enter Binary Number:");
+int binaryNumber=int.Parse(Console.ReadLine());
+ConvertBinaryToDecimal(binaryNumber);
+
+//Convert Octal No to Decimal Number.
+//Coder:Shubham Teli.
+
+static int ConvertOctalToDecimal(long number)
+{
+    int i = 0;
+    int decimalNumber = 0;
+    int baseValue = 8;
+
+    while (number != 0)
+    {
+        int digit = (int)(number % 10);
+        int octalPowerValue = (int)Math.Pow(baseValue, i);
+        decimalNumber = decimalNumber + digit * octalPowerValue;
+        number = number / 10; //(number/=10)
+        i++;
+    }
+    return decimalNumber;
+}
+
+
 //Title:Calculate Sum of the numbers in array
 //Coder:Shubham Teli
 
@@ -580,6 +590,34 @@ static int CalculateSum()
     Console.WriteLine(sum);
     return sum;
 }
+
+
+// Find Non Repeating Characters in string 
+// Coder:Shubham Teli
+
+// Initializing variables.
+
+static void FindRepeating()
+{        
+        string str = "Shubham5!";
+        int[] freq = new int[256];
+      
+        // Calculating frequency of each character.
+        for (int i = 0; i < str.Length; i++)
+        {
+            freq[(int)str[i]]++;
+        }
+        Console.Write("The non-repeating characters are: ");
+        for (int i = 0; i < 256; i++)
+        {
+            if (freq[i] == 1) // Finding unique characters and printing them.
+            {
+                Console.Write(" " + (char)i + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+
 
 //Remove Duplicates In Array using HashSet 
 //Coder:Shubham Teli.
@@ -610,9 +648,6 @@ static int RemoveDuplicatesInArray(int[] arr)
 
 // Testing
 //int[] arr = { 10, 50, 30, 10, 2, 50, 30, 10 };
-
-RemoveDuplicatesInArray(arr);
-
 
 
 //Print length of string whithout using .length Function.
@@ -738,6 +773,13 @@ static int EqualNumbers()
 
         return 1;
     }
+    //Testing
+    
+// if (EqualNumbers() == 1)
+//     Console.WriteLine("Yes");
+// else
+//     Console.WriteLine("No");
+
 
 //Title:Finding Maximum scalar product of two vectors in an array
 //Coder:Abhay Navale
