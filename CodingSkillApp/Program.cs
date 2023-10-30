@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
@@ -1144,40 +1145,6 @@ static string RemoveAdjacentDuplicates(string input)
 }
 
 
-//Title :program to find the frequency of elements in an array
-//Coder :Akash Ajab.
-static void FindFrequencyOfElement()
-{
-
-    int[] arr = { 10, 20, 30, 10, 20, 30, 40, 10 };
-
-    Dictionary<int, int> frequency = new Dictionary<int, int>();
-
-    foreach (int element in arr)
-    {
-        if (frequency.ContainsKey(element))
-        {
-            frequency[element]++;
-        }
-
-        else
-        {
-
-            frequency[element] = 1;
-        }
-
-
-    }
-
-    foreach (var kvp in frequency)
-    {
-        Console.WriteLine($"Element{kvp.Key} appears {kvp.Value}");
-    }
-
-}
-
-
-
 //Title :program to count numbers of even and odd elements in an array
 //Coder :Akash Ajab
 static void FindCountOfNumberInArray()
@@ -1240,7 +1207,7 @@ GetCircularArr(myarray, 2, myarray.Length);
 
 
 FindCountOfNumberInArray();
-FindFrequencyOfElement();
+//FindFrequencyOfElement();
 // string input = "abbaca";
 // string result = RemoveAdjacentDuplicates(input);
 // Console.WriteLine("Original string: " + input);
@@ -1464,6 +1431,49 @@ static string RemoveWhiteSpace(string source)
     return source.Trim();
 }
 
+// Title:Count the sum of numbers in a string
+//coader=pragati
+static int FindSumOfDigitsInString(string strings){
+  int sum =0;
+ foreach(char ch in strings){
+  if(char.IsDigit(ch)){
+    sum+= ch-'0';
+  }
+ }
+ return sum;
+}
+string strings="2dg5ds46";
+
+//Title:Find if there is any subarray with sum equal to 0
+//coader=pragati
+static bool findSum(int[] numbers){
+ int flag=0;
+ int sum=0;
+ for(int i=0; i<numbers.Length; i++){
+  for(int j=i ;j<numbers.Length; j++ ){
+    sum+=numbers[j];
+    if(sum==0){
+      flag=1;
+      break;
+    }
+    else{
+      flag=0;
+      break;
+    }
+  }
+ }
+  if(flag==1){
+    return true;
+  }
+  return false;
+ }
+
+int[] numbers ={0,0,9,8,7};
+
+
+bool status = findSum(numbers);
+Console.WriteLine(status);
+ 
 
 //topic:Number is Palindrom or not
 //coder:Rushikesh Chikane.
@@ -1483,44 +1493,80 @@ static void Palindrom()
     else
         Console.WriteLine(num + " is not Palindrome");
 }
-Palindrom();
+//Palindrom();
 
 //topic: Armstrong Number
 //coder: Rushikesh Chikane.
 
-static int getArmstrongSum(int num, int order)
+//    static void Armstrongnum ()
+//   {
+//     int num = 407, len;
+//     // function to get order(length)
+//     len = Order(num);
+//     // check if Armstrong
+//     if (armstrong (num, len))
+//         Console.WriteLine(num + " is armstrong");
+//     else
+//         Console.WriteLine(num + " is armstrong");
+//   static int Order (int num)
+//   {
+//     int len = 0;
+//     while (num != 0 )
+//       {
+// 	    len++;
+// 	    num = num / 10;
+//       }
+//     return len;
+//   }
+
+//   static bool armstrong (int num, int len)
+//   {
+//     int sum = 0, temp, digit;
+//     temp = num;
+
+//     // loop to extract digit, find power & add to sum
+//     while (temp != 0)
+//       {
+// 	// extract digit
+// 	digit = temp % 10;
+
+// 	// add power to sum
+// 	sum = sum + (int)Math.Pow(digit, len);
+// 	temp /= 10;
+//       };
+
+//     return num == sum;
+//   }
+
+//   }
+//   Armstrongnum();
+
+
+
+static void armstrong()
 {
-    if (num == 0)
-        return 0;
+    int num = 153;
+    int rem;
+    int cube;
+    int result=0;
+    int temp = num;
 
-    int digit = num % 10;
-
-    return (int)Math.Pow(digit, order) + getArmstrongSum(num / 10, order);
-}
-
-static int order(int num)
-{
-    int len = 0;
-    while (num != 0)
+    while(num != 0)
     {
-        len++;
-        num = num / 10;
+        rem = num % 10;
+        cube = rem*rem*rem;
+        result= result + cube;
+        num = num /10;
     }
-    return len;
-}
+    num = temp;
 
-static void isArmstrong()
-{
-    //variables initialization
-    int num = 1634, reverse = 0;
-    int len = order(num);
-
-    if (num == getArmstrongSum(num, len))
-        Console.WriteLine(num + " is an Armstrong Number");
+    if (num==result)
+        Console.WriteLine(num + " is armstrong");
     else
-        Console.WriteLine(num + " is not an Armstrong Number");
+        Console.WriteLine(num + " is armstrong");
 }
-isArmstrong();
+//armstrong();
+
 
 
 //topic: Armstrong Number between tow intervals(in given range)
@@ -1568,7 +1614,7 @@ static void armstrongs()
             Console.Write(num + " ");
     }
 }
-armstrongs();
+//armstrongs();
 
 //topic: LCM (Lowest Common Factorial)
 //coder: Rushikesh Chikane.
@@ -1576,7 +1622,6 @@ armstrongs();
 static void LCM()
 {
     int num1 = 36, num2 = 60, lcm = 0;
-
     // finding the larger number here
     int max = (num1 > num2) ? num1 : num2;
 
@@ -1592,7 +1637,7 @@ static void LCM()
       }
     Console.WriteLine ("\n"+"The LCM: " + lcm);
   }
-  LCM();
+ // LCM();
 
 
 //topic: Permutations in which n people can occupy r seats in a classroom
@@ -1620,14 +1665,13 @@ static void LCM()
             per = fact1 / fact2;  //calculating  nPr
             Console.WriteLine(per+" ways");  
     }  
-
-    PermatutationPeopleOccupySeats();
+//PermatutationPeopleOccupySeats();
 
 
 //topic: Program to convert Digits/Numbers to Words
 //coder: Rushikesh Chikane.
 
-static void convert_to_words(char[] num)
+static void ConvertToWwords(char[] num)
 {
     int len = num.Length;
     // Base cases
@@ -1642,28 +1686,28 @@ static void convert_to_words(char[] num)
             "Length more than 4 is not supported");
         return;
     }
-    String[] single_digits = new String[] {
+    string[] SingleDigits = new string[] {
             "zero", "one", "two",   "three", "four",
             "five", "six", "seven", "eight", "nine"
         };
 
-    String[] two_digits = new String[] {
+    string[] TwoDigits = new string[] {
             "",          "ten",      "eleven",  "twelve",
             "thirteen",  "fourteen", "fifteen", "sixteen",
             "seventeen", "eighteen", "nineteen"
         };
 
-    String[] tens_multiple = new String[] {
+    string[] TensMultiple = new string[] {
             "",      "",      "twenty",  "thirty", "forty",
             "fifty", "sixty", "seventy", "eighty", "ninety"
         };
 
-    String[] tens_power = new String[] { "hundred", "thousand" };
+    string[] TensPower = new string[] { "hundred", "thousand" };
 
     Console.Write(new string(num) + ": ");
     if (len == 1)
     {
-        Console.WriteLine(single_digits[num[0] - '0']);
+        Console.WriteLine(SingleDigits[num[0] - '0']);
         return;
     }
     int x = 0;
@@ -1673,8 +1717,8 @@ static void convert_to_words(char[] num)
         {
             if (num[x] - '0' != 0)
             {
-                Console.Write(single_digits[num[x] - '0'] + " ");
-                Console.Write(tens_power[len - 3] + " ");
+                Console.Write(SingleDigits[num[x] - '0'] + " ");
+                Console.Write(TensPower[len - 3] + " ");
 
             }
             --len;
@@ -1685,7 +1729,7 @@ static void convert_to_words(char[] num)
             {
                 int sum
                     = num[x] - '0' + num[x + 1] - '0';
-                Console.WriteLine(two_digits[sum]);
+                Console.WriteLine(TwoDigits[sum]);
                 return;
             }
             else if (num[x] - '0' == 2
@@ -1698,20 +1742,540 @@ static void convert_to_words(char[] num)
             {
                 int i = (num[x] - '0');
                 if (i > 0)
-                    Console.Write(tens_multiple[i] + " ");
+                    Console.Write(TensMultiple[i] + " ");
                 else
                     Console.WriteLine("");
                 ++x;
                 if (num[x] - '0' != 0)
-                    Console.Write(single_digits[num[x] - '0']);
+                    Console.Write(SingleDigits[num[x] - '0']);
             }
         }
         ++x;
     }
 }
 // Driver Code
+//convert_to_words("1121".ToCharArray());
+
+//topic: Reversing a Number using Recursion
+//coder: Rushikesh Chikane.
+
+static void Reverse(int num)
+    {
+        // base condition to end recursive calls
+        if (num < 10) {
+            Console.WriteLine(num);
+            return;
+        }
+        else {
+            // print the unit digit of the given number
+            Console.Write(num % 10);
+            // calling function for remaining number other than unit digit
+            Reverse(num / 10);
+        }
+    }
+
+    // driver code
+ static void ReverseNum(int num)
+    {
+        // number to be reversed
+        Console.WriteLine("Enter Number for Revrsing :");
+        num = int.Parse(Console.ReadLine());
+
+        Console.Write("Reversed Number: ");
+        // calling recursive function to print the number in reversed form
+        Reverse(num);
+    }
+  //ReverseNum(num);  
+
+
+
+  //topic: Find the Nth row in Pascal’s Triangle
+//coder: Rushikesh Chikane.
+
+ static List<int> GetRow(int rowIndex)
+    {
+        List<int> currow = new List<int>();
+
+        currow.Add(1);
+
+        if (rowIndex == 0)
+        {
+            return currow;
+        }
+
+        List<int> prev = GetRow(rowIndex - 1);
+
+        for (int i = 1; i < prev.Count; i++)
+        {
+            int curr = prev[i - 1] + prev[i];
+            currow.Add(curr);
+        }
+        currow.Add(1);
+
+        return currow;
+    }
+
+    static void PascalsTriangle(int n)
+    {
+        Console.WriteLine("Enter a Number For Pascals Triangle:");
+        n = int.Parse(Console.ReadLine());
+
+        List<int> arr = GetRow(n);
+
+        for (int i = 0; i < arr.Count; i++)
+        {
+            if (i == arr.Count - 1)
+                Console.Write(arr[i]);
+            else
+                Console.Write(arr[i] + ", ");
+        }
+    }
+//PascalsTriangle(n);
+
+ //topic: Program to find Largest and Smallest Element in an Array
+//coder: Rushikesh Chikane.
+
+static void FindingSamllAndLagerstNumberFromArray(int[]arry)
+    {
+        
+        int n = arry.Length;
+
+        int smallest = int.MaxValue;
+        int largest = int.MinValue;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (smallest > arry[i])
+                smallest = arry[i];
+            if (largest < arry[i])
+                largest = arry[i];
+        }
+
+         Console.WriteLine("Smallest Number: " + smallest);
+        Console.WriteLine("Largest Number: " + largest);
+    }
+
+   int[] arry = { 10, 67, 89, 78, 34, 2, 95 };
+  //FindingSamllAndLagerstNumberFromArray(arry);  
+
+
+  //topic: Program to find Distinct Element In Array
+ //coder: Rushikesh Chikane.
+
+ static void DistinctElementFromArray(int[]array)
+    {
+        
+        int n = array.Length;
+
+        int[] visited = new int[n];
+        int count_dis = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (visited[i] != 1)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        visited[j] = 1;
+                    }
+                }
+                count_dis++;
+            }
+        }
+        Console.WriteLine(count_dis);
+    }
+
+    int[] array = { 10, 30, 10, 20, 40, 20, 50, 10 };
+ //DistinctElementFromArray(array);
+
+
+//topic: program to find Arrays are disjoint or not
+ //coder: Rushikesh Chikane.
+    
+
+   static bool Disjoint(int[] arr1, int[] arr2)
+    {
+        for (int i = 0; i < arr1.Length; i++)
+        {
+            for (int j = 0; j < arr2.Length; j++)
+            {
+                if (arr1[i] == arr2[j])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    static void DisjointOrNot(int[] arr1,int [] arr2)
+    {
+        if (Disjoint(arr1, arr2))
+            Console.WriteLine("Yes");
+        else
+            Console.WriteLine("No");
+    } 
+ int[] arr1 = { 10, 51, 3, 43, 6 };
+ int[] arr2 = { 80, 71, 29, 3 };
+ //DisjointOrNot(arr1,arr2);
+
+
+//topic: program to check a character is an alphabet or not
+ //coder: Rushikesh Chikane.
+
+  static void AlphabeOrNot()
+    {										
+        char ch;                     
+        ch = 'a';
+		
+	//condition for checking characters
+        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+	       Console.WriteLine("The inserted character " + ch + " is an Alphabet");
+	else
+	       Console.WriteLine("The inserted character " + ch + " is not an Alphabet");
+    }
+
+    AlphabeOrNot();
 // convert_to_words("1121".ToCharArray());
 //     }
 //     Console.WriteLine("\n" + "The LCM: " + lcm);
 // }
 // LCM();
+
+
+
+//quadrants in which a given coordinate lies
+
+static void FindQuadrants(int x,int y){
+if(x>0 && y>0){
+   Console.WriteLine("point: " + x +"," +y+" lies in the first quadrant");
+}
+else if(x<0 && y>0){
+   Console.WriteLine("point: " + x +"," +y+" lies in the second quadrant");
+}
+else if(x<0 && y<0){
+   Console.WriteLine("point: " + x +"," +y+" lies in the third quadrant");
+}
+else if(x>0 && y<0){
+   Console.WriteLine("point: " + x +"," +y+" lies in the forth quadrant");
+}
+else if(x==0 && y==0){
+   Console.WriteLine("point: " + x +"," +y+" lies in origin");
+}
+else if(x!=0 && y==0){
+   Console.WriteLine("point: " + x +"," +y+" lies in x-axis");
+}
+else if(x==0 && y!=0){
+   Console.WriteLine("point: " + x +"," +y+" lies in y-axis");
+}
+}
+FindQuadrants(1,-2);
+
+//find maximum product subarray in a given array
+
+int[] numberArray = { 10, -20, -30, 0, 70, -80, -20 };
+    int p= numberArray.Length;
+    int result = numberArray[0];
+    
+    for (int k = 0; k < n; k++)
+    {
+        int mul = numberArray[k];
+        // traversing in current subarray
+        for (int j = k + 1; j < n; j++) { // updating result every time // to keep an eye over the // maximum product 
+                if(mul>result)
+                result = mul;
+            mul *= numberArray[j];
+        }
+        if(mul>result)
+            result = mul;
+    }
+    Console.WriteLine(result);
+
+
+//topic: Find Repeating element of an array
+// Given an array, print all element whose frequency is not equal to one.
+//coder:Sahil Mankar
+void FindRepetedElementsInArray()
+{
+    
+    int[] arr = new int[] { 10, 30, 30, 20, 10, 20, 50, 10 };
+    Dictionary<int, int> dict = new Dictionary<int, int>();
+
+    foreach (var element in arr)
+    {
+        if (dict.ContainsKey(element))
+        {
+            dict[element]++;
+        }
+        else
+        {
+            dict[element] = 1;
+        }
+    }
+    Console.WriteLine($"Repeted elemnts in array are");
+
+    foreach (var element in dict)
+    {
+        if (element.Value > 1)
+        {
+            Console.Write($" {element.Key} ,");
+        }
+    }
+}
+
+//array is a subset of another array
+/*
+ Example
+arr1 = {1,2,3,4,5}  , arr2 = {3,4,5}
+arr2 is a subset of arr1 (As, arr1 contains all the elements of arr2)
+arr3 = {1,2,3,4,5}   arr4 = {1,2,9}
+arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4).
+ */
+//coder:Sahil Mankar
+
+
+void ArrayIsSubSetArray()
+{
+    int[] arr1 = { 11, 10, 13, 21, 30, 70 };
+    int[] arr2 = { 11, 30, 70, 10, 12 };
+
+    for (int i = 0; i < arr2.Length; i++)
+    { // i itrets over arr2
+        int j;
+        for (j = 0; j < arr1.Length; j++)
+        { // j itrets over arr1
+            if (arr2[i] == arr1[j])
+                break;
+        }
+
+        if (j == arr1.Length) // this condition hit when any element is not present in arr1
+        {
+            Console.WriteLine("arr2[] is not subset of arr1[] ");
+            return;
+        }
+    }
+    Console.WriteLine("arr2[] is  subset of arr1[] ");
+}
+
+//ASCII Value of character
+//coder:Sahil Mankar
+
+void ASCIIValueOfCharacter()
+{
+    char c = 'a';
+    int ASCIIValue = c;
+    Console.WriteLine($"ASCII Value of Character {c} is {ASCIIValue}");
+}
+
+// Factorial of a Number
+//coder:Sahil Mankar
+
+void GetFactorial()
+{
+    int fact = 1;
+    int n = 5;
+    if (n < 0)
+    {
+        Console.WriteLine("Factorial for Negative Number dosent Exist");
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+    Console.WriteLine($"Factorial of {n} is {fact}");
+}
+
+// topic : frequency of character in string
+//coder:Sahil Mankar
+
+
+void FrequencyOfCharacterInString()
+{
+    string str = "sahil";
+    Dictionary<char, int> dict = new Dictionary<char, int>();
+
+    foreach (char ch in str)
+    {
+        if (dict.ContainsKey(ch))
+        {
+            dict[ch]++;
+        }
+        else
+        {
+            dict[ch] = 1;
+        }
+    }
+    Console.WriteLine($"Characters  in string with Coressponding frequencies are");
+
+    foreach (var ch in dict)
+    {
+        Console.WriteLine($" {ch.Key} = {ch.Value}");
+    }
+}
+
+// GCD(Greatest Common Divisor) or HCF(Highest Common Factor) of two numbers
+//is the number which is the largest common factor of both numbers.
+//It is also referred as Greatest Common Factor(GCF),
+//Greatest Common Measure(GCM), Highest Common Divisor(HCD).
+
+//coder:sahil mankar
+
+void GetGCDByLoop()
+{
+    int num1 = 36;
+    int num2 = 60;
+    int gcd = 0;
+
+    for (int i = 1; i <= num1 && i <= num2; i++)
+    {
+        Console.WriteLine("count" + i);
+        if (num1 % i == 0 && num2 % i == 0)
+            gcd = i;
+    }
+
+    Console.WriteLine("The GCD is: " + gcd);
+}
+
+void GetGCDByRepetedSubstraction()
+{
+    int num1 = 36,
+        num2 = 60,
+        hcf;
+
+    while (num1 != num2)
+    {
+        if (num1 > num2)
+            num1 -= num2;
+        else
+            num2 -= num1;
+    }
+
+    Console.WriteLine("The HCF: " + num1);
+}
+
+
+//program to find the number of days in a given month of a given year
+//coder:sahil mankar
+
+void GetNumberOfMonths(){
+      int month=2, year = 2012;
+        switch (month) {
+            // Cases for 31 Days
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+           Console.WriteLine("Number of days is 31");
+            break;
+  
+            // Cases for 30 Days
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+           Console.WriteLine("Number of days is 30");
+            break;
+  
+            // Case for 28/29 Days
+            case 2:
+                if((year%400==0) || ((year%100!=0)&&(year%4==0)))
+                   Console.WriteLine("Number of days is 29");
+                else
+                Console.WriteLine("Number of days is 28");
+            break;
+  
+            default:
+           Console.WriteLine("Invalid Month.");
+            break;
+        }
+}
+
+
+//find the second smallest element in an array
+//coder:sahil mankar
+
+void FindSecondSmallestElementInArray(){
+int[] numbers = { 5, 8, 2, 10, 3, 1, 9, 4, 7, 6 };
+
+int smallest = int.MaxValue;
+int secondSmallest = int.MaxValue;
+
+foreach (int num in numbers)
+{
+    if (num < smallest)
+    {
+        secondSmallest = smallest;
+        smallest = num;
+    }
+    
+    else if (num < secondSmallest && num != smallest)
+    {
+        secondSmallest = num;
+    }
+}
+
+if (secondSmallest == int.MaxValue)
+{
+    Console.WriteLine("There is no second smallest element.");
+}
+else
+{
+    Console.WriteLine("The second smallest element is: " + secondSmallest);
+}
+}
+
+// Maximum number of handshakes
+// The given program will find the maximum number of handshakes in a room.
+//Suppose there are N persons in a room. We have to find the maximum number of Handshakes
+// possible. Given the fact that any two persons shake hand only once.
+//coder:sahil mankar
+
+void GenrateHandShakes()
+{
+    int num = 3;
+
+    int total = num * (num - 1) / 2; // Combination nC2 n!/(n-2)!2!
+
+    Console.WriteLine("For " + num + " people there will be " + total + " handshakes");
+}
+
+// Find common elements in three Sorted Arrays
+//coder:sahil mankar
+
+void FindCommonElementInThreeArray()
+{
+    int[] arr1 = { 1, 5, 10, 20, 40, 80 };
+    int[] arr2 = { 6, 7, 20, 80, 100 };
+    int[] arr3 = { 3, 4, 15, 20, 30, 70, 80, 120 };
+
+    int i = 0,
+        j = 0,
+        k = 0;
+    Console.WriteLine("Common element in array");
+    while (i < arr1.Length && j < arr2.Length && k < arr3.Length)
+    {
+        if (arr1[i] == arr2[j] && arr2[j] == arr3[k])
+        {
+            Console.WriteLine(arr1[i]+",");
+            i++;
+            j++;
+            k++;
+        }
+        else if (arr1[i] < arr2[j])
+        {
+            i++;
+        }
+        else if (arr2[j] < arr3[k])
+        {
+            j++;
+        }
+        else
+        {
+            k++;
+        }
+    }
+}
