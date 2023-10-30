@@ -600,20 +600,6 @@ static void FindMaximumProduct()
 //         leftSum += arr[i];
 //     }
 
-<<<<<<< HEAD
-    //     return -1; // No equilibrium point found
-    // }
-    
-    //string palidrome
-
-	
-	bool isPal(string str){
-        int front =0;
-        int end=str.Length-1;
-        while(front<end){
-            if(str[front]!=str[end])
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 //     return -1; // No equilibrium point found
 // }
 
@@ -636,8 +622,6 @@ bool isPal(string str)
 
 //Title:Calculates the power
 //Coder:Abhay Navale
-<<<<<<< HEAD
-=======
 
 // static int Power(int base, int power)
 // {
@@ -646,7 +630,6 @@ bool isPal(string str)
 //     {
 //         result = result * base;
 // static int Power(int base,int power){
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 //     int result=1;
 //     while(power > 0){
 //         result=result*base;
@@ -663,7 +646,6 @@ bool isPal(string str)
 //     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
 //     return Regex.IsMatch(inputString, stringWithWildCards);
 // }
-<<<<<<< HEAD
 static int Power(int base, int power)
     int result = 1;
     while (power > 0)
@@ -681,8 +663,6 @@ static bool IsStringMatching(string inputString, string stringWithWildCards)
     string regexPattern = Regex.Escape(stringWithWildCards).Replace("//*", ".*");
     return Regex.IsMatch(inputString, stringWithWildCards);
 }
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
 
 //Title: Reverse an Array
 static int[] ReverseArray(int[] array)
@@ -764,8 +744,10 @@ static int[] RigthRotate(int[] arr)
         arr[i] = arr[i - 1];
         rotated.Append(arr[i]);
     }
+    arr[0] = x;
+    rotated.Append(arr[0]);
+    return rotated;
 
-<<<<<<< HEAD
     //Title:-Removing vowels from line
     //coder:-Rohit Mangale
     static string RemoveVowels(string line){
@@ -776,11 +758,7 @@ static int[] RigthRotate(int[] arr)
             return modifiedString;        
 
         } 
-=======
->>>>>>> 2445e730dd0a9fc488ab9c887f3cef4f7825d965
-    arr[0] = x;
-    rotated.Append(arr[0]);
-    return rotated;
+   
 
 }
     //Title:-Shorting of Array
@@ -805,6 +783,37 @@ static int[] RigthRotate(int[] arr)
         return arr;
     }
 
+//Title:-Kadane Expression
+//Coder:- Rohit Mangale
+  // function for kadane's algorithm
+  static int kadane(int[] Array) {
+    int max_sum = 0;
+    int current_sum = 0;
+    int n = Array.Length;
+    
+    for(int i=0; i<n; i++) {
+      current_sum = current_sum + Array[i];
+      if (current_sum < 0)
+        current_sum = 0; 
+      if(max_sum < current_sum)
+        max_sum = current_sum; 
+    }
+    return max_sum;
+  }
+
+  
+
+//Title:-Replacing one word from string
+//Coder:- Rohit Mangale
+   static void ReplacingWord(string line) {
+
+      string str = "All the best for interviews ";
+      Console.WriteLine(str);
+
+      string res = str.Replace("interviews ", "Bright Future ");
+      Console.WriteLine("After replacing...");
+      Console.WriteLine(res);
+   }
 
 
 //ShowFibonacciSeriesNumber(10);
