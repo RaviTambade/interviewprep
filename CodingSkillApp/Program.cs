@@ -2324,7 +2324,8 @@ arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4)
 // }
 
 
-
+//Topic : finding leapyear 
+// coder : Tanpure Akshay
 
 
  static void LeapYearChecker1()
@@ -2339,3 +2340,22 @@ arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4)
                 Console.WriteLine(year + " is not a Leap Year");
         }
 LeapYearChecker1();
+
+
+//Topic : finding Max Value 
+// coder : Tanpure Akshay
+
+static void MaxValue(int x,int y,int z){
+        
+    if (x > y && x > z)
+        Console.WriteLine (x + " : x is the greatest value");
+
+  
+    else if (y > x && y > z)
+        Console.WriteLine(y + ": y  is the greatest value");
+
+  
+    else if (z > x && z > y)
+       Console.WriteLine(z + ": z is the greatest value");
+    }
+    MaxValue(10,20,30);
