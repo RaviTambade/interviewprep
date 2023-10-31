@@ -1524,96 +1524,96 @@ using System.Xml.Serialization;
 
 //topic:Number is Palindrom or not
 //coder:Rushikesh Chikane.
-static void Palindrom()
-{
-    int num = 12021, reverse = 0, rem, temp;
-    temp = num;
-    while (temp != 0)
-    {
-        rem = temp % 10;
-        reverse = reverse * 10 + rem;
-        temp /= 10;
-    };
-    // palindrome if num and reverse are equal
-    if (num == reverse)
-        Console.WriteLine(num + " is Palindrome");
-    else
-        Console.WriteLine(num + " is not Palindrome");
-}
-//Palindrom();
+// static void Palindrom()
+// {
+//     int num = 12021, reverse = 0, rem, temp;
+//     temp = num;
+//     while (temp != 0)
+//     {
+//         rem = temp % 10;
+//         reverse = reverse * 10 + rem;
+//         temp /= 10;
+//     };
+//     // palindrome if num and reverse are equal
+//     if (num == reverse)
+//         Console.WriteLine(num + " is Palindrome");
+//     else
+//         Console.WriteLine(num + " is not Palindrome");
+// }
+// //Palindrom();
 
-//topic: Armstrong Number
-//coder: Rushikesh Chikane.
+// //topic: Armstrong Number
+// //coder: Rushikesh Chikane.
 
-static void Armstrongnum()
-{
-    Console.WriteLine("Enter Number :");
-    int num = int.Parse(Console.ReadLine()); 
-    int len;
-    // function to get order(length)
-    len = Order(num);
-    // check if Armstrong
-    if (Armstrong(num, len))
-        Console.WriteLine(num + " is armstrong");
-    else
-        Console.WriteLine(num + " is not an armstrong");
+// static void Armstrongnum()
+// {
+//     Console.WriteLine("Enter Number :");
+//     int num = int.Parse(Console.ReadLine()); 
+//     int len;
+//     // function to get order(length)
+//     len = Order(num);
+//     // check if Armstrong
+//     if (Armstrong(num, len))
+//         Console.WriteLine(num + " is armstrong");
+//     else
+//         Console.WriteLine(num + " is not an armstrong");
 
-    static int Order(int num)
-    {
-        int len = 0;
-        while (num != 0)
-        {
-            len++;
-            num = num / 10;
-        }
-        return len;
-    }
+//     static int Order(int num)
+//     {
+//         int len = 0;
+//         while (num != 0)
+//         {
+//             len++;
+//             num = num / 10;
+//         }
+//         return len;
+//     }
 
-    static bool Armstrong(int num, int len)
-    {
-        int sum = 0, temp, digit;
-        temp = num;
+//     static bool Armstrong(int num, int len)
+//     {
+//         int sum = 0, temp, digit;
+//         temp = num;
 
-        // loop to extract digit, find power & add to sum
-        while (temp != 0)
-        {
-            // extract digit
-            digit = temp % 10;
-            // add power to sum
-            sum = sum + (int)Math.Pow(digit, len);
-            temp /= 10;
-        };
+//         // loop to extract digit, find power & add to sum
+//         while (temp != 0)
+//         {
+//             // extract digit
+//             digit = temp % 10;
+//             // add power to sum
+//             sum = sum + (int)Math.Pow(digit, len);
+//             temp /= 10;
+//         };
 
-        return num == sum;
-    }
+//         return num == sum;
+//     }
 
-}
-//Armstrongnum();
+// }
+// //Armstrongnum();
 
 
 
-static void Armstrong()
-{
-    int num = 153;
-    int rem;
-    int cube;
-    int result = 0;
-    int temp = num;
+// static void Armstrong()
+// {
+//     int num = 153;
+//     int rem;
+//     int cube;
+//     int result = 0;
+//     int temp = num;
 
-    while (num != 0)
-    {
-        rem = num % 10;
-        cube = rem * rem * rem;
-        result = result + cube;
-        num = num / 10;
-    }
-    num = temp;
+//     while (num != 0)
+//     {
+//         rem = num % 10;
+//         cube = rem * rem * rem;
+//         result = result + cube;
+//         num = num / 10;
+//     }
+//     num = temp;
 
-    if (num == result)
-        Console.WriteLine(num + " is armstrong");
-    else
-        Console.WriteLine(num + " is not an armstrong");
-}
+//     if (num == result)
+//         Console.WriteLine(num + " is armstrong");
+//     else
+//         Console.WriteLine(num + " is not an armstrong");
+// }
 //Armstrong();
 
 
@@ -1622,219 +1622,219 @@ static void Armstrong()
 //coder: Rushikesh Chikane.
 
 
-static int GetOrder(int num)
-{
-    int len = 0;
-    while (num != 0)
-    {
-        len++;
-        num = num / 10;
-    }
-    return len;
-}
-static void Armstrongs()
-{
+// static int GetOrder(int num)
+// {
+//     int len = 0;
+//     while (num != 0)
+//     {
+//         len++;
+//         num = num / 10;
+//     }
+//     return len;
+// }
+// static void Armstrongs()
+// {
 
-    Console.WriteLine("Enter lower and upper ranges : ");
-    int low = int.Parse(Console.ReadLine());
-    int high = int.Parse(Console.ReadLine());
+//     Console.WriteLine("Enter lower and upper ranges : ");
+//     int low = int.Parse(Console.ReadLine());
+//     int high = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Armstrong numbers between " + low + " and " + high + " are : ");
+//     Console.WriteLine("Armstrong numbers between " + low + " and " + high + " are : ");
 
-    // loop for finding and printing all armstrong numbers between given range
-    for (int num = low; num <= high; num++)
-    {
-        int sum = 0, temp, digit, len;
+//     // loop for finding and printing all armstrong numbers between given range
+//     for (int num = low; num <= high; num++)
+//     {
+//         int sum = 0, temp, digit, len;
 
-        len = GetOrder(num);
-        temp = num;
-        // loop to extract digit, find ordered power of digits & add to sum
-        while (temp != 0)
-        {
-            // extract digit
-            digit = temp % 10;
-            // add power to sum
-            sum = sum + (int)Math.Pow(digit, len);
-            temp /= 10;
-        };
+//         len = GetOrder(num);
+//         temp = num;
+//         // loop to extract digit, find ordered power of digits & add to sum
+//         while (temp != 0)
+//         {
+//             // extract digit
+//             digit = temp % 10;
+//             // add power to sum
+//             sum = sum + (int)Math.Pow(digit, len);
+//             temp /= 10;
+//         };
 
-        if (sum == num)
-            Console.Write(num + " ");
-    }
-}
+//         if (sum == num)
+//             Console.Write(num + " ");
+//     }
+// }
 //armstrongs();
 
 //topic: LCM (Lowest Common Factorial)
 //coder: Rushikesh Chikane.
 
-static void LCM()
-{
-    int num1 = 36, num2 = 60, lcm = 0;
-    // finding the larger number here
-    int max = (num1 > num2) ? num1 : num2;
+// static void LCM()
+// {
+//     int num1 = 36, num2 = 60, lcm = 0;
+//     // finding the larger number here
+//     int max = (num1 > num2) ? num1 : num2;
 
-    // LCM will atleast be >= max(num1, num2)
-    // Largest possibility of LCM will be num1*num2
-    for (int i = max; i <= num1 * num2; i++)
-    {
-        if (i % num1 == 0 && i % num2 == 0)
-        {
-            lcm = i;
-            break;
-        }
-    }
-    Console.WriteLine("\n" + "The LCM: " + lcm);
-}
+//     // LCM will atleast be >= max(num1, num2)
+//     // Largest possibility of LCM will be num1*num2
+//     for (int i = max; i <= num1 * num2; i++)
+//     {
+//         if (i % num1 == 0 && i % num2 == 0)
+//         {
+//             lcm = i;
+//             break;
+//         }
+//     }
+//     Console.WriteLine("\n" + "The LCM: " + lcm);
+// }
 // LCM();
 
 
 //topic: Permutations in which n people can occupy r seats in a classroom
 //coder: Rushikesh Chikane.
 
-static void PermatutationPeopleOccupySeats()
-{
-    int n, r, per, fact1, fact2;
-    Console.WriteLine("Enter the Value of n: ");
-    n = int.Parse(Console.ReadLine());
-    Console.WriteLine("Enter the Value of r: ");
-    r = int.Parse(Console.ReadLine());
-    fact1 = 1;
-    for (int i = n; i > 1; i = i - 1)
-    {
-        fact1 = fact1 * i;  //calculating factorial (n!)
-    }
-    int number;
-    number = n - r;
-    fact2 = 1;
-    for (int i = number; i > 1; i = i - 1)
-    {
-        fact2 = fact2 * i;  //calculating factorial ((n-r)!)
-    }
-    per = fact1 / fact2;  //calculating  nPr
-    Console.WriteLine(per + " ways");
-}
+// static void PermatutationPeopleOccupySeats()
+// {
+//     int n, r, per, fact1, fact2;
+//     Console.WriteLine("Enter the Value of n: ");
+//     n = int.Parse(Console.ReadLine());
+//     Console.WriteLine("Enter the Value of r: ");
+//     r = int.Parse(Console.ReadLine());
+//     fact1 = 1;
+//     for (int i = n; i > 1; i = i - 1)
+//     {
+//         fact1 = fact1 * i;  //calculating factorial (n!)
+//     }
+//     int number;
+//     number = n - r;
+//     fact2 = 1;
+//     for (int i = number; i > 1; i = i - 1)
+//     {
+//         fact2 = fact2 * i;  //calculating factorial ((n-r)!)
+//     }
+//     per = fact1 / fact2;  //calculating  nPr
+//     Console.WriteLine(per + " ways");
+// }
 //PermatutationPeopleOccupySeats();
 
 
 //topic: Program to convert Digits/Numbers to Words
 //coder: Rushikesh Chikane.
 
-static void ConvertToWwords(char[] num)
-{
-    int len = num.Length;
-    // Base cases
-    if (len == 0)
-    {
-        Console.WriteLine("empty string");
-        return;
-    }
-    if (len > 4)
-    {
-        Console.WriteLine(
-            "Length more than 4 is not supported");
-        return;
-    }
-    string[] SingleDigits = new string[] {
-            "zero", "one", "two",   "three", "four",
-            "five", "six", "seven", "eight", "nine"
-        };
+// static void ConvertToWwords(char[] num)
+// {
+//     int len = num.Length;
+//     // Base cases
+//     if (len == 0)
+//     {
+//         Console.WriteLine("empty string");
+//         return;
+//     }
+//     if (len > 4)
+//     {
+//         Console.WriteLine(
+//             "Length more than 4 is not supported");
+//         return;
+//     }
+//     string[] SingleDigits = new string[] {
+//             "zero", "one", "two",   "three", "four",
+//             "five", "six", "seven", "eight", "nine"
+//         };
 
-    string[] TwoDigits = new string[] {
-            "",          "ten",      "eleven",  "twelve",
-            "thirteen",  "fourteen", "fifteen", "sixteen",
-            "seventeen", "eighteen", "nineteen"
-        };
+//     string[] TwoDigits = new string[] {
+//             "",          "ten",      "eleven",  "twelve",
+//             "thirteen",  "fourteen", "fifteen", "sixteen",
+//             "seventeen", "eighteen", "nineteen"
+//         };
 
-    string[] TensMultiple = new string[] {
-            "",      "",      "twenty",  "thirty", "forty",
-            "fifty", "sixty", "seventy", "eighty", "ninety"
-        };
+//     string[] TensMultiple = new string[] {
+//             "",      "",      "twenty",  "thirty", "forty",
+//             "fifty", "sixty", "seventy", "eighty", "ninety"
+//         };
 
-    string[] TensPower = new string[] { "hundred", "thousand" };
+//     string[] TensPower = new string[] { "hundred", "thousand" };
 
-    Console.Write(new string(num) + ": ");
-    if (len == 1)
-    {
-        Console.WriteLine(SingleDigits[num[0] - '0']);
-        return;
-    }
-    int x = 0;
-    while (x < num.Length)
-    {
-        if (len >= 3)
-        {
-            if (num[x] - '0' != 0)
-            {
-                Console.Write(SingleDigits[num[x] - '0'] + " ");
-                Console.Write(TensPower[len - 3] + " ");
+//     Console.Write(new string(num) + ": ");
+//     if (len == 1)
+//     {
+//         Console.WriteLine(SingleDigits[num[0] - '0']);
+//         return;
+//     }
+//     int x = 0;
+//     while (x < num.Length)
+//     {
+//         if (len >= 3)
+//         {
+//             if (num[x] - '0' != 0)
+//             {
+//                 Console.Write(SingleDigits[num[x] - '0'] + " ");
+//                 Console.Write(TensPower[len - 3] + " ");
 
-            }
-            --len;
-        }
-        else
-        {
-            if (num[x] - '0' == 1)
-            {
-                int sum
-                    = num[x] - '0' + num[x + 1] - '0';
-                Console.WriteLine(TwoDigits[sum]);
-                return;
-            }
-            else if (num[x] - '0' == 2
-                     && num[x + 1] - '0' == 0)
-            {
-                Console.WriteLine("twenty");
-                return;
-            }
-            else
-            {
-                int i = (num[x] - '0');
-                if (i > 0)
-                    Console.Write(TensMultiple[i] + " ");
-                else
-                    Console.WriteLine("");
-                ++x;
-                if (num[x] - '0' != 0)
-                    Console.Write(SingleDigits[num[x] - '0']);
-            }
-        }
-        ++x;
-    }
-}
+//             }
+//             --len;
+//         }
+//         else
+//         {
+//             if (num[x] - '0' == 1)
+//             {
+//                 int sum
+//                     = num[x] - '0' + num[x + 1] - '0';
+//                 Console.WriteLine(TwoDigits[sum]);
+//                 return;
+//             }
+//             else if (num[x] - '0' == 2
+//                      && num[x + 1] - '0' == 0)
+//             {
+//                 Console.WriteLine("twenty");
+//                 return;
+//             }
+//             else
+//             {
+//                 int i = (num[x] - '0');
+//                 if (i > 0)
+//                     Console.Write(TensMultiple[i] + " ");
+//                 else
+//                     Console.WriteLine("");
+//                 ++x;
+//                 if (num[x] - '0' != 0)
+//                     Console.Write(SingleDigits[num[x] - '0']);
+//             }
+//         }
+//         ++x;
+//     }
+// }
 // Driver Code
 //convert_to_words("1121".ToCharArray());
 
 //topic: Reversing a Number using Recursion
 //coder: Rushikesh Chikane.
 
-static void Reverse(int num)
-{
-    // base condition to end recursive calls
-    if (num < 10)
-    {
-        Console.WriteLine(num);
-        return;
-    }
-    else
-    {
-        // print the unit digit of the given number
-        Console.Write(num % 10);
-        // calling function for remaining number other than unit digit
-        Reverse(num / 10);
-    }
-}
+// static void Reverse(int num)
+// {
+//     // base condition to end recursive calls
+//     if (num < 10)
+//     {
+//         Console.WriteLine(num);
+//         return;
+//     }
+//     else
+//     {
+//         // print the unit digit of the given number
+//         Console.Write(num % 10);
+//         // calling function for remaining number other than unit digit
+//         Reverse(num / 10);
+//     }
+// }
 
 // driver code
-static void ReverseNum(int num)
-{
-    // number to be reversed
-    Console.WriteLine("Enter Number for Revrsing :");
-    num = int.Parse(Console.ReadLine());
+// static void ReverseNum(int num)
+// {
+//     // number to be reversed
+//     Console.WriteLine("Enter Number for Revrsing :");
+//     num = int.Parse(Console.ReadLine());
 
-    Console.Write("Reversed Number: ");
-    // calling recursive function to print the number in reversed form
-    Reverse(num);
-}
+//     Console.Write("Reversed Number: ");
+//     // calling recursive function to print the number in reversed form
+//     Reverse(num);
+// }
 //ReverseNum(num);  
 
 
@@ -1842,68 +1842,68 @@ static void ReverseNum(int num)
 //topic: Find the Nth row in Pascal’s Triangle
 //coder: Rushikesh Chikane.
 
-static List<int> GetRow(int rowIndex)
-{
-    List<int> currow = new List<int>();
+// static List<int> GetRow(int rowIndex)
+// {
+//     List<int> currow = new List<int>();
 
-    currow.Add(1);
+//     currow.Add(1);
 
-    if (rowIndex == 0)
-    {
-        return currow;
-    }
+//     if (rowIndex == 0)
+//     {
+//         return currow;
+//     }
 
-    List<int> prev = GetRow(rowIndex - 1);
+//     List<int> prev = GetRow(rowIndex - 1);
 
-    for (int i = 1; i < prev.Count; i++)
-    {
-        int curr = prev[i - 1] + prev[i];
-        currow.Add(curr);
-    }
-    currow.Add(1);
+//     for (int i = 1; i < prev.Count; i++)
+//     {
+//         int curr = prev[i - 1] + prev[i];
+//         currow.Add(curr);
+//     }
+//     currow.Add(1);
 
-    return currow;
-}
+//     return currow;
+// }
 
-static void PascalsTriangle(int n)
-{
-    Console.WriteLine("Enter a Number For Pascals Triangle:");
-    n = int.Parse(Console.ReadLine());
+// static void PascalsTriangle(int n)
+// {
+//     Console.WriteLine("Enter a Number For Pascals Triangle:");
+//     n = int.Parse(Console.ReadLine());
 
-    List<int> arr = GetRow(n);
+//     List<int> arr = GetRow(n);
 
-    for (int i = 0; i < arr.Count; i++)
-    {
-        if (i == arr.Count - 1)
-            Console.Write(arr[i]);
-        else
-            Console.Write(arr[i] + ", ");
-    }
-}
+//     for (int i = 0; i < arr.Count; i++)
+//     {
+//         if (i == arr.Count - 1)
+//             Console.Write(arr[i]);
+//         else
+//             Console.Write(arr[i] + ", ");
+//     }
+// }
 //PascalsTriangle(n);
 
 //topic: Program to find Largest and Smallest Element in an Array
 //coder: Rushikesh Chikane.
 
-static void FindingSamllAndLagerstNumberFromArray(int[] arry)
-{
+// static void FindingSamllAndLagerstNumberFromArray(int[] arry)
+// {
 
-    int n = arry.Length;
+//     int n = arry.Length;
 
-    int smallest = int.MaxValue;
-    int largest = int.MinValue;
+//     int smallest = int.MaxValue;
+//     int largest = int.MinValue;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (smallest > arry[i])
-            smallest = arry[i];
-        if (largest < arry[i])
-            largest = arry[i];
-    }
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (smallest > arry[i])
+//             smallest = arry[i];
+//         if (largest < arry[i])
+//             largest = arry[i];
+//     }
 
-    Console.WriteLine("Smallest Number: " + smallest);
-    Console.WriteLine("Largest Number: " + largest);
-}
+//     Console.WriteLine("Smallest Number: " + smallest);
+//     Console.WriteLine("Largest Number: " + largest);
+// }
 
 int[] arry = { 10, 67, 89, 78, 34, 2, 95 };
 //FindingSamllAndLagerstNumberFromArray(arry);  
@@ -1912,30 +1912,30 @@ int[] arry = { 10, 67, 89, 78, 34, 2, 95 };
 //topic: Program to find Distinct Element In Array
 //coder: Rushikesh Chikane.
 
-static void DistinctElementFromArray(int[] array)
-{
+// static void DistinctElementFromArray(int[] array)
+// {
 
-    int n = array.Length;
+//     int n = array.Length;
 
-    int[] visited = new int[n];
-    int count_dis = 0;
+//     int[] visited = new int[n];
+//     int count_dis = 0;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (visited[i] != 1)
-        {
-            for (int j = i + 1; j < n; j++)
-            {
-                if (array[i] == array[j])
-                {
-                    visited[j] = 1;
-                }
-            }
-            count_dis++;
-        }
-    }
-    Console.WriteLine(count_dis);
-}
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (visited[i] != 1)
+//         {
+//             for (int j = i + 1; j < n; j++)
+//             {
+//                 if (array[i] == array[j])
+//                 {
+//                     visited[j] = 1;
+//                 }
+//             }
+//             count_dis++;
+//         }
+//     }
+//     Console.WriteLine(count_dis);
+// }
 
 int[] array = { 10, 30, 10, 20, 40, 20, 50, 10 };
 //DistinctElementFromArray(array);
@@ -1945,46 +1945,46 @@ int[] array = { 10, 30, 10, 20, 40, 20, 50, 10 };
 //coder: Rushikesh Chikane.
 
 
-static bool Disjoint(int[] arr1, int[] arr2)
-{
-    for (int i = 0; i < arr1.Length; i++)
-    {
-        for (int j = 0; j < arr2.Length; j++)
-        {
-            if (arr1[i] == arr2[j])
-            {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-static void DisjointOrNot(int[] arr1, int[] arr2)
-{
-    if (Disjoint(arr1, arr2))
-        Console.WriteLine("Yes");
-    else
-        Console.WriteLine("No");
-}
-int[] arr1 = { 10, 51, 3, 43, 6 };
-int[] arr2 = { 80, 71, 29, 3 };
+// static bool Disjoint(int[] arr1, int[] arr2)
+// {
+//     for (int i = 0; i < arr1.Length; i++)
+//     {
+//         for (int j = 0; j < arr2.Length; j++)
+//         {
+//             if (arr1[i] == arr2[j])
+//             {
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+// }
+// static void DisjointOrNot(int[] arr1, int[] arr2)
+// {
+//     if (Disjoint(arr1, arr2))
+//         Console.WriteLine("Yes");
+//     else
+//         Console.WriteLine("No");
+// }
+// int[] arr1 = { 10, 51, 3, 43, 6 };
+// int[] arr2 = { 80, 71, 29, 3 };
 //DisjointOrNot(arr1,arr2);
 
 
 //topic: program to check a character is an alphabet or not
 //coder: Rushikesh Chikane.
 
-static void AlphabeOrNot()
-{
-    char ch;
-    ch = 'a';
+// static void AlphabeOrNot()
+// {
+//     char ch;
+//     ch = 'a';
 
-    //condition for checking characters
-    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-        Console.WriteLine("The inserted character " + ch + " is an Alphabet");
-    else
-        Console.WriteLine("The inserted character " + ch + " is not an Alphabet");
-}
+//     //condition for checking characters
+//     if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+//         Console.WriteLine("The inserted character " + ch + " is an Alphabet");
+//     else
+//         Console.WriteLine("The inserted character " + ch + " is not an Alphabet");
+// }
 //AlphabeOrNot();
 
 
@@ -2322,3 +2322,20 @@ arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4)
 //         }
 //     }
 // }
+
+
+
+
+
+ static void LeapYearChecker1()
+        {
+            int year = 2020;
+
+            if (year % 400 == 0)
+                Console.WriteLine(year + " is a Leap Year");
+            else if (year % 4 == 0 && year % 100 != 0)
+                Console.WriteLine(year + " is a Leap Year");
+            else
+                Console.WriteLine(year + " is not a Leap Year");
+        }
+LeapYearChecker1();
