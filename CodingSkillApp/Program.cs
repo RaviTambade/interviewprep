@@ -2341,6 +2341,51 @@ arr4 is not a subset of arr3 (As, arr3 do not contains all the elements of arr4)
         }
 LeapYearChecker1();
 
+//topic : Common elements in all row of a given matrix 
+void CommonElementInMatrixRows()
+{
+    int[][] matrix =
+    {
+        new int[] { 10, 20, 30, 40 },
+        new int[] { 15, 20, 30, 30 },
+        new int[] { 20, 30, 37, 48 },
+        new int[] { 32, 20, 39, 30 }
+    };
+
+    int m = 4,
+        n = 4;
+
+    for (int i = 0; i < n; i++)
+    {
+        int x = matrix[0][i],
+            count = 0;
+
+        for (int j = 1; j < m; j++)
+        {
+            // int flag = 0;
+            for (int k = 0; k < n; k++)
+            {
+                if (x == matrix[j][k])
+                {
+                    // flag = 1;
+                    count++;
+                    matrix[j][k] = -1;
+                    break;
+                }
+            }
+            // if (flag == 1)
+            // {
+            //     count++;
+            // }
+        }
+        if (count == m - 1)
+        {
+            Console.WriteLine(x);
+        }
+    }
+}
+
+
 
 //Topic : finding Max Value 
 // coder : Tanpure Akshay
