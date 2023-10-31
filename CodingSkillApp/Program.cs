@@ -1491,33 +1491,33 @@ using System.Xml.Serialization;
 
 // //Title:Find if there is any subarray with sum equal to 0
 // //coader=pragati
-// static bool findSum(int[] numbers){
-//  int flag=0;
-//  int sum=0;
-//  for(int i=0; i<numbers.Length; i++){
-//   for(int j=i ;j<numbers.Length; j++ ){
-//     sum+=numbers[j];
-//     if(sum==0){
-//       flag=1;
-//       break;
-//     }
-//     else{
-//       flag=0;
-//       break;
-//     }
-//   }
-//  }
-//   if(flag==1){
-//     return true;
-//   }
-//   return false;
-//  }
+static bool findSum(int[] numbers){
+ int flag=0;
+ int sum=0;
+ for(int i=0; i<numbers.Length; i++){
+  for(int j=i ;j<numbers.Length; j++ ){
+    sum+=numbers[j];
+    if(sum==0){
+      flag=1;
+      break;
+    }
+    else{
+      flag=0;
+      break;
+    }
+  }
+ }
+  if(flag==1){
+    return true;
+  }
+  return false;
+ }
 
-// int[] numbers ={0,0,9,8,7};
+int[] numbers ={0,0,9,8,7};
 
 
-// bool status = findSum(numbers);
-// Console.WriteLine(status);
+bool status = findSum(numbers);
+Console.WriteLine(status);
  
 
 
@@ -1541,6 +1541,7 @@ static void Palindrom()
         Console.WriteLine(num + " is not Palindrome");
 }
 //Palindrom();
+
 
 //topic: Armstrong Number
 //coder: Rushikesh Chikane.
@@ -1589,7 +1590,6 @@ static void Armstrongnum()
 
 }
 //Armstrongnum();
-
 
 
 static void Armstrong()
