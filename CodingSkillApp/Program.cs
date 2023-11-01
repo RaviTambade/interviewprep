@@ -1277,6 +1277,7 @@ if (!flag)
 
 
 //Find Smallest Element in an Array
+//coader:pragati
 static int SmallestNumberInArray()
 {
     int[] numbers = { 34, 4, 89, 90, 56 };
@@ -2019,3 +2020,30 @@ void FindCommonElementInThreeArray()
         }
     }
 }
+
+// search element in matrix
+
+static void FindElementInMatrix(){
+int[][] matrix ={new int[]{1,2,4,8},new int[]{5,6,7,9},new int[]{10,11,12,13}};
+Console.WriteLine("Enter element which you want to search:");
+int search=int.Parse(Console.ReadLine());
+int size = matrix.Length;
+int flag = 0;
+ for(int i=0; i<size; i++){
+    for(int j=0; j<matrix[i].Length; j++){
+        if(matrix[i][j]==search){
+           Console.WriteLine($"Element found at position :{i},{j} ");
+           flag=1;
+           break;
+        }
+    }
+    if(flag==1){
+      break;
+    }
+ }
+ if(flag==0){
+    Console.WriteLine("Not found");
+ }
+}
+
+FindElementInMatrix();
