@@ -1,63 +1,45 @@
 <article>
 <div class="entry-content-wrap primary-entry-content">
-<header class="entry-header"><h1 class="entry-title">How to Prepare for Git Interview</h1>
+<header class="entry-header"><h1 class="entry-title">How to Prepare for Sql Interview</h1>
 </header>
 <div class="entry-content">
-<p>If you're a developer, you've probably heard of Git and GitHub. But what are they, and what's the difference? The first answer is version control. Any developer who has worked on a project with multiple team members knows the importance of version control. When more than one person is working on a codebase, it's essential to have a way to track changes and ensure that everyone is working off of the same version of the code. Git is a version control system used for tracking changes in computer files. It is generally used for source code management in software development. Git is used to tracking changes in the source code. The distributed version control tool is used for source code management.</p>
+<p>SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.</p>
 
-<p>Git is a version control system that allows developers to track changes in their code. GitHub is a web-based hosting service for git repositories. In simple terms, you can use git without Github, but you cannot use GitHub without Git. Take note of the following illustration for further information on the distinctions between the two.</p>
+<p>SQL skills help data experts maintain, create and retrieve information from relational databases, which separate data into columns and rows. It also allows them to access, update, manipulate, insert and modify data efficiently.</p>
 
-<h3><span class="ez-toc-section" id="Basic-NET-Core-interview-questions"></span><a href="#basic-net-core-interview-questions">GIT interview questions</a><span class="ez-toc-section-end"></span></h3>
+<h3><span class="ez-toc-section" id="Basic-NET-Core-interview-questions"></span>
+<a href="#basic-net-core-interview-questions">Sql interview questions</a><span class="ez-toc-section-end"></span></h3>
 <ol>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is GIT?</a></li>
-<li><a href="#what-is-the-latest-version-of-net-core">What is Distributed Control System?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is GIT version control?</a></li>
-<li><a href="#what-is-the-latest-version-of-net-core">What is a repository in GIT?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How can you create a local repository in Git?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is ‘bare repository’ in GIT?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to configure GitHub repository locally?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to Create Alias to git commands</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is the git clone?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is ‘git add’?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is Staging Area?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is the use of ‘git log’?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How can we add modified/updated/edited files to the staging area and commit then at the same time?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to edit an incorrect commit message in Git? Or How can you fix a broken commit?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to get back a commit to staging area?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to get back a file from staging area to working area?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to get back a commit to work area?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git reset?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is ‘head’ in git and how many heads can be created in a repository?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is .gitignore file?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to see the difference between 2 commits?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">When file have staging area or file have committed if file is deleted in local repository unfortunately how to get back that file to staging area?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to create a branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to checkout to branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to create branch while checkout?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you rename the local branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to see the branch list?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to see the remote branch list?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to see the local and remote branch list?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to delete a branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to delete a Remote Branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to see the difference between 2 branches</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git push?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you push the files to master branch in remote repo?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you push files from local to particular branch in remote repo?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How to push new branch and its data to remote repository?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git pull?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you pull a file from particular remote branch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you download a remote branch to local without merge?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git Fetch?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is difference between git clone & git pull?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git merge?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is git conflict? What is the scenario you will get git conflict error?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you resolve merge conflict?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How do you skip from merge conflict?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is the function of ‘git rm’?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">How will you know in GIT if a branch has been already merged into master?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is branching? What is the purpose of branching in GIT?</a></li>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is the criteria u merge two branches?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">1. What exactly is SQL?</a></li>
+<li><a href="#what-is-the-latest-version-of-net-core">2. What Can SQL do for you?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">1. How do you distinguish between SQL and MySQL?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">2. What are the various SQL subsets?
+</a></li>
+<li><a href="#what-is-the-latest-version-of-net-core">What do you mean by database management system (DBMS)? What are the many sorts of it?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">4. In SQL, how do you define a table and a field?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">5. How do we define joins in SQL?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">6. What is the difference between the SQL data types CHAR and VARCHAR2?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">7. What are constraints?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">8. What is a foreign key?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">9. What is"data integrity"?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">10. What is the difference between a clustered and a non-clustered
+index?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">11. How would you write a SQL query to show the current date?
+</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">12. What exactly do you mean when you say "query optimization"?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">13. What is "denormalization"?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">14. What are the differences between entities and relationships?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">15. What is an index?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">16. Describe the various types of indexes in SQL</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">17. What is normalization, and what are its benefits?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">18. Describe the various forms of normalization.</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">19. In a database, what is the ACID property?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">20. What is "Trigger" in SQL?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">21. What are the different types of SQL operators?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">22. Do NULL values have the same meaning as zero or a blank space?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">23. What is the difference between a natural join and a cross join?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">24. What is a subquery in SQL?</a></li>
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">25. What are the various forms of subqueries?</a></li>
 </ol>
 
 <h3><span class="ez-toc-section" id="ASPNET-MVC-interview-questions"></span><a href="#asp-net-mvc-interview-questions">1. What is GIT? </a><span class="ez-toc-section-end"></span></h3>

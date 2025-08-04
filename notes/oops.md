@@ -1,6 +1,6 @@
 <article>
 <div class="entry-content-wrap primary-entry-content">
-<header class="entry-header"><h1 class="entry-title">.NET Core Interview Questions and Answers</h1>
+<header class="entry-header"><h1 class="entry-title">Object Oriented Programming Interview Questions and Answers</h1>
 </header>
 <div class="entry-content">
 <p>According to <a href="https://survey.stackoverflow.co/2023/#section-most-popular-technologies-other-frameworks-and-libraries" target="_blank" rel="noopener">Stackoverflow Survey 2023</a>, developers are using .NET and .NET Core in first place respectively, as framework or libraries. Mostly it is the first programming language the programmers learn after the OOPs concepts. There are multiple reasons for the success of .NET, one of the most prominent ones is its stack- layered architecture. This architecture provides flexibility to add/ update layers without disturbing the whole application.</p>
@@ -8,8 +8,46 @@
 <p>.NET MVC(Model-View-Controller), provides a large set of additional functionalities to create modular applications. It eases the whole application creation process by providing component-based development and testing.</p>
 <h3><span class="ez-toc-section" id="Basic-NET-Core-interview-questions"></span><a href="#basic-net-core-interview-questions">Basic .NET Core interview questions</a><span class="ez-toc-section-end"></span></h3>
 <ol>
-<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is .NET Core Framework, and how does it work?</a></li>
-<li><a href="#what-is-the-latest-version-of-net-core">What is the latest version of .NET Core? Share one specific attribute.</a></li>
+1)What is OOPS?
+2)Write basic concepts of OOPS?
+3)What is Class?
+4)What is an Object?
+5)What is Encapsulation?
+6)What is Polymorphism?
+7)What is Inheritance?
+8)What are manipulators?
+9)Explain the term constructor?
+10)Define Destructor?
+21)What is method overriding?
+22)What is an interface?
+23)What is exception handling?
+24)What are tokens?
+25)What is the main difference between overloading and overriding?
+26)What is the main difference between a class and an object?
+27)What is an abstraction?
+28)What are the access modifiers?
+29)What are sealed modifiers?
+30)How can we call the base method without creating an instance?
+31)What is the difference between new and override?
+32)What are the various types of constructors?
+33)What is early and late Binding?
+34)What is 'this' pointer?
+35)What is the difference between structure and a class?
+36)What is the default access modifier in a class?
+37)What is a pure virtual function?
+38)What are all the operators that cannot be overloaded?
+39)What is dynamic or run time polymorphism?
+40)Do we require a parameter for constructors?
+41)What is a copy constructor?
+42)What does the keyword virtual represented in the method definition?
+43)Whether static method can use nonstatic members?
+44)What are a base class,subclass, and superclass?
+45)What is static and dynamic binding?
+46)How many instance can be created for an abstract class?
+47)Which keyword can be used for overloading?
+48)What is the default access specifier in a class definition?
+<li><a href="#what-is-net-core-framework-and-how-does-it-work">What is OOPS?</a></li>
+<li><a href="#what-is-the-latest-version-of-net-core">Write basic concepts of OOPS</a></li>
 <li><a href="#share-specific-features-of-net-core">Share specific features of .NET Core?</a></li>
 <li><a href="#what-is-net-core-used-for">What is .NET Core used for?</a></li>
 <li><a href="#discuss-critical-components-in-net-core">Discuss critical components in .NET Core?</a></li>
@@ -983,3 +1021,43 @@ ________________________________________________________________________________
 </pre>
 </li> 
 </ol>
+
+
+1)What is OOPS?
+2)Write basic concepts of OOPS?
+3)What is Class?
+4)What is an Object?
+5)What is Encapsulation?
+6)What is Polymorphism?
+7)What is Inheritance?
+8)What are manipulators?
+9)Explain the term constructor?
+10)Define Destructor?
+21)What is method overriding?
+22)What is an interface?
+23)What is exception handling?
+24)What are tokens?
+25)What is the main difference between overloading and overriding?
+26)What is the main difference between a class and an object?
+27)What is an abstraction?
+28)What are the access modifiers?
+29)What are sealed modifiers?
+30)How can we call the base method without creating an instance?
+31)What is the difference between new and override?
+32)What are the various types of constructors?
+33)What is early and late Binding?
+34)What is 'this' pointer?
+35)What is the difference between structure and a class?
+36)What is the default access modifier in a class?
+37)What is a pure virtual function?
+38)What are all the operators that cannot be overloaded?
+39)What is dynamic or run time polymorphism?
+40)Do we require a parameter for constructors?
+41)What is a copy constructor?
+42)What does the keyword virtual represented in the method definition?
+43)Whether static method can use nonstatic members?
+44)What are a base class,subclass, and superclass?
+45)What is static and dynamic binding?
+46)How many instance can be created for an abstract class?
+47)Which keyword can be used for overloading?
+48)What is the default access specifier in a class definition?
